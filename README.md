@@ -1,1 +1,0 @@
-# przyklady_javascript
