@@ -13,8 +13,9 @@ function initialize() {
 }
 // DICE 
 var counter = 1;
-var tura=counter +1;
+var tura = counter + 1;
 var suma_total = 0;
+
 function roll() {
 	var przycisk = $('<div class="button1"></div>');
 	var combo = 0;
@@ -33,7 +34,7 @@ function roll() {
 		document.querySelector('.combo').innerHTML = "EXTRA +10 punktów";
 		document.querySelector('.combo').style.color = "red";
 		combo = 10;
-	
+
 
 
 	} else {
@@ -163,7 +164,7 @@ Zmienne nie mogą zaczynać sie od liczby lub być słowami kluczowymi;
 */
 var nazwaZmiennej = 5; // assigned value 5 ( deklacracja zmiennej);
 var VAT = 23;
-var obliczonyVAT = (1 + VAT * 1/100);
+var obliczonyVAT = (1 + VAT * 1 / 100);
 var cenaNettoJAVA = 39;
 var cenaNettoAJAX = 34;
 
@@ -173,27 +174,24 @@ alert("cena brutto AJAX to " + cenaBruttoAJAX + ", a cena brutto JAVA to " + cen
 
 // PRZYCISK - TO TOP PAGE 
 
-window.onload = function(){
-var przyciskTop = document.getElementById("przyciskTop");
-przyciskTop.onclick = function()
-{
-	// - window.scrollBy(0, -100);/* wartości ujemne - do góry */
-	window.scrollBy(0,  -1 * window.pageYOffset);
-}
-var przycisDown = document.getElementById("przyciskDown");
+window.onload = function () {
+	var przyciskTop = document.getElementById("przyciskTop");
+	przyciskTop.onclick = function () {
+		// - window.scrollBy(0, -100);/* wartości ujemne - do góry */
+		window.scrollBy(0, -1 * window.pageYOffset);
+	}
+	var przycisDown = document.getElementById("przyciskDown");
 
 	// obsługa scroll- gdy scroll'ujemy, wywołujemy funkcję
-	window.onscroll = function()
-	{
+	window.onscroll = function () {
 		var test = document.getElementById("test");
 		test.innerHTML = window.pageYOffset;
 	}
-przyciskDown.onclick = function()
-{
-	//pierwsza liczba w poziomie(x), druga w pionie(y)
-	window.scrollBy(0, 100);/* wartości dodatnie dół*/
+	przyciskDown.onclick = function () {
+		//pierwsza liczba w poziomie(x), druga w pionie(y)
+		window.scrollBy(0, 100); /* wartości dodatnie dół*/
 
-	
-	
-}
+
+
+	}
 };

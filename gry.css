@@ -1,4 +1,3 @@
-
 h1 {
 	padding: 3%;
 	font-family: sans-serif;
@@ -97,7 +96,6 @@ h6 {
 }
 
 /* jQuery */
-
 
 .rodzic {
 
@@ -202,6 +200,7 @@ h6 {
 
 
 /* Memory */
+
 .plansza {
 	margin: 30px auto;
 	position: relative;
@@ -235,22 +234,24 @@ h6 {
 }
 
 /* przycisk top */
+
 #przyciskTop {
 	padding: 2px;
 	background-color: #45aada;
 	font-size: 40px;
 	position: fixed;
 	bottom: 15px;
-	right:15px;
+	right: 15px;
 	cursor: pointer;
 }
+
 #przyciskDown {
 	padding: 2px;
 	background-color: #45aada;
 	font-size: 40px;
 	position: fixed;
 	bottom: 15px;
-	left:15px;
+	left: 15px;
 	cursor: pointer;
 	transform: rotate(180deg);
 }
