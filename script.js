@@ -183,9 +183,18 @@ window.onload = function () {
 	var przycisDown = document.getElementById("przyciskDown");
 
 	// obsługa scroll- gdy scroll'ujemy, wywołujemy funkcję
+
 	window.onscroll = function () {
 		var test = document.getElementById("test");
-		test.innerHTML = window.pageYOffset;
+		var przyciskTop = document.getElementById("przyciskTop");
+		var yScrollAxis = window.pageYOffset;
+		// przycisk nawigujący w górę pojawia sie od danej wartości px
+		if (yScrollAxis > 100) {
+			przyciskTop.style.display = "block";
+		} else {
+			przyciskTop.style.display = "none";
+		}
+		test.innerHTML = yScrollAxis;
 	}
 	przyciskDown.onclick = function () {
 		//pierwsza liczba w poziomie(x), druga w pionie(y)
