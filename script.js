@@ -135,43 +135,6 @@ document.getElementById("godzina").innerHTML = godzina + ":" + minuta + ":" + se
 
 
 
-// ------------KURS JAVASCRIPT---------------
-
-// Zmienne
-
-/* 
-Typy zmiennych:
-1) liczby - number:
-var number = 20;
-2) ciąg znaków - string:
-var string = "dwadzieścia";
-var string1 = "20";
-3) wartości logiczne - boolean(true/false):
-var redHead = true;
-var blueCar = false;
-4) tablice - array;
-var cars = ["blue", 20, true, [] ];
-5) pustka - null;
-6) niezidentyfikowana - undifined; 
- 
- NIe trzeba pisać var za każdym razem, odzielamy je przecinkiem:
- var a = 2, b = 3, c = 4;
-  var a = 2,
-	  b = 3,
-	  c = 4;
-
-Zmienne nie mogą zaczynać sie od liczby lub być słowami kluczowymi;
-*/
-var nazwaZmiennej = 5; // assigned value 5 ( deklacracja zmiennej);
-var VAT = 23;
-var obliczonyVAT = (1 + VAT * 1 / 100);
-var cenaNettoJAVA = 39;
-var cenaNettoAJAX = 34;
-
-var cenaBruttoJAVA = cenaNettoJAVA * obliczonyVAT;
-var cenaBruttoAJAX = cenaNettoAJAX * obliczonyVAT;
-alert("cena brutto AJAX to " + cenaBruttoAJAX + ", a cena brutto JAVA to " + cenaBruttoJAVA);
-
 // PRZYCISK - TO TOP PAGE 
 
 window.onload = function () {
@@ -199,8 +162,5 @@ window.onload = function () {
 	przyciskDown.onclick = function () {
 		//pierwsza liczba w poziomie(x), druga w pionie(y)
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
-
-
-
 	}
 };
