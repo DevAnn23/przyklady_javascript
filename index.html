@@ -11,7 +11,7 @@
 	<meta name="MobileOptimized" content="320">
 	<meta name="HandheldFriendly" content="true">
 	<meta name="viewport" content="width=device-width, initial-scale=1, target-densitydpi=device-dpi">
-	<link rel="icon" type="image/png" href="board-games-set.png">
+	<link rel="icon" type="image/png" href="img/board-games-set.png">
 	<link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
@@ -35,7 +35,7 @@
 
 	<h1> Moje przykłady JavaScript </h1>
 
-	<h6><img class="fliud rounded" src="board-games-set.png" alt="" name="obrazek" /> Witaj, odwiedziłeś mnie <span id="zegar"></span> o godzinie <span id="godzina"></span></h6><br />
+	<h6>Witaj, odwiedziłeś mnie <span id="zegar"></span> o godzinie <span id="godzina"></span></h6><br />
 
 	<div id="accordion" role="tablist">
 		<!-- Dice -->
@@ -147,12 +147,37 @@
 				</div>
 			</div>
 		</div>
+		<div class="card">
+			<div class="card-header" role="tab" id="headingOne">
+				<h5 class="mb-0">
+					<a onmousemove="initialize()" data-toggle="collapse" href="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+        Totolotek
+        </a>
+				</h5>
+			</div>
+			<div id="collapseOne3" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
+				<div class= "totolotek">
+					<p >Liczba nr 1 to <span class="liczba"></span></p><br>
+					<p >Liczba nr 2 to <span class="liczba"></span></p><br>
+				<p >Liczba nr 3 to <span class="liczba"></span></p><br>
+					<p >Liczba nr 4 to <span class="liczba"></span></p><br>
+				<p >Liczba nr 5 to <span class="liczba"></span></p><br>
+					<p >Liczba nr 6 to <span class="liczba"></span></p><br>
+					</div>
+					<button id="losuj" onclick="totolotek()">Losowanie 6 przypadkowych liczb</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div id="testowy"><h4>Przesuwaj obrazek myszką i umieść jabłko w dowolny miejscu na stronie:)</h4></div>
+		<div ><img id="obrazek" class="fliud rounded" src="img/title_7.png" alt="obrazek" name="obrazek" /></div>
 
 		<!-- przykład javascript- scroll -->
 		<button id="przyciskDown">^</button>
 		<button id="przyciskTop">^<br><span id="test"></span></button>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	</div>
+
 
 </body>
 

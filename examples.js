@@ -156,4 +156,100 @@ alert(czyParzysta);
 var czyParzysta = ( x % 2 === 0) ? true : false;
 // za true i false możemy wpisać swój tekst, możemy zrobić jeszcze większy skrót:
 alert(( x % 2 === 0) ? "ta liczba jest parzysta" : "ta liczba jest nieparzysta";
+
+FUNCTIONS  - FUNKCJE - kawałek kodu, który moze być wykjorzystany w wielu miejscach bez potrzeby ponownego pisania treści, funkcje wywołują coś.
+
+np funkcja alert(); jest to juz istniejaca funkcja w javascript, funkcje też możemy sami napisać.
+
+
+function test(){
+// w klamerkach piszemy tzw. ciało funkcji, może byc funkcja w funkcji
+	alert("cosik");
+}
+FUNKCJE JAKO WARTOŚC ZMIENNEJ / ANONIMOWE FUNKCJE
+
+var y = function(){
+alert("kkk");
+}
+y(); - wywołanie funkcji
+*/
+/*s
+function dodaj(x, y){
+// w klamerkach piszemy tzw. ciało funkcji, może byc funkcja w funkcji
+	return x + y;
+}
+function dzielenie(x, y){
+	if ( y === 0){
+		alert("Nie dzielimy przez 0");
+		//return; ---- gdy to zapiszę, nie muszę dawać else, bo to oznacza, że zwróci ten blok i wyjdzie z funkcji, nie będzie sie dalej wywoływać.
+	}
+	else {
+		return x / y;
+	}
+}
+var sumaZmiennych = dodaj(2, 7);
+alert(sumaZmiennych);
+var dzielenieZmiennych = dzielenie(10, 0);
+aler(dzielenieZmiennych);}
+ //Funkcje anonimowe - bez nazwy, warość zmiennej w nawiasie może być funkcją;
+
+function test(f)
+{
+	f();
+}
+test(
+function(){
+	alert("Funkcja anonimowa w funkcji test");
+})
+
+OBIEKTY - TO POJEMNIKI DO PRZECHOWYWANIA ZMIENNYCH I FUNKCJI TEMATYCZNIE ZE SOBĄ ZWIAZANYCH
+
+NP. document - to obiekt stworzony przez dev javascript
+
+var div= document.getElementById("test");
+div.innerHTML = "nowa treśc";
+
+WŁASNE OBIEKTY TWORZYMY W NASTĘPUJĄCY SPOSÓB:
+
+var osoba = {
+imie: "Arek",
+nazwisko: "Kowalski"
+};
+
+alert(osoba.imie);
+lub
+div.innerHTML = osoba.imie;
+
+*** Słówko kluczowe THIS
+
+var osoba = {
+imie: "Arek",
+nazwisko: "Kowalski",
+pobierzInformacje: function(){                  ***** funkcja jest częścia obiektu
+return this.imie + " " + this.nazwisko;
+}
+};
+
+div.innerHTML = osoba.pobierzInformacje();
+
+GDY div.innerHTML = osoba; ZWRACA - TYLKO TO, ŻE JEST TO OBJECT
+
+GDY CHCEMY ŻEBY ZWRÓCIŁO NAM NASZ OBIEKT JAKO CIĄG ZNAKÓW, MOŻNA UŻYĆ METODY toString:
+
+
+var osoba = {
+imie: "Arek",
+nazwisko: "Kowalski",
+pobierzInformacje: function()
+{
+return this.imie + " " + this.nazwisko;
+},
+toString: finction() {
+return this.imie + " " + this.nazwisko;
+}
+};
+GDY div.innerHTML = osoba; TERAZ ZWRACA TO CO JEST W CIELE FUNKCJI METODY toString;
+
+
+
 */

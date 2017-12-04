@@ -5,7 +5,7 @@ h1 {
 }
 
 body {
-	background-image: url('title.png');
+	background-image: url('img/title.png');
 
 }
 
@@ -124,39 +124,39 @@ h6 {
 .dice {
 	transform: translateZ(50px);
 	-webkit-transform: translateZ(50px);
-	background-image: url(title_2.png);
+	background-image: url(img/title_2.png);
 
 }
 
 #tyl {
 	transform: translateZ(-50px);
 	-webkit-transform: translateZ(-50px);
-	background-image: url('title_1.png');
+	background-image: url('img/title_1.png');
 	background-position: center;
 }
 
 #lewo {
 	transform: rotateY(-90deg) translateZ(50px);
 	-webkit-transform: rotateY(-90deg) translateZ(50px);
-	background-image: url(title_4.png);
+	background-image: url(img/title_4.png);
 }
 
 #prawo {
 	transform: rotateY(90deg) translateZ(50px);
 	-webkit-transform: rotateY(90deg) translateZ(50px);
-	background-image: url(title_3.png);
+	background-image: url(img/title_3.png);
 }
 
 #gora {
 	transform: rotateX(-90deg) translateZ(50px);
 	-webkit-transform: rotateX(-90deg) translateZ(50px);
-	background-image: url(title_5.png);
+	background-image: url(img/title_5.png);
 }
 
 #dol {
 	transform: rotateX(90deg) translateZ(50px);
 	-webkit-transform: rotateX(90deg) translateZ(50px);
-	background-image: url(title_6.png);
+	background-image: url(img/title_6.png);
 }
 
 .rodzic > div > div {
@@ -217,7 +217,7 @@ h6 {
 	float: left;
 	width: 100px;
 	height: 100px;
-	background: #f6da17 url(images/title.png) center center no-repeat;
+	background: #f6da17 url(images/img/title.png) center center no-repeat;
 	margin: 10px;
 }
 
@@ -233,7 +233,7 @@ h6 {
 	-webkit-perspective: 300px;
 }
 
-/* przycisk top */
+/* ************przycisk top */
 
 #przyciskTop {
 	padding: 2px;
@@ -260,4 +260,22 @@ h6 {
 #przyciskTop:hover,
 #przyciskDown:hover {
 	color: #f00;
+}
+/************ totolotek */
+button {
+	background-color: #dd4d11;
+	border-radius: 5px;
+}
+.liczba {
+	margin-left: 5%;
+}
+
+/*******Obrazek przesuwany myszką*/
+#obrazek {
+	position: absolute;
+}
+h4 {
+	padding: 3%;
+	font-family: sans-serif;
+	color: #66a;
 }
