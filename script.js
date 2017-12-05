@@ -175,9 +175,12 @@ function zastopujPowiekszanie() {
 
 
 	//********** przesuwany obrazek ruchami myszki
+
+
 	var obrazek = document.getElementById("obrazek");
 	function ruchObrazka(e, obr)
 {
+
 			obr.style.left = e.clientX - obr.width / 2 + "px";
 			obr.style.top = e.clientY - obr.height / 2 + "px";/* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
 
@@ -187,6 +190,8 @@ function zastopujPowiekszanie() {
 		var self = this;
 		document.onmousemove = function (e)
 		{
+		var tmp = document.getElementById("tmp");
+	tmp.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
 			ruchObrazka(e, self);
 		};
 	};
@@ -231,25 +236,13 @@ function zastopujPowiekszanie() {
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
 	};
 
+	function wykonaj() {
+
+	}
+
+	var nowyPrzyklad = document.getElementById("nowyPrzyklad");
+
+	nowyPrzyklad.onmousemove = wykonaj;
+
 };
-/*
-function zmienKolor()
-{
-    this.className = "zmienKolor"; !!!!!!!! zdarzenia MUSZĄ BYĆ W JEDNYM WINDOW.ONLOAD
-}
-function zmienKolor2()
-{
-    this.removeAttribute("class");
-}
 
-window.onload = function()
-{
-
-    var testowy = document.getElementById("godzina");
-    var testowy2 = document.getElementById("zegar");
-
-    testowy.onmouseover = zmienKolor;
-    testowy2.onmouseover = zmienKolor;
-    testowy.onmouseout = zmienKolor2;
-    testowy2.onmouseout = zmienKolor2;
-};*/

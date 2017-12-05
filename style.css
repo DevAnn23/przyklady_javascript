@@ -10,6 +10,8 @@ body {
 .container {
 	background-color: #9badac;
 	font-family: 'Fira Sans', sans-serif;
+	padding: 1% 0;
+	margin-bottom: 2px;
 }
 h6 {
 	float: right;
