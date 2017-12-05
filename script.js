@@ -1,16 +1,4 @@
-// Google map
 
-
-function initialize() {
-	var mapProp = {
-		center: new google.maps.LatLng(53.092694, 21.547027),
-		zoom: 12,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-	google.maps.event.addDomListener(window, initialize);
-
-}
 // DICE 
 var counter = 1;
 var tura = counter + 1;
@@ -135,22 +123,65 @@ var rok = dzisiaj.getFullYear();
 var godzina = dzisiaj.getHours();
 var minuta = dzisiaj.getMinutes();
 var sekunda = dzisiaj.getSeconds();
+var zegar = document.getElementById("zegar");
+var czas = document.getElementById("godzina");
 
-document.getElementById("zegar").innerHTML = dzien + "/" + miesiac + "/" + rok;
-document.getElementById("godzina").innerHTML = godzina + ":" + minuta + ":" + sekunda;
+function leadingZero (i) {
+        return (i < 10)? '0'+i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
+    }
+
+zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
+czas.innerHTML =  leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
 
 
-//********** przesuwany obrazek ruchami myszki
 
+window.onload = function ()
+{
+	function zmienKolor()
+{
+    this.className = "zmienKolor";
+}
+function zmienKolor2()
+{
+    this.removeAttribute("class");
+}
+function powiekszCzcionke() {
+	var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+	this.style.fontSize = (++fontSize) + "px";
+	wykrzyknik.className = "cursor";
+}
+function zastopujPowiekszanie() {
+	wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
+	wykrzyknik.removeAttribute("class");
+}
+	var testowy = document.getElementById("godzina");
+    var testowy2 = document.getElementById("zegar");
+	var wykrzyknik  = document.getElementById("wykrzyknik");
+	var stop  = document.getElementById("stop");
+
+   /* testowy.onmouseover = zmienKolor;
+    testowy2.onmouseover = zmienKolor;
+    testowy.onmouseout = zmienKolor2;
+    testowy2.onmouseout = zmienKolor2;*/
+
+	testowy.addEventListener("mouseover", zmienKolor);
+	testowy.addEventListener("mouseout", zmienKolor2);
+	testowy2.addEventListener("mouseover", zmienKolor);
+	testowy2.addEventListener("mouseout", zmienKolor2);
+	wykrzyknik.addEventListener("mousedown", powiekszCzcionke);
+	stop.addEventListener("click", zastopujPowiekszanie);
+
+
+
+
+	//********** przesuwany obrazek ruchami myszki
+	var obrazek = document.getElementById("obrazek");
 	function ruchObrazka(e, obr)
 {
 			obr.style.left = e.clientX - obr.width / 2 + "px";
 			obr.style.top = e.clientY - obr.height / 2 + "px";/* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
 
 	}
-window.onload = function ()
-{
-	var obrazek = document.getElementById("obrazek");
 	obrazek.onmousedown = function ()
 	{
 		var self = this;
@@ -168,6 +199,8 @@ window.onload = function ()
 		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
 	};
 
+
+
 	// ********* PRZYCISK - TO TOP PAGE
 
 	var przyciskTop = document.getElementById("przyciskTop");
@@ -175,7 +208,6 @@ window.onload = function ()
 		// - window.scrollBy(0, -100);/* wartości ujemne - do góry */
 		window.scrollBy(0, -1 * window.pageYOffset);
 	}
-	var przycisDown = document.getElementById("przyciskDown");
 
 	// obsługa scroll- gdy scroll'ujemy, wywołujemy funkcję
 
@@ -193,7 +225,31 @@ window.onload = function ()
 		test.innerHTML = yScrollAxis;
 	}
 	przyciskDown.onclick = function () {
+		var przycisDown = document.getElementById("przyciskDown");
+
 		//pierwsza liczba w poziomie(x), druga w pionie(y)
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
 	};
+
 };
+/*
+function zmienKolor()
+{
+    this.className = "zmienKolor"; !!!!!!!! zdarzenia MUSZĄ BYĆ W JEDNYM WINDOW.ONLOAD
+}
+function zmienKolor2()
+{
+    this.removeAttribute("class");
+}
+
+window.onload = function()
+{
+
+    var testowy = document.getElementById("godzina");
+    var testowy2 = document.getElementById("zegar");
+
+    testowy.onmouseover = zmienKolor;
+    testowy2.onmouseover = zmienKolor;
+    testowy.onmouseout = zmienKolor2;
+    testowy2.onmouseout = zmienKolor2;
+};*/

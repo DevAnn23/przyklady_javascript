@@ -250,6 +250,41 @@ return this.imie + " " + this.nazwisko;
 };
 GDY div.innerHTML = osoba; TERAZ ZWRACA TO CO JEST W CIELE FUNKCJI METODY toString;
 
+	// *** przykład na obiektach
+
+	//MOZEMY ROBI TZW. KLASY, ŻEBY TWORZYĆ FORMY DO WYTWARZANIA NOWYCH PODPBNYCH DO SIEBIE OBIEKTÓW, RÓZNIACYMI SIĘ POSZCZEGÓLNAMI WARTOSCIAMI.
+var div= document.getElementById("testowy");
+function osoba(imie, nazwisko)
+{
+	this.name = imie;
+	this.surname = nazwisko;
+	this.toString = function()
+	{
+	return this.name + " " + this.surname;
+	};
+}
+//***** teraz możemy stworzyć wiele osób
+	 var div= document.getElementById("testowy");
+	var x = new osoba("Jan", "Kowalski");
+	var z = new osoba("Janko", "Kowal");
+	var a = new osoba("Janina", "Kowalska");
+	var d = new osoba("Janusz", "Kowalek");
+	div.innerHTML = x + "<br>" + a + "<br>" + z + "<br>" + d + "<br>";
+
+****** ARRAYS - tablice ----- tablica jets też obiektem
+
+var produkty = ["PHP,JAVA,MYSQL];
+alert(produkty[0]);
+.push - wypychamy coś na koniec tablicy
+
+Tablica Asocjacyjna
+var osoba = [];
+osoba["imie"] = "Arek";
+alert(osoba["imie"]);
+
+***** DOM - document object model
+
+
 
 
 */
