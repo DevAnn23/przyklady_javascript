@@ -6,6 +6,7 @@ h1 {
 
 body {
 	background-image: url('img/title.png');
+	background-color:#133d69eb;
 }
 .container {
 	background-color: #9badac;
@@ -99,7 +100,6 @@ h5 a {
 
 }
 
-/* jQuery */
 
 .rodzic {
 
@@ -109,57 +109,71 @@ h5 a {
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	-webkit-animation-name: obrot;
-	-webkit-animation-duration: 3s;
-	left: 80px;
+	-webkit-animation-duration: 5s;
+	border-radius: 10px;
+	left: 60px;
+	transform: rotateX(350deg) rotateZ(355deg);
 
 }
-
+#perspektywa {
+	width: 80px;
+	margin: 5px 20px;
+	height: 80px;
+	border-radius: 10px;
+	perspective: 300px;
+	-webkit-perspective: 300px;
+}
 .rodzic > div {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background-color: darkcyan;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 80%;
-	box-shadow: 0 0 4px #00F;
+	background-size: 60%;
+	border-radius: 10px;
+	background-color: #dddddde0;
+	box-shadow:1px 1px 12px 3px grey inset;
 }
 
 .dice {
-	transform: translateZ(50px);
-	-webkit-transform: translateZ(50px);
+	transform: translateZ(35px);
+	-webkit-transform: translateZ(35px);
 	background-image: url(img/title_2.png);
+	border-radius: 10px;
+	background-color: #0040855e;
+	border: 1px solid grey;
+
 
 }
 
 #tyl {
-	transform: translateZ(-50px);
-	-webkit-transform: translateZ(-50px);
+	transform: translateZ(-35px);
+	-webkit-transform: translateZ(-35px);
 	background-image: url('img/title_1.png');
 	background-position: center;
 }
 
 #lewo {
-	transform: rotateY(-90deg) translateZ(50px);
-	-webkit-transform: rotateY(-90deg) translateZ(50px);
+	transform: rotateY(-90deg) translateZ(35px);
+	-webkit-transform: rotateY(-90deg) translateZ(35px);
 	background-image: url(img/title_4.png);
 }
 
 #prawo {
-	transform: rotateY(90deg) translateZ(50px);
-	-webkit-transform: rotateY(90deg) translateZ(50px);
+	transform: rotateY(90deg) translateZ(35px);
+	-webkit-transform: rotateY(90deg) translateZ(35px);
 	background-image: url(img/title_3.png);
 }
 
 #gora {
-	transform: rotateX(-90deg) translateZ(50px);
-	-webkit-transform: rotateX(-90deg) translateZ(50px);
+	transform: rotateX(-90deg) translateZ(35px);
+	-webkit-transform: rotateX(-90deg) translateZ(35px);
 	background-image: url(img/title_5.png);
 }
 
 #dol {
-	transform: rotateX(90deg) translateZ(50px);
-	-webkit-transform: rotateX(90deg) translateZ(50px);
+	transform: rotateX(90deg) translateZ(35px);
+	-webkit-transform: rotateX(90deg) translateZ(35px);
 	background-image: url(img/title_6.png);
 }
 
@@ -179,7 +193,7 @@ h5 a {
 		transform: rotateX(0) rotateZ(0);
 	}
 	100% {
-		transform: rotateX(360deg) rotateZ(360deg);
+		transform: rotateX(350deg) rotateZ(355deg);
 	}
 }
 
@@ -188,7 +202,7 @@ h5 a {
 		-webkit-transform: rotateX(0) rotateZ(0);
 	}
 	100% {
-		-webkit-transform: rotateX(360deg) rotateZ(360deg);
+		-webkit-transform: rotateX(350deg) rotateZ(355deg);
 	}
 }
 
@@ -229,13 +243,6 @@ h5 a {
 	background-color: #F7C11A;
 }
 
-#perspektywa {
-	width: 100px;
-	height: 100px;
-	margin: 5%;
-	perspective: 300px;
-	-webkit-perspective: 300px;
-}
 
 /* ************przycisk top */
 

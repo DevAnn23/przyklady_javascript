@@ -11,7 +11,7 @@ function roll() {
 	var d2 = Math.floor(Math.random() * 6 + 1);
 	var d3 = Math.floor(Math.random() * 6 + 1);
 	var suma = d1 + d2 + d3;
-
+	var button = document.querySelector('#button1');
 
 	if (d1 === d2 && d1 === d3 && d2 === d3) {
 		document.querySelector('.combo').innerHTML = "EXTRA +10 punktów";
@@ -27,7 +27,7 @@ function roll() {
 	counter++;
 	suma_total += suma + combo;
 
-	document.querySelector('#button1').innerHTML = "Rzut ";
+	button.innerHTML = "Rzut ";
 	document.querySelector('.wynik').innerHTML = "Twój wynik to: " + suma;
 	document.querySelector('.licznik').innerHTML = "Tura " + counter;
 	document.querySelector('.suma_total').innerHTML = "Suma " + suma_total;
@@ -154,10 +154,13 @@ function zastopujPowiekszanie() {
 	wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
 	wykrzyknik.removeAttribute("class");
 }
+
+	var button = document.querySelector('#button1');
 	var testowy = document.getElementById("godzina");
     var testowy2 = document.getElementById("zegar");
 	var wykrzyknik  = document.getElementById("wykrzyknik");
 	var stop  = document.getElementById("stop");
+
 
    /* testowy.onmouseover = zmienKolor;
     testowy2.onmouseover = zmienKolor;
@@ -236,13 +239,13 @@ function zastopujPowiekszanie() {
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
 	};
 
-	function wykonaj() {
+	var email = document.getElementById("email");
+	var submit = document.querySelector("#newsletter input[type='submit']");
+	var tmp = document.getElementById("tmp");
 
-	}
-
-	var nowyPrzyklad = document.getElementById("nowyPrzyklad");
-
-	nowyPrzyklad.onmousemove = wykonaj;
+	submit.onclick = function (){
+		tmp.innerHTML = email.value
+	};
 
 };
 
