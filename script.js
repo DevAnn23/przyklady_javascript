@@ -1,5 +1,4 @@
-
-// DICE 
+// DICE
 var counter = 1;
 var tura = counter + 1;
 var suma_total = 0;
@@ -102,14 +101,15 @@ function roll() {
 
 }
 // TOTOLOTEK
-function totolotek() {
+function totolotek(liczba, wylosowanaLiczba) {
 	/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
 	var liczba = document.getElementsByClassName('liczba');
 
-
 	for (var i = 0; i < liczba.length; i++) {
-		liczba[i].innerHTML = Math.floor(Math.random() * 50 + 1);
+		var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		liczba[i].innerHTML = wylosowanaLiczba;
 	}
+
 }
 
 
@@ -125,46 +125,46 @@ var sekunda = dzisiaj.getSeconds();
 var zegar = document.getElementById("zegar");
 var czas = document.getElementById("godzina");
 
-function leadingZero (i) {
-        return (i < 10)? '0'+i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
-    }
+function leadingZero(i) {
+	return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
+}
 
 zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
-czas.innerHTML =  leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
+czas.innerHTML = leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
 
 
 
-window.onload = function ()
-{
-	function zmienKolor()
-{
-    this.className = "zmienKolor";
-}
-function zmienKolor2()
-{
-    this.removeAttribute("class");
-}
-function powiekszCzcionke() {
-	var fontSize = parseInt(window.getComputedStyle(this).fontSize);
-	this.style.fontSize = (++fontSize) + "px";
-	wykrzyknik.className = "cursor";
-}
-function zastopujPowiekszanie() {
-	wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
-	wykrzyknik.removeAttribute("class");
-}
+window.onload = function () {
+	function zmienKolor() {
+		this.className = "zmienKolor";
+	}
+
+	function zmienKolor2() {
+		this.removeAttribute("class");
+	}
+
+	function powiekszCzcionke() {
+		var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+		this.style.fontSize = (++fontSize) + "px";
+		wykrzyknik.className = "cursor";
+	}
+
+	function zastopujPowiekszanie() {
+		wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
+		wykrzyknik.removeAttribute("class");
+	}
 
 	var button = document.querySelector('#button1');
 	var testowy = document.getElementById("godzina");
-    var testowy2 = document.getElementById("zegar");
-	var wykrzyknik  = document.getElementById("wykrzyknik");
-	var stop  = document.getElementById("stop");
+	var testowy2 = document.getElementById("zegar");
+	var wykrzyknik = document.getElementById("wykrzyknik");
+	var stop = document.getElementById("stop");
 
 
-   /* testowy.onmouseover = zmienKolor;
-    testowy2.onmouseover = zmienKolor;
-    testowy.onmouseout = zmienKolor2;
-    testowy2.onmouseout = zmienKolor2;*/
+	/* testowy.onmouseover = zmienKolor;
+	 testowy2.onmouseover = zmienKolor;
+	 testowy.onmouseout = zmienKolor2;
+	 testowy2.onmouseout = zmienKolor2;*/
 
 	testowy.addEventListener("mouseover", zmienKolor);
 	testowy.addEventListener("mouseout", zmienKolor2);
@@ -180,24 +180,22 @@ function zastopujPowiekszanie() {
 
 
 	var obrazek = document.getElementById("obrazek");
-	function ruchObrazka(e, obr)
-{
 
-			obr.style.left = e.clientX - obr.width / 2 + "px";
-			obr.style.top = e.clientY - obr.height / 2 + "px";/* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
+	function ruchObrazka(e, obr) {
+
+		obr.style.left = e.clientX - obr.width / 2 + "px";
+		obr.style.top = e.clientY - obr.height / 2 + "px"; /* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
 
 	}
-	obrazek.onmousedown = function ()
-	{
+	obrazek.onmousedown = function () {
 		var self = this;
-		document.onmousemove = function (e)
-		{
-		var lokalizacja = document.getElementById("lokalizacja");
-	lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
+		document.onmousemove = function (e) {
+			var lokalizacja = document.getElementById("lokalizacja");
+			lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
 			ruchObrazka(e, self);
 		};
 	};
-		/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
+	/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
 
 	obrazek.onmouseup = function () {
 		document.onmousemove = null;
@@ -247,7 +245,7 @@ function zastopujPowiekszanie() {
 	var tmp3 = document.getElementById("tmp3");
 	var tmp4 = document.getElementById("tmp4");
 
-	submit.onclick = function (e){
+	submit.onclick = function (e) {
 
 		tmp.style.display = "block";
 		tmp.innerHTML = email.value;
@@ -258,11 +256,10 @@ function zastopujPowiekszanie() {
 		if (email2.value != email3.value) {
 			tmp4.innerHTML = "Hasła są różne";
 			tmp4.style.display = "block";
-		tmp2.style.display = "block";
-		tmp2.style.borderColor = "red";
-		tmp3.style.borderColor = "red";
-		}
-		else {
+			tmp2.style.display = "block";
+			tmp2.style.borderColor = "red";
+			tmp3.style.borderColor = "red";
+		} else {
 			tmp4.innerHTML = "";
 		}
 		tmp2.innerHTML = email2.value;
@@ -272,8 +269,17 @@ function zastopujPowiekszanie() {
 
 	// Stoper
 	function stopwatch(uchwytStopera, liczba) {
+		var span = document.getElementById("boom");
 		uchwytStopera.innerHTML = --liczba;
-		setTimeout(function(){
+		if (liczba === 0) {
+			span.style.display = "block";
+		}
+		if (liczba <= 0)
+			return;
+
+
+
+		setTimeout(function () {
 			stopwatch(uchwytStopera, liczba);
 		}, 1000);
 	};
@@ -285,34 +291,44 @@ function zastopujPowiekszanie() {
 	var uchwytStopera = document.getElementById("uchwytStopera");
 
 
-	przyciskWlacz.onclick = function(){
-var poczatkowaValue = poczatkowaWartosc.value;
+	przyciskWlacz.onclick = function () {
+		var poczatkowaValue = poczatkowaWartosc.value;
 		uchwytStopera.innerHTML = poczatkowaValue;
-		setTimeout(function(){
+
+		setTimeout(function () {
 			stopwatch(uchwytStopera, poczatkowaValue);
 		}, 1000);
 	};
 
-	// Licznik
-	function stopwatch1(uchwytStopera1, liczbaA) {
 
-			uchwytStopera1.innerHTML = --liczbaA;
-		setTimeout(function(){
+	// *********Licznik
+
+	function stopwatch1(uchwytStopera1, liczbaA) {
+		var span = document.getElementById("boom");
+
+
+
+		uchwytStopera1.innerHTML = --liczbaA;
+		setTimeout(function () {
+
 			stopwatch(uchwytStopera1, liczbaA);
 		}, 1000);
 
 
-	};
+	}
 
 	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
 	var poczatkowaValue1 = poczatkowaWartosc1.value;
 	var uchwytStopera1 = document.getElementById("uchwytStopera1");
+	var span = document.getElementById("boom");
 
 
-var poczatkowaValue1 = poczatkowaWartosc1.value;
-		uchwytStopera1.innerHTML = poczatkowaValue1;
-		setTimeout(function(){
-			stopwatch1(uchwytStopera1, poczatkowaValue1);
-		}, 1000);
+	var poczatkowaValue1 = poczatkowaWartosc1.value;
+	uchwytStopera1.innerHTML = poczatkowaValue1;
+	setTimeout(function () {
+		var span = document.getElementById("boom");
+
+
+		stopwatch1(uchwytStopera1, poczatkowaValue1);
+	}, 1000);
 };
-

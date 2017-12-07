@@ -112,9 +112,10 @@ TRUE ZMIENI W FALSE, FALSE W TRUE;
 JEST FAŁSZYWA GDY OBA WYRAŻENIA SĄ FAŁSZYWE
 */
 
-var a = 1, b = 2;
+var a = 1,
+	b = 2;
 
-if (!(a < b && b == 3)){
+if (!(a < b && b == 3)) {
 	// negacj  zmieniła wynik zanegowała całe wyrażenie
 	alert("test udany");
 }
@@ -294,24 +295,35 @@ clearInterval - j.w  tylko interwał
 
 
 */
-	// Licznik
-	function stopwatch1(uchwytStopera1, liczbaA) {
+// Licznik
+function stopwatch1(uchwytStopera1, liczbaA) {
 
-			uchwytStopera1.innerHTML = --liczbaA;
-		setTimeout(function(){
-			stopwatch(uchwytStopera1, liczbaA);
-		}, 1000);
+	uchwytStopera1.innerHTML = --liczbaA;
+	setTimeout(function () {
+		stopwatch(uchwytStopera1, liczbaA);
+	}, 1000);
 
 
-	};
+};
 
-	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
-	var poczatkowaValue1 = poczatkowaWartosc1.value;
-	var uchwytStopera1 = document.getElementById("uchwytStopera1");
+var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
+var poczatkowaValue1 = poczatkowaWartosc1.value;
+var uchwytStopera1 = document.getElementById("uchwytStopera1");
 
 
 var poczatkowaValue1 = poczatkowaWartosc1.value;
-		uchwytStopera1.innerHTML = poczatkowaValue1;
-		setTimeout(function(){
-			stopwatch1(uchwytStopera1, poczatkowaValue1);
-		}, 1000);
+uchwytStopera1.innerHTML = poczatkowaValue1;
+setTimeout(function () {
+	stopwatch1(uchwytStopera1, poczatkowaValue1);
+}, 1000);
+// TOTOLOTEK
+function totolotek(liczba, wylosowanaLiczba) {
+	/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
+	var liczba = document.getElementsByClassName('liczba');
+
+	for (var i = 0; i < liczba.length; i++) {
+		var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		liczba[i].innerHTML = wylosowanaLiczba;
+	}
+
+}
