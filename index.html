@@ -159,12 +159,18 @@
 				<div id="collapseOne3" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<div class="losowanie">
-							<p>Liczba nr 1 to <span class="liczba"></span></p><br>
-							<p>Liczba nr 2 to <span class="liczba"></span></p><br>
-							<p>Liczba nr 3 to <span class="liczba"></span></p><br>
-							<p>Liczba nr 4 to <span class="liczba"></span></p><br>
-							<p>Liczba nr 5 to <span class="liczba"></span></p><br>
-							<p>Liczba nr 6 to <span class="liczba"></span></p><br>
+							<p>Liczba nr 1 to</p>
+							<div><p class="liczba"></p></div>
+							<p>Liczba nr 2 to </p>
+								<div><p class="liczba"></p></div>
+							<p>Liczba nr 3 to </p>
+								<div><p class="liczba"></p></div>
+							<p>Liczba nr 4 to </p>
+								<div><p class="liczba"></p></div>
+							<p>Liczba nr 5 to </p>
+								<div><p class="liczba"></p></div>
+							<p>Liczba nr 6 to </p>
+								<div><p class="liczba"></p></div>
 						</div>
 						<button id="losuj" onclick="totolotek()">Losowanie 6 przypadkowych liczb</button>
 					</div>
@@ -198,16 +204,15 @@
 				<div id="collapseOne5" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<form id="newsletter">
-					<p>Wupełnij wszystkie pola, a następnie potwierdź dane.</p>
+							<p>Wupełnij wszystkie pola, a następnie potwierdź dane.</p>
 							Email: <input type="text" id="email">
 							<p id="tmp"></p>
-								Hasło: <input type="text" id="email2">
-							Powtórz Hasło: <input type="text" id="email3">
+							Hasło: <input type="text" id="email2"> Powtórz Hasło: <input type="text" id="email3">
 
 							<input type="submit" value="Wyślij">
-								<p id="tmp2"></p>
-						<p id="tmp3"></p>
-						<p id="tmp4"></p>
+							<p id="tmp2"></p>
+							<p id="tmp3"></p>
+							<p id="tmp4"></p>
 
 						</form>
 					</div>
@@ -225,18 +230,41 @@
 					<div class="card-body">
 						<h4>Stoper</h4>
 
-					<p>Wpisz liczbę</p>
-							 <input type="text" id="poczatkowaWartosc">
-							<input type="button" value="Włącz" id="przyciskWlacz">
-							<input type="button" value="Zatrzymaj" id="przyciskZatrzymaj">
+						<p>Wpisz liczbę</p>
+						<input type="text" id="poczatkowaWartosc">
+						<input type="button" value="Włącz" id="przyciskWlacz">
+						<input type="button" value="Zatrzymaj" id="przyciskZatrzymaj">
 
-							<div id="uchwytStopera"></div>
+						<div id="uchwytStopera"></div>
 
 
 					</div>
 				</div>
 			</div>
-			<h4><span id="zerowaLiczba">20</span> lat doświadczenia</h4>
+
+			<div class="card">
+				<div class="card-header" role="tab" id="headingOne">
+					<h5 class="mb-0">
+						<a onmousemove="initialize()" data-toggle="collapse" href="#collapseOne7" aria-expanded="true" aria-controls="collapseOne7">
+          Licznik
+        </a>
+					</h5>
+				</div>
+				<div id="collapseOne7" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body">
+
+						<h4>licznik</h4>
+
+						<input type="text" id="poczatkowaWartosc1" value="300">
+
+
+						<div id="stoper">
+							<p><span id="uchwytStopera1"></span> <br />Lat doświadczenia</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
 
 
 

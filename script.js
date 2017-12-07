@@ -108,7 +108,6 @@ function totolotek() {
 
 
 	for (var i = 0; i < liczba.length; i++) {
-		liczba[i].style.display = "inline";
 		liczba[i].innerHTML = Math.floor(Math.random() * 50 + 1);
 	}
 }
@@ -294,5 +293,26 @@ var poczatkowaValue = poczatkowaWartosc.value;
 		}, 1000);
 	};
 
+	// Licznik
+	function stopwatch1(uchwytStopera1, liczbaA) {
+
+			uchwytStopera1.innerHTML = --liczbaA;
+		setTimeout(function(){
+			stopwatch(uchwytStopera1, liczbaA);
+		}, 1000);
+
+
+	};
+
+	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
+	var poczatkowaValue1 = poczatkowaWartosc1.value;
+	var uchwytStopera1 = document.getElementById("uchwytStopera1");
+
+
+var poczatkowaValue1 = poczatkowaWartosc1.value;
+		uchwytStopera1.innerHTML = poczatkowaValue1;
+		setTimeout(function(){
+			stopwatch1(uchwytStopera1, poczatkowaValue1);
+		}, 1000);
 };
 
