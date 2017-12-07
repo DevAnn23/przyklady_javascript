@@ -313,15 +313,10 @@ window.onload = function () {
 	// *********Licznik
 
 	function stopwatch1(uchwytStopera1, liczbaA) {
-		var span = document.getElementById("boom");
-
 		setTimeout(function () {
-
 			stopwatch(uchwytStopera1, liczbaA);
 		}, 1000);
-
 		uchwytStopera1.innerHTML = ++liczbaA;
-
 	}
 
 	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
@@ -333,10 +328,7 @@ window.onload = function () {
 	var poczatkowaValue1 = poczatkowaWartosc1.value;
 	uchwytStopera1.innerHTML = setTimeout(function () {
 		var span = document.getElementById("boom");
-
-
 		stopwatch1(uchwytStopera1, poczatkowaValue1);
 	}, 1000);
-
 
 };
