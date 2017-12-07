@@ -104,9 +104,14 @@ function roll() {
 function totolotek(liczba, wylosowanaLiczba) {
 	/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
 	var liczba = document.getElementsByClassName('liczba');
-
+	var wylosowaneLiczby = [];
 	for (var i = 0; i < liczba.length; i++) {
 		var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		while (wylosowaneLiczby.includes(wylosowanaLiczba)) {
+			wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		}
+		wylosowaneLiczby.push(wylosowanaLiczba);
+		console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby ' + wylosowaneLiczby);
 		liczba[i].innerHTML = wylosowanaLiczba;
 	}
 
@@ -269,19 +274,21 @@ window.onload = function () {
 
 	// Stoper
 	function stopwatch(uchwytStopera, liczba) {
-		var span = document.getElementById("boom");
+
 		uchwytStopera.innerHTML = --liczba;
-		if (liczba === 0) {
+			if (liczba === 0) {
+
 			span.style.display = "block";
 		}
-		if (liczba <= 0)
+		if (liczba <= 0) {
 			return;
-
+		}
 
 
 		setTimeout(function () {
 			stopwatch(uchwytStopera, liczba);
 		}, 1000);
+		console.log(liczba);
 	};
 
 	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
@@ -306,14 +313,12 @@ window.onload = function () {
 	function stopwatch1(uchwytStopera1, liczbaA) {
 		var span = document.getElementById("boom");
 
-
-
-		uchwytStopera1.innerHTML = --liczbaA;
 		setTimeout(function () {
 
 			stopwatch(uchwytStopera1, liczbaA);
 		}, 1000);
 
+		uchwytStopera1.innerHTML = ++liczbaA;
 
 	}
 
@@ -324,11 +329,12 @@ window.onload = function () {
 
 
 	var poczatkowaValue1 = poczatkowaWartosc1.value;
-	uchwytStopera1.innerHTML = poczatkowaValue1;
-	setTimeout(function () {
+	uchwytStopera1.innerHTML = setTimeout(function () {
 		var span = document.getElementById("boom");
 
 
 		stopwatch1(uchwytStopera1, poczatkowaValue1);
 	}, 1000);
+
+
 };
