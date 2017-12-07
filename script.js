@@ -1,10 +1,12 @@
 // DICE
 var counter = 1;
-var tura = counter + 1;
 var suma_total = 0;
 
 function roll() {
 	var combo = 0;
+	var przod = document.getElementById("przod");
+	var przod1 = document.getElementById("przod1");
+	var przod2 = document.getElementById("przod2");
 	var tab = [przod, przod1, przod2];
 	var d1 = Math.floor(Math.random() * 6 + 1);
 	var d2 = Math.floor(Math.random() * 6 + 1);
@@ -111,7 +113,7 @@ function totolotek(liczba, wylosowanaLiczba) {
 			wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
 		}
 		wylosowaneLiczby.push(wylosowanaLiczba);
-		console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby ' + wylosowaneLiczby);
+		console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby: ' + wylosowaneLiczby);
 		liczba[i].innerHTML = wylosowanaLiczba;
 	}
 
@@ -181,7 +183,7 @@ window.onload = function () {
 
 
 
-	//********** przesuwany obrazek ruchami myszki
+	//********** przesuwany  ruchami myszki
 
 
 	var obrazek = document.getElementById("obrazek");
@@ -194,7 +196,7 @@ window.onload = function () {
 	}
 	obrazek.onmousedown = function () {
 		var self = this;
-		document.onmousemove = function (e) {
+		obrazek.onmousemove = function (e) {
 			var lokalizacja = document.getElementById("lokalizacja");
 			lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
 			ruchObrazka(e, self);
@@ -203,7 +205,7 @@ window.onload = function () {
 	/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
 
 	obrazek.onmouseup = function () {
-		document.onmousemove = null;
+		obrazek.onmousemove = null;
 	};
 	obrazek.ondragstart = function (e) {
 		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
@@ -288,8 +290,8 @@ window.onload = function () {
 		setTimeout(function () {
 			stopwatch(uchwytStopera, liczba);
 		}, 1000);
-		console.log(liczba);
-	};
+
+	}
 
 	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
 	var poczatkowaValue = poczatkowaWartosc.value;
