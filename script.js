@@ -193,8 +193,8 @@ function zastopujPowiekszanie() {
 		var self = this;
 		document.onmousemove = function (e)
 		{
-		var tmp = document.getElementById("tmp");
-	tmp.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
+		var lokalizacja = document.getElementById("lokalizacja");
+	lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
 			ruchObrazka(e, self);
 		};
 	};
@@ -242,9 +242,56 @@ function zastopujPowiekszanie() {
 	var email = document.getElementById("email");
 	var submit = document.querySelector("#newsletter input[type='submit']");
 	var tmp = document.getElementById("tmp");
+	var email2 = document.getElementById("email2");
+	var email3 = document.getElementById("email3");
+	var tmp2 = document.getElementById("tmp2");
+	var tmp3 = document.getElementById("tmp3");
+	var tmp4 = document.getElementById("tmp4");
 
-	submit.onclick = function (){
-		tmp.innerHTML = email.value
+	submit.onclick = function (e){
+
+		tmp.style.display = "block";
+		tmp.innerHTML = email.value;
+		if (email.value === "" || email.value === " " || email2.value === "" || email2.value === " ") {
+			tmp3.innerHTML = "Wypełnij wszystkie pola";
+			tmp3.style.display = "block";
+		}
+		if (email2.value != email3.value) {
+			tmp4.innerHTML = "Hasła są różne";
+			tmp4.style.display = "block";
+		tmp2.style.display = "block";
+		tmp2.style.borderColor = "red";
+		tmp3.style.borderColor = "red";
+		}
+		else {
+			tmp4.innerHTML = "";
+		}
+		tmp2.innerHTML = email2.value;
+		e.preventDefault();
+		/* domyslnie  jak klikniemy wyślij to od razu wysyła i  zamyka formularz, żeby wyłączyć te domyślną akcję - e.preventDefault(); */
+	};
+
+	// Stoper
+	function stopwatch(uchwytStopera, liczba) {
+		uchwytStopera.innerHTML = --liczba;
+		setTimeout(function(){
+			stopwatch(uchwytStopera, liczba);
+		}, 1000);
+	};
+
+	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
+	var poczatkowaValue = poczatkowaWartosc.value;
+	var przyciskWlacz = document.getElementById("przyciskWlacz");
+	var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
+	var uchwytStopera = document.getElementById("uchwytStopera");
+
+
+	przyciskWlacz.onclick = function(){
+var poczatkowaValue = poczatkowaWartosc.value;
+		uchwytStopera.innerHTML = poczatkowaValue;
+		setTimeout(function(){
+			stopwatch(uchwytStopera, poczatkowaValue);
+		}, 1000);
 	};
 
 };

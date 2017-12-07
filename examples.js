@@ -286,5 +286,11 @@ alert(osoba["imie"]);
 
 
 
+setTimeout - która wykonuje operację po okreslonym czasie
+setInterval - wykonuje operację co interwał (co określony przez nas czas, w nieskończoność)
+
+clearTimeout - powstrzymuje operację, która ma zostać wykonana
+clearInterval - j.w  tylko interwał
+
 
 */
