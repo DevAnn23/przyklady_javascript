@@ -317,7 +317,7 @@ h5 a {
 /*******Obrazek przesuwany myszką*/
 
 #obrazek {
-	position: absolute !importants;
+	position: absolute;
 }
 
 h4 {
