@@ -270,19 +270,17 @@ window.onload = function () {
 		e.preventDefault();
 		/* domyslnie  jak klikniemy wyślij to od razu wysyła i  zamyka formularz, żeby wyłączyć te domyślną akcję - e.preventDefault(); */
 	};
-
 	// Stoper
 	function stopwatch(uchwytStopera, liczba) {
 
 		uchwytStopera.innerHTML = --liczba;
-			if (liczba === 0) {
+		if (liczba === 0) {
 
 			span.style.display = "block";
 		}
 		if (liczba <= 0) {
 			return;
 		}
-
 
 		setTimeout(function () {
 			stopwatch(uchwytStopera, liczba);
@@ -305,86 +303,88 @@ window.onload = function () {
 			stopwatch(uchwytStopera, poczatkowaValue);
 		}, 1000);
 	};
-function licznik(){
-	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
-	var poczatkowaValue1 = poczatkowaWartosc1.value;
-	var uchwytStopera1 = document.getElementById("uchwytStopera1");
-	var span = document.getElementById("boom");
-	uchwytStopera1.style.font = "26px Tahoma";
-	uchwytStopera1.style.color = "#504a67";
+
+	function licznik() {
+		var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
+		var poczatkowaValue1 = poczatkowaWartosc1.value;
+		var uchwytStopera1 = document.getElementById("uchwytStopera1");
+		var span = document.getElementById("boom");
+		uchwytStopera1.style.font = "26px Tahoma";
+		uchwytStopera1.style.color = "#504a67";
 
 
-	function stopwatch1(uchwytStopera1, liczbaA){
+		function stopwatch1(uchwytStopera1, liczbaA) {
 
-		uchwytStopera1.innerHTML = --liczbaA;
+			uchwytStopera1.innerHTML = --liczbaA;
 
-		if (liczbaA <= 0){
-			uchwytStopera1.style.display = "none";
-			span.style.display = "block";
-			return;
+			if (liczbaA <= 0) {
+				uchwytStopera1.style.display = "none";
+				span.style.display = "block";
+				return;
 
+			}
+
+			setTimeout(function () {
+				stopwatch1(uchwytStopera1, liczbaA)
+			}, 1000)
 		}
 
-		setTimeout(function(){
-			stopwatch1(uchwytStopera1, liczbaA)
-		}, 1000)
+
+		uchwytStopera1.innerHTML = poczatkowaValue1;
+		setTimeout(function () {
+			stopwatch1(uchwytStopera1, poczatkowaValue1);
+		}, 1000);
 	}
 
-
-	uchwytStopera1.innerHTML = poczatkowaValue1;
-	setTimeout(function(){
-		stopwatch1(uchwytStopera1, poczatkowaValue1);
-	}, 1000);
-}
-	function licznik2(){
-	var poczatkowaWartosc2 = document.getElementById("poczatkowaWartosc2");
-	var poczatkowaValue2 = poczatkowaWartosc2.value;
-	var uchwytStopera2 = document.getElementById("uchwytStopera2");
-	uchwytStopera2.style.font = "26px Tahoma";
-	uchwytStopera2.style.color = "#504a67";
+	function licznik2() {
+		var poczatkowaWartosc2 = document.getElementById("poczatkowaWartosc2");
+		var poczatkowaValue2 = poczatkowaWartosc2.value;
+		var uchwytStopera2 = document.getElementById("uchwytStopera2");
+		uchwytStopera2.style.font = "26px Tahoma";
+		uchwytStopera2.style.color = "#504a67";
 
 
-	function stopwatch2(uchwytStopera2, liczba2){
+		function stopwatch2(uchwytStopera2, liczba2) {
 
-		uchwytStopera2.innerHTML = ++liczba2;
+			uchwytStopera2.innerHTML = ++liczba2;
 
-		if (liczba2 >= 13){
-			return;
+			if (liczba2 >= 13) {
+				return;
+			}
+
+			setTimeout(function () {
+				stopwatch2(uchwytStopera2, liczba2)
+			}, 100)
 		}
 
-		setTimeout(function(){
-			stopwatch2(uchwytStopera2, liczba2)
-		}, 100)
+
+		uchwytStopera2.innerHTML = poczatkowaValue2;
+		setTimeout(function () {
+			stopwatch2(uchwytStopera2, poczatkowaValue2);
+		}, 100);
 	}
-
-
-	uchwytStopera2.innerHTML = poczatkowaValue2;
-	setTimeout(function(){
-		stopwatch2(uchwytStopera2, poczatkowaValue2);
-	}, 100);
-}
 	licznik();
 	licznik2();
 
 	// *********Licznik
-/*
-	function stopwatch1(uchwytStopera1, liczbaA) {
-		setTimeout(function () {
-			stopwatch(uchwytStopera1, liczbaA);
-		}, 1000);
-		uchwytStopera1.innerHTML = ++liczbaA;
-	}
+	/*
+		function stopwatch1(uchwytStopera1, liczbaA) {
+			setTimeout(function () {
+				stopwatch(uchwytStopera1, liczbaA);
+			}, 1000);
+			uchwytStopera1.innerHTML = ++liczbaA;
+		}
 
-	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
-	var poczatkowaValue1 = poczatkowaWartosc1.value;
-	var uchwytStopera1 = document.getElementById("uchwytStopera1");
-	var span = document.getElementById("boom");
-
-
-	var poczatkowaValue1 = poczatkowaWartosc1.value;
-	uchwytStopera1.innerHTML = setTimeout(function () {
+		var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
+		var poczatkowaValue1 = poczatkowaWartosc1.value;
+		var uchwytStopera1 = document.getElementById("uchwytStopera1");
 		var span = document.getElementById("boom");
-		stopwatch1(uchwytStopera1, poczatkowaValue1);
-	}, 1000);*/
+
+
+		var poczatkowaValue1 = poczatkowaWartosc1.value;
+		uchwytStopera1.innerHTML = setTimeout(function () {
+			var span = document.getElementById("boom");
+			stopwatch1(uchwytStopera1, poczatkowaValue1);
+		}, 1000);*/
 
 };
