@@ -317,7 +317,7 @@ h5 a {
 /*******Obrazek przesuwany myszką*/
 
 #obrazek {
-	position: absolute;
+	position: absolute !importants;
 }
 
 h4 {
@@ -353,7 +353,8 @@ button {
 }
 
 #tmp3,
-#poczatkowaWartosc1 {
+#poczatkowaWartosc1,
+#poczatkowaWartosc2 {
 	display: none;
 	color: #f00;
 }
@@ -410,7 +411,7 @@ button {
 }
 
 #stoper:before {
-	border-color: #c47135;
+	border-color: #aac;
 	border-left-width: 2px;
 	border-top-width: 2px;
 	left: -8px;
@@ -419,14 +420,14 @@ button {
 
 #stoper:after {
 	border-bottom-width: 2px;
-	border-color: #c47135;
+	border-color: #aac;
 	border-right-width: 2px;
 	bottom: -8px;
 	right: -8px;
 }
 
 #stoper:hover {
-	background-color: #c47135;
+	background-color: #aac;
 	-webkit-transition: all 0.75s;
 	transition: all 0.75s
 }
@@ -440,7 +441,7 @@ button {
 .card-body {
 	padding-left: 5%;
 }
-
+/* Liczniki */
 #boom {
 	display: none;
 	text-stroke-width: 3px;
@@ -451,3 +452,11 @@ button {
 	font-size: 6em;
 	font-weight: bolder;
 }
+.licznikiflex {
+	display: flex;
+}
+.licznikiflex > div.liczniki {
+	width: 50%;
+	margin-left: 5%;
+}
+

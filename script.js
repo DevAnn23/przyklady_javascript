@@ -18,9 +18,6 @@ function roll() {
 		document.querySelector('.combo').innerHTML = "EXTRA +10 punktów";
 		document.querySelector('.combo').style.color = "red";
 		combo = 10;
-
-
-
 	} else {
 		document.querySelector('.combo').innerHTML = "";
 		combo = 0;
@@ -196,7 +193,7 @@ window.onload = function () {
 	}
 	obrazek.onmousedown = function () {
 		var self = this;
-		obrazek.onmousemove = function (e) {
+		document.onmousemove = function (e) {
 			var lokalizacja = document.getElementById("lokalizacja");
 			lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
 			ruchObrazka(e, self);
@@ -205,7 +202,7 @@ window.onload = function () {
 	/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
 
 	obrazek.onmouseup = function () {
-		obrazek.onmousemove = null;
+		document.onmousemove = null;
 	};
 	obrazek.ondragstart = function (e) {
 		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
@@ -308,10 +305,69 @@ window.onload = function () {
 			stopwatch(uchwytStopera, poczatkowaValue);
 		}, 1000);
 	};
+function licznik(){
+	var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
+	var poczatkowaValue1 = poczatkowaWartosc1.value;
+	var uchwytStopera1 = document.getElementById("uchwytStopera1");
+	var span = document.getElementById("boom");
+	uchwytStopera1.style.font = "26px Tahoma";
+	uchwytStopera1.style.color = "#504a67";
 
+
+	function stopwatch1(uchwytStopera1, liczbaA){
+
+		uchwytStopera1.innerHTML = --liczbaA;
+
+		if (liczbaA <= 0){
+			uchwytStopera1.style.display = "none";
+			span.style.display = "block";
+			return;
+
+		}
+
+		setTimeout(function(){
+			stopwatch1(uchwytStopera1, liczbaA)
+		}, 1000)
+	}
+
+
+	uchwytStopera1.innerHTML = poczatkowaValue1;
+	setTimeout(function(){
+		stopwatch1(uchwytStopera1, poczatkowaValue1);
+	}, 1000);
+}
+	function licznik2(){
+	var poczatkowaWartosc2 = document.getElementById("poczatkowaWartosc2");
+	var poczatkowaValue2 = poczatkowaWartosc2.value;
+	var uchwytStopera2 = document.getElementById("uchwytStopera2");
+	uchwytStopera2.style.font = "26px Tahoma";
+	uchwytStopera2.style.color = "#504a67";
+
+
+	function stopwatch2(uchwytStopera2, liczba2){
+
+		uchwytStopera2.innerHTML = ++liczba2;
+
+		if (liczba2 >= 13){
+			return;
+		}
+
+		setTimeout(function(){
+			stopwatch2(uchwytStopera2, liczba2)
+		}, 100)
+	}
+
+
+	uchwytStopera2.innerHTML = poczatkowaValue2;
+	setTimeout(function(){
+		stopwatch2(uchwytStopera2, poczatkowaValue2);
+	}, 100);
+}
+	licznik();
+	licznik2();
 
 	// *********Licznik
-
+/*
 	function stopwatch1(uchwytStopera1, liczbaA) {
 		setTimeout(function () {
 			stopwatch(uchwytStopera1, liczbaA);
@@ -329,6 +385,6 @@ window.onload = function () {
 	uchwytStopera1.innerHTML = setTimeout(function () {
 		var span = document.getElementById("boom");
 		stopwatch1(uchwytStopera1, poczatkowaValue1);
-	}, 1000);
+	}, 1000);*/
 
 };
