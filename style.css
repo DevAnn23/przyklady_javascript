@@ -319,6 +319,9 @@ h5 a {
 #obrazek {
 	position: absolute;
 }
+aside {
+	background-color:#0c546029;
+}
 
 h4 {
 	padding: 3%;
@@ -441,7 +444,9 @@ button {
 .card-body {
 	padding-left: 5%;
 }
+
 /* Liczniki */
+
 #boom {
 	display: none;
 	text-stroke-width: 3px;
@@ -453,11 +458,12 @@ button {
 	font-weight: bolder;
 	transform: rotate(-5deg);
 }
+
 .licznikiflex {
 	display: flex;
 }
+
 .licznikiflex > div.liczniki {
 	width: 50%;
 	margin-left: 5%;
 }
-

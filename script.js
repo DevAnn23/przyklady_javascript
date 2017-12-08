@@ -180,33 +180,6 @@ window.onload = function () {
 
 
 
-	//********** przesuwany  ruchami myszki
-
-
-	var obrazek = document.getElementById("obrazek");
-
-	function ruchObrazka(e, obr) {
-
-		obr.style.left = e.clientX - obr.width / 2 + "px";
-		obr.style.top = e.clientY - obr.height / 2 + "px"; /* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
-
-	}
-	obrazek.onmousedown = function () {
-		var self = this;
-		document.onmousemove = function (e) {
-			var lokalizacja = document.getElementById("lokalizacja");
-			lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
-			ruchObrazka(e, self);
-		};
-	};
-	/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
-
-	obrazek.onmouseup = function () {
-		document.onmousemove = null;
-	};
-	obrazek.ondragstart = function (e) {
-		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
-	};
 
 
 
@@ -386,5 +359,39 @@ window.onload = function () {
 			var span = document.getElementById("boom");
 			stopwatch1(uchwytStopera1, poczatkowaValue1);
 		}, 1000);*/
+
+	//********** przesuwany  ruchami myszki
+
+
+
+
+	var obrazek = document.getElementById("obrazek");
+
+	function ruchObrazka(e, obr) {
+
+		obr.style.left = e.clientX - obr.width / 2 + "px";
+		obr.style.top = e.clientY - obr.height / 2 + "px"; /* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
+
+	}
+	obrazek.onmousedown = function () {
+		var self = this;
+		document.onmousemove = function (e) {
+			var lokalizacja = document.getElementById("lokalizacja");
+			lokalizacja.innerHTML = "Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
+			ruchObrazka(e, self);
+				obrazek.style.position = "fixed";
+		};
+	};
+	/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
+
+	obrazek.onmouseup = function () {
+		document.onmousemove = null;
+
+
+	};
+	obrazek.ondragstart = function (e) {
+		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
+	};
+
 
 };
