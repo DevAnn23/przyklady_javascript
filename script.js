@@ -1,4 +1,4 @@
-window.onload = function () {
+
 	// DICE
 	var button1 = document.querySelector('#button1');
 	var button2 = document.querySelector('#button2');
@@ -134,7 +134,7 @@ var d1 = Math.floor(Math.random() * 6 + 1);
 
 	}
 
-
+window.onload = function () {
 	// data
 	var dzisiaj = new Date();
 
@@ -174,12 +174,10 @@ var d1 = Math.floor(Math.random() * 6 + 1);
 		wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
 		wykrzyknik.removeAttribute("class");
 	}
-	var button = document.querySelector('#button1');
 	var testowy = document.getElementById("godzina");
 	var testowy2 = document.getElementById("zegar");
 	var wykrzyknik = document.getElementById("wykrzyknik");
 	var stop = document.getElementById("stop");
-	var obrazek = document.getElementById("obrazek");
 
 
 	/* testowy.onmouseover = zmienKolor;
@@ -261,6 +259,7 @@ var d1 = Math.floor(Math.random() * 6 + 1);
 		/* domyslnie  jak klikniemy wyślij to od razu wysyła i  zamyka formularz, żeby wyłączyć te domyślną akcję - e.preventDefault(); */
 	};
 	// Stoper
+
 	var timeOutStoper;
 	// timeOutStoper musi być zmienną globalna
 	function stopwatch(uchwytStopera, liczba) {
@@ -328,7 +327,7 @@ var d1 = Math.floor(Math.random() * 6 + 1);
 		setTimeout(function () {
 			stopwatch1(uchwytStopera1, poczatkowaValue1);
 		}, 1000);
-	}
+	};
 
 	function licznik2() {
 		var poczatkowaWartosc2 = document.getElementById("poczatkowaWartosc2");
