@@ -3,6 +3,7 @@ h1 {
 	padding: 3%;
 	font-family: 'Exo', sans-serif;
 	font-weight: 600;
+	    background-color: #49627d;
 }
 
 body {
@@ -365,7 +366,7 @@ button {
 }
 
 #stoper:before {
-	border-color: #aac;
+	border-color: #49627d;
 	border-left-width: 2px;
 	border-top-width: 2px;
 	left: -8px;
@@ -374,14 +375,14 @@ button {
 
 #stoper:after {
 	border-bottom-width: 2px;
-	border-color: #aac;
+	border-color: #49627d;
 	border-right-width: 2px;
 	bottom: -8px;
 	right: -8px;
 }
 
 #stoper:hover {
-	background-color: #aac;
+	background-color: #49627d;
 	-webkit-transition: all 0.75s;
 	transition: all 0.75s
 }
@@ -549,7 +550,7 @@ button {
 	height:100%;
 }
 #stoper2:before {
-	border-color: #aac;
+	border-color: #49627d;
 	border-left-width: 2px;
 	border-top-width: 2px;
 	left: 0;
@@ -557,7 +558,7 @@ button {
 }
 #stoper2:after {
 	border-bottom-width: 2px;
-	border-color: #aac;
+	border-color: #49627d;
 	border-right-width: 2px;
 	bottom: 0;
 	right: 0;
@@ -601,10 +602,9 @@ button {
   margin: 10px 1%;
   background: #4e82b7;
 }
-
 #stop:before,
 #stop:after {
-
+box-shadow: 0 0 6px 3px #183a5d inset;
   position: absolute;
   content: "";
 	height: 0;
@@ -614,7 +614,7 @@ button {
 }
 #stop:before {
 	left: 0;
-	bottom: 3px;
+	bottom: 0px;
 	width: 10%;
 	height: 0;
 	border-right: 1px solid black;

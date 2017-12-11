@@ -303,7 +303,7 @@ window.onload = function () {
 		var uchwytStopera1 = document.getElementById("uchwytStopera1");
 		var span = document.getElementById("boom");
 		uchwytStopera1.style.font = "26px Tahoma";
-		uchwytStopera1.style.color = "#504a67";
+		uchwytStopera1.style.color = "#504a7d";
 
 
 		function stopwatch1(uchwytStopera1, liczbaA) {
