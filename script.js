@@ -1,144 +1,161 @@
-// DICE
-var counter = 1;
-var suma_total = 0;
-
-function roll() {
+window.onload = function () {
+	// DICE
+	var button1 = document.querySelector('#button1');
+	var button2 = document.querySelector('#button2');
+	var counter = 1;
+	var suma_total = 0;
+	var suma;
 	var combo = 0;
 	var przod = document.getElementById("przod");
+	var comboPole = document.querySelector('.combo')
 	var przod1 = document.getElementById("przod1");
 	var przod2 = document.getElementById("przod2");
-	var tab = [przod, przod1, przod2];
-	var d1 = Math.floor(Math.random() * 6 + 1);
+	var wynik = document.querySelector('.wynik');
+	var licznik = document.querySelector('.licznik');
+	var sumaTotalPole= document.querySelector('.suma_total');
+
+	button2.onclick = function gameOver() {
+	counter = 0;
+		suma_total = 0;
+		suma = 0;
+		button1.innerHTML = "Rozpocznij grę";
+		wynik.innerHTML = "Twój wynik to: " + suma;
+		comboPole.innerHTML = "";
+		licznik.innerHTML = "Tura " + counter;
+		sumaTotalPole.innerHTML = "Suma " + suma_total;
+	}
+
+	button1.onclick = function roll() {
+var d1 = Math.floor(Math.random() * 6 + 1);
 	var d2 = Math.floor(Math.random() * 6 + 1);
 	var d3 = Math.floor(Math.random() * 6 + 1);
-	var suma = d1 + d2 + d3;
-	var button = document.querySelector('#button1');
-
-	if (d1 === d2 && d1 === d3 && d2 === d3) {
-		document.querySelector('.combo').innerHTML = "EXTRA +10 punktów";
-		document.querySelector('.combo').style.color = "red";
-		combo = 10;
-	} else {
-		document.querySelector('.combo').innerHTML = "";
-		combo = 0;
-	}
-	counter++;
-	suma_total += suma + combo;
-
-	button.innerHTML = "Rzut ";
-	document.querySelector('.wynik').innerHTML = "Twój wynik to: " + suma;
-	document.querySelector('.licznik').innerHTML = "Tura " + counter;
-	document.querySelector('.suma_total').innerHTML = "Suma " + suma_total;
-
-	switch (d1) {
-		case (1):
-			przod.style.backgroundImage = "url('img/title_1.png')";
-			ani();
-			break;
-		case (2):
-			przod.style.backgroundImage = "url('img/title_2.png')";
-			break;
-		case (3):
-			przod.style.backgroundImage = "url('img/title_3.png')";
-			break;
-		case (4):
-			przod.style.backgroundImage = "url('img/title_4.png')";
-			break;
-		case (5):
-			przod.style.backgroundImage = "url('img/title_5.png')";
-			break;
-		case (6):
-			przod.style.backgroundImage = "url('img/title_6.png')";
-			break;
-		default:
-			przod.style.backgroundImage = 'none';
-	}
-	switch (d2) {
-		case (1):
-			przod1.style.backgroundImage = "url('img/title_1.png')";
-			break;
-		case (2):
-			przod1.style.backgroundImage = "url('img/title_2.png')";
-			break;
-		case (3):
-			przod1.style.backgroundImage = "url('img/title_3.png')";
-			break;
-		case (4):
-			przod1.style.backgroundImage = "url('img/title_4.png')";
-			break;
-		case (5):
-			przod1.style.backgroundImage = "url('img/title_5.png')";
-			break;
-		case (6):
-			przod1.style.backgroundImage = "url('img/title_6.png')";
-			break;
-		default:
-			przod1.style.backgroundImage = 'none';
-	}
-	switch (d3) {
-		case (1):
-			przod2.style.backgroundImage = "url('img/title_1.png')";
-			break;
-		case (2):
-			przod2.style.backgroundImage = "url('img/title_2.png')";
-			break;
-		case (3):
-			przod2.style.backgroundImage = "url('img/title_3.png')";
-			break;
-		case (4):
-			przod2.style.backgroundImage = "url('img/title_4.png')";
-			break;
-		case (5):
-			przod2.style.backgroundImage = "url('img/title_5.png')";
-			break;
-		case (6):
-			przod2.style.backgroundImage = "url('img/title_6.png')";
-			break;
-		default:
-			przod2.style.backgroundImage = 'none';
-	}
-
-}
-// TOTOLOTEK
-function totolotek(liczba, wylosowanaLiczba) {
-	/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
-	var liczba = document.getElementsByClassName('liczba');
-	var wylosowaneLiczby = [];
-	for (var i = 0; i < liczba.length; i++) {
-		var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
-		while (wylosowaneLiczby.includes(wylosowanaLiczba)) {
-			wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		if (d1 === d2 && d1 === d3 && d2 === d3) {
+			comboPole.innerHTML = "EXTRA +10 punktów";
+			comboPole.style.color = "red";
+			combo = 10;
+		} else {
+			comboPole.innerHTML = "";
+			combo = 0;
 		}
-		wylosowaneLiczby.push(wylosowanaLiczba);
-		console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby: ' + wylosowaneLiczby);
-		liczba[i].innerHTML = wylosowanaLiczba;
+		counter++;
+	    suma = d1 + d2 + d3;
+		suma_total += suma + combo;
+
+
+		button1.innerHTML = "Rzut ";
+		wynik.innerHTML = "Twój wynik to: " + suma;
+		licznik.innerHTML = "Tura " + counter;
+		sumaTotalPole.innerHTML = "Suma " + suma_total;
+
+		switch (d1) {
+			case (1):
+				przod.style.backgroundImage = "url('img/title_1.png')";
+				ani();
+				break;
+			case (2):
+				przod.style.backgroundImage = "url('img/title_2.png')";
+				break;
+			case (3):
+				przod.style.backgroundImage = "url('img/title_3.png')";
+				break;
+			case (4):
+				przod.style.backgroundImage = "url('img/title_4.png')";
+				break;
+			case (5):
+				przod.style.backgroundImage = "url('img/title_5.png')";
+				break;
+			case (6):
+				przod.style.backgroundImage = "url('img/title_6.png')";
+				break;
+			default:
+				przod.style.backgroundImage = 'none';
+		}
+		switch (d2) {
+			case (1):
+				przod1.style.backgroundImage = "url('img/title_1.png')";
+				break;
+			case (2):
+				przod1.style.backgroundImage = "url('img/title_2.png')";
+				break;
+			case (3):
+				przod1.style.backgroundImage = "url('img/title_3.png')";
+				break;
+			case (4):
+				przod1.style.backgroundImage = "url('img/title_4.png')";
+				break;
+			case (5):
+				przod1.style.backgroundImage = "url('img/title_5.png')";
+				break;
+			case (6):
+				przod1.style.backgroundImage = "url('img/title_6.png')";
+				break;
+			default:
+				przod1.style.backgroundImage = 'none';
+		}
+		switch (d3) {
+			case (1):
+				przod2.style.backgroundImage = "url('img/title_1.png')";
+				break;
+			case (2):
+				przod2.style.backgroundImage = "url('img/title_2.png')";
+				break;
+			case (3):
+				przod2.style.backgroundImage = "url('img/title_3.png')";
+				break;
+			case (4):
+				przod2.style.backgroundImage = "url('img/title_4.png')";
+				break;
+			case (5):
+				przod2.style.backgroundImage = "url('img/title_5.png')";
+				break;
+			case (6):
+				przod2.style.backgroundImage = "url('img/title_6.png')";
+				break;
+			default:
+				przod2.style.backgroundImage = 'none';
+		}
+	};
+
+
+	// TOTOLOTEK
+	function totolotek(liczba, wylosowanaLiczba) {
+		/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
+		var liczba = document.getElementsByClassName('liczba');
+		var wylosowaneLiczby = [];
+		for (var i = 0; i < liczba.length; i++) {
+			var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+			while (wylosowaneLiczby.includes(wylosowanaLiczba)) {
+				wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+			}
+			wylosowaneLiczby.push(wylosowanaLiczba);
+			console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby: ' + wylosowaneLiczby);
+			liczba[i].innerHTML = wylosowanaLiczba;
+		}
+
 	}
 
-}
 
+	// data
+	var dzisiaj = new Date();
 
-// data
-var dzisiaj = new Date();
+	var dzien = dzisiaj.getDate();
+	var miesiac = dzisiaj.getMonth() + 1;
+	var rok = dzisiaj.getFullYear();
+	var godzina = dzisiaj.getHours();
+	var minuta = dzisiaj.getMinutes();
+	var sekunda = dzisiaj.getSeconds();
+	var zegar = document.getElementById("zegar");
+	var czas = document.getElementById("godzina");
 
-var dzien = dzisiaj.getDate();
-var miesiac = dzisiaj.getMonth() + 1;
-var rok = dzisiaj.getFullYear();
-var godzina = dzisiaj.getHours();
-var minuta = dzisiaj.getMinutes();
-var sekunda = dzisiaj.getSeconds();
-var zegar = document.getElementById("zegar");
-var czas = document.getElementById("godzina");
+	function leadingZero(i) {
+		return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
+	}
 
-function leadingZero(i) {
-	return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
-}
-
-zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
-czas.innerHTML = leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
+	zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
+	czas.innerHTML = leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
 
 
 
-window.onload = function () {
 	function zmienKolor() {
 		this.className = "zmienKolor";
 	}
@@ -244,25 +261,21 @@ window.onload = function () {
 		/* domyslnie  jak klikniemy wyślij to od razu wysyła i  zamyka formularz, żeby wyłączyć te domyślną akcję - e.preventDefault(); */
 	};
 	// Stoper
+	var timeOutStoper;
+	// timeOutStoper musi być zmienną globalna
 	function stopwatch(uchwytStopera, liczba) {
 
-		uchwytStopera.innerHTML = --liczba;
-		if (liczba === 0) {
-
-			span.style.display = "block";
-		}
-		if (liczba <= 0) {
+		uchwytStopera.innerHTML = liczba--;
+		if (liczba < 0)
 			return;
-		}
 
-		setTimeout(function () {
+		timeOutStoper = setTimeout(function () {
 			stopwatch(uchwytStopera, liczba);
 		}, 1000);
-
+		return timeOutStoper;
 	}
 
 	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
-	var poczatkowaValue = poczatkowaWartosc.value;
 	var przyciskWlacz = document.getElementById("przyciskWlacz");
 	var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
 	var uchwytStopera = document.getElementById("uchwytStopera");
@@ -272,10 +285,18 @@ window.onload = function () {
 		var poczatkowaValue = poczatkowaWartosc.value;
 		uchwytStopera.innerHTML = poczatkowaValue;
 
-		setTimeout(function () {
-			stopwatch(uchwytStopera, poczatkowaValue);
-		}, 1000);
+		if (timeOutStoper)
+			clearTimeout(timeOutStoper);
+
+		/*jeżeli timeOutStoper już istniał to czyści, jesli nie ma wartości - NaN - fałszwarunek niespełniony i przechodzi dalej*/
+		timeOutStoper = stopwatch(uchwytStopera, poczatkowaValue);
 	};
+	przyciskZatrzymaj.onclick = function () {
+		clearTimeout(timeOutStoper);
+	};
+
+
+	//Liczniki
 
 	function licznik() {
 		var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
@@ -334,7 +355,7 @@ window.onload = function () {
 		uchwytStopera2.innerHTML = poczatkowaValue2;
 		setTimeout(function () {
 			stopwatch2(uchwytStopera2, poczatkowaValue2);
-		}, 1000);
+		}, 500);
 	}
 	licznik();
 	licznik2();
