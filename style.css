@@ -5,7 +5,9 @@ h1 {
 	font-weight: 600;
 	    background-color: #49627d;
 }
-
+a:hover {
+	    text-decoration: none;
+	}
 body {
 	background-image: url('img/title.png');
 	background-color: #f7f7f7;

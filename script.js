@@ -1,138 +1,136 @@
+// DICE
+var button1 = document.querySelector('#button1');
+var button2 = document.querySelector('#button2');
+var counter = 1;
+var suma_total = 0;
+var suma;
+var combo = 0;
+var przod = document.getElementById("przod");
+var comboPole = document.querySelector('.combo')
+var przod1 = document.getElementById("przod1");
+var przod2 = document.getElementById("przod2");
+var wynik = document.querySelector('.wynik');
+var licznik = document.querySelector('.licznik');
+var sumaTotalPole = document.querySelector('.suma_total');
 
-	// DICE
-	var button1 = document.querySelector('#button1');
-	var button2 = document.querySelector('#button2');
-	var counter = 1;
-	var suma_total = 0;
-	var suma;
-	var combo = 0;
-	var przod = document.getElementById("przod");
-	var comboPole = document.querySelector('.combo')
-	var przod1 = document.getElementById("przod1");
-	var przod2 = document.getElementById("przod2");
-	var wynik = document.querySelector('.wynik');
-	var licznik = document.querySelector('.licznik');
-	var sumaTotalPole= document.querySelector('.suma_total');
-
-	button2.onclick = function gameOver() {
+button2.onclick = function gameOver() {
 	counter = 0;
-		suma_total = 0;
-		suma = 0;
-		button1.innerHTML = "Rozpocznij grę";
-		wynik.innerHTML = "Twój wynik to: " + suma;
-		comboPole.innerHTML = "";
-		licznik.innerHTML = "Tura " + counter;
-		sumaTotalPole.innerHTML = "Suma " + suma_total;
-	}
+	suma_total = 0;
+	suma = 0;
+	button1.innerHTML = "Rozpocznij grę";
+	wynik.innerHTML = "Twój wynik to: " + suma;
+	comboPole.innerHTML = "";
+	licznik.innerHTML = "Tura " + counter;
+	sumaTotalPole.innerHTML = "Suma " + suma_total;
+}
 
-	button1.onclick = function roll() {
-var d1 = Math.floor(Math.random() * 6 + 1);
+button1.onclick = function roll() {
+	var d1 = Math.floor(Math.random() * 6 + 1);
 	var d2 = Math.floor(Math.random() * 6 + 1);
 	var d3 = Math.floor(Math.random() * 6 + 1);
-		if (d1 === d2 && d1 === d3 && d2 === d3) {
-			comboPole.innerHTML = "EXTRA +10 punktów";
-			comboPole.style.color = "red";
-			combo = 10;
-		} else {
-			comboPole.innerHTML = "";
-			combo = 0;
-		}
-		counter++;
-	    suma = d1 + d2 + d3;
-		suma_total += suma + combo;
-
-
-		button1.innerHTML = "Rzut ";
-		wynik.innerHTML = "Twój wynik to: " + suma;
-		licznik.innerHTML = "Tura " + counter;
-		sumaTotalPole.innerHTML = "Suma " + suma_total;
-
-		switch (d1) {
-			case (1):
-				przod.style.backgroundImage = "url('img/title_1.png')";
-				ani();
-				break;
-			case (2):
-				przod.style.backgroundImage = "url('img/title_2.png')";
-				break;
-			case (3):
-				przod.style.backgroundImage = "url('img/title_3.png')";
-				break;
-			case (4):
-				przod.style.backgroundImage = "url('img/title_4.png')";
-				break;
-			case (5):
-				przod.style.backgroundImage = "url('img/title_5.png')";
-				break;
-			case (6):
-				przod.style.backgroundImage = "url('img/title_6.png')";
-				break;
-			default:
-				przod.style.backgroundImage = 'none';
-		}
-		switch (d2) {
-			case (1):
-				przod1.style.backgroundImage = "url('img/title_1.png')";
-				break;
-			case (2):
-				przod1.style.backgroundImage = "url('img/title_2.png')";
-				break;
-			case (3):
-				przod1.style.backgroundImage = "url('img/title_3.png')";
-				break;
-			case (4):
-				przod1.style.backgroundImage = "url('img/title_4.png')";
-				break;
-			case (5):
-				przod1.style.backgroundImage = "url('img/title_5.png')";
-				break;
-			case (6):
-				przod1.style.backgroundImage = "url('img/title_6.png')";
-				break;
-			default:
-				przod1.style.backgroundImage = 'none';
-		}
-		switch (d3) {
-			case (1):
-				przod2.style.backgroundImage = "url('img/title_1.png')";
-				break;
-			case (2):
-				przod2.style.backgroundImage = "url('img/title_2.png')";
-				break;
-			case (3):
-				przod2.style.backgroundImage = "url('img/title_3.png')";
-				break;
-			case (4):
-				przod2.style.backgroundImage = "url('img/title_4.png')";
-				break;
-			case (5):
-				przod2.style.backgroundImage = "url('img/title_5.png')";
-				break;
-			case (6):
-				przod2.style.backgroundImage = "url('img/title_6.png')";
-				break;
-			default:
-				przod2.style.backgroundImage = 'none';
-		}
-	};
-
-
-	// TOTOLOTEK
-	function totolotek(liczba, wylosowanaLiczba) {
-		/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
-		var liczba = document.getElementsByClassName('liczba');
-		var wylosowaneLiczby = [];
-		for (var i = 0; i < liczba.length; i++) {
-			var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
-			while (wylosowaneLiczby.includes(wylosowanaLiczba)) {
-				wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
-			}
-			wylosowaneLiczby.push(wylosowanaLiczba);
-			console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby: ' + wylosowaneLiczby);
-			liczba[i].innerHTML = wylosowanaLiczba;
-		}
-
+	if (d1 === d2 && d1 === d3 && d2 === d3) {
+		comboPole.innerHTML = "EXTRA +10 punktów";
+		comboPole.style.color = "red";
+		combo = 10;
+	} else {
+		comboPole.innerHTML = "";
+		combo = 0;
 	}
+	counter++;
+	suma = d1 + d2 + d3;
+	suma_total += suma + combo;
+
+
+	button1.innerHTML = "Rzut ";
+	wynik.innerHTML = "Twój wynik to: " + suma;
+	licznik.innerHTML = "Tura " + counter;
+	sumaTotalPole.innerHTML = "Suma " + suma_total;
+
+	switch (d1) {
+		case (1):
+			przod.style.backgroundImage = "url('img/title_1.png')";
+			break;
+		case (2):
+			przod.style.backgroundImage = "url('img/title_2.png')";
+			break;
+		case (3):
+			przod.style.backgroundImage = "url('img/title_3.png')";
+			break;
+		case (4):
+			przod.style.backgroundImage = "url('img/title_4.png')";
+			break;
+		case (5):
+			przod.style.backgroundImage = "url('img/title_5.png')";
+			break;
+		case (6):
+			przod.style.backgroundImage = "url('img/title_6.png')";
+			break;
+		default:
+			przod.style.backgroundImage = 'none';
+	}
+	switch (d2) {
+		case (1):
+			przod1.style.backgroundImage = "url('img/title_1.png')";
+			break;
+		case (2):
+			przod1.style.backgroundImage = "url('img/title_2.png')";
+			break;
+		case (3):
+			przod1.style.backgroundImage = "url('img/title_3.png')";
+			break;
+		case (4):
+			przod1.style.backgroundImage = "url('img/title_4.png')";
+			break;
+		case (5):
+			przod1.style.backgroundImage = "url('img/title_5.png')";
+			break;
+		case (6):
+			przod1.style.backgroundImage = "url('img/title_6.png')";
+			break;
+		default:
+			przod1.style.backgroundImage = 'none';
+	}
+	switch (d3) {
+		case (1):
+			przod2.style.backgroundImage = "url('img/title_1.png')";
+			break;
+		case (2):
+			przod2.style.backgroundImage = "url('img/title_2.png')";
+			break;
+		case (3):
+			przod2.style.backgroundImage = "url('img/title_3.png')";
+			break;
+		case (4):
+			przod2.style.backgroundImage = "url('img/title_4.png')";
+			break;
+		case (5):
+			przod2.style.backgroundImage = "url('img/title_5.png')";
+			break;
+		case (6):
+			przod2.style.backgroundImage = "url('img/title_6.png')";
+			break;
+		default:
+			przod2.style.backgroundImage = 'none';
+	}
+};
+
+
+// TOTOLOTEK
+function totolotek(liczba, wylosowanaLiczba) {
+	/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
+	var liczba = document.getElementsByClassName('liczba');
+	var wylosowaneLiczby = [];
+	for (var i = 0; i < liczba.length; i++) {
+		var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		while (wylosowaneLiczby.includes(wylosowanaLiczba)) {
+			wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+		}
+		wylosowaneLiczby.push(wylosowanaLiczba);
+		console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby: ' + wylosowaneLiczby);
+		liczba[i].innerHTML = wylosowanaLiczba;
+	}
+
+}
 
 window.onload = function () {
 	// data
@@ -258,43 +256,108 @@ window.onload = function () {
 		e.preventDefault();
 		/* domyslnie  jak klikniemy wyślij to od razu wysyła i  zamyka formularz, żeby wyłączyć te domyślną akcję - e.preventDefault(); */
 	};
+
 	// Stoper
+	/* Rozwiązanie z setTimeOut
+		var timeOutStoper;
+		// timeOutStoper musi być zmienną globalna
 
-	var timeOutStoper;
-	// timeOutStoper musi być zmienną globalna
-	function stopwatch(uchwytStopera, liczba) {
+		function stopwatch(uchwytStopera, liczba) {
 
-		uchwytStopera.innerHTML = liczba--;
-		if (liczba < 0)
-			return;
+			uchwytStopera.innerHTML = liczba--;
+			if (liczba < 0)
+				return;
 
-		timeOutStoper = setTimeout(function () {
-			stopwatch(uchwytStopera, liczba);
-		}, 1000);
-		return timeOutStoper;
+			timeOutStoper = setTimeout(function () {
+				stopwatch(uchwytStopera, liczba);
+			}, 1000);
+			return timeOutStoper;
+		}
+
+		var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
+		var przyciskWlacz = document.getElementById("przyciskWlacz");
+		var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
+		var uchwytStopera = document.getElementById("uchwytStopera");
+
+
+		przyciskWlacz.onclick = function () {
+			var poczatkowaValue = poczatkowaWartosc.value;
+			uchwytStopera.innerHTML = poczatkowaValue;
+
+			if (timeOutStoper)
+				clearTimeout(timeOutStoper);
+
+			/*jeżeli timeOutStoper już istniał to czyści, jesli nie ma wartości - NaN - fałszwarunek niespełniony i przechodzi dalej
+			timeOutStoper = stopwatch(uchwytStopera, poczatkowaValue);
+		};
+		przyciskZatrzymaj.onclick = function () {
+			clearTimeout(timeOutStoper);
+		};
+
+	*/
+	// stworzenie stopera metodą obiektową
+
+	function stopWatchClass(uchwytStopera) {
+		this.poczatkowaWartosc;
+		this.uchwytStopera = uchwytStopera;
+		this.timeOutRef = undefined;
+		this.odpal = function (poczatkowaWartosc) {
+		this.poczatkowaWartosc = poczatkowaWartosc;
+		this.tablicaWynikow = [];
+		this.wyniki = document.getElementById("wyniki");
+
+		if(this.timeOutRef)
+			clearTimeout(this.timeOutRef);
+
+		this.startStoper();
+		};
+		this.startStoper = function () {
+
+			this.uchwytStopera.innerHTML = this.poczatkowaWartosc--;
+
+
+			var self = this; /* trzeba napisać zmienną, bo nie można się odwołac za pomocą this */
+			this.timeOutRef = setTimeout(function () {
+				if (self.poczatkowaWartosc < 0)
+					return;
+
+				self.startStoper();
+			}, 1000);
+		};
+		this.zatrzymaj = function () {
+
+			clearTimeout(this.timeOutRef);
+			tablicaWynikow.push(" " + (1 + stoper.poczatkowaWartosc));
+			wyniki.innerHTML = "Twoje wyniki: " + tablicaWynikow;
+		};
+		this.kontynuuj = function () {
+			this.startStoper();
+		};
 	}
 
-	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
+	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
 	var przyciskWlacz = document.getElementById("przyciskWlacz");
+	var przyciskKontynuuj = document.getElementById("przyciskKontynuuj");
 	var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
 	var uchwytStopera = document.getElementById("uchwytStopera");
 
+	var tablicaWynikow = [];
+	var wyniki = document.getElementById("wyniki");
+
+	var stoper = new stopWatchClass(uchwytStopera);
 
 	przyciskWlacz.onclick = function () {
-		var poczatkowaValue = poczatkowaWartosc.value;
-		uchwytStopera.innerHTML = poczatkowaValue;
+		var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
+		stoper.odpal(poczatkowaWartosc);
 
-		if (timeOutStoper)
-			clearTimeout(timeOutStoper);
-
-		/*jeżeli timeOutStoper już istniał to czyści, jesli nie ma wartości - NaN - fałszwarunek niespełniony i przechodzi dalej*/
-		timeOutStoper = stopwatch(uchwytStopera, poczatkowaValue);
 	};
-	przyciskZatrzymaj.onclick = function () {
-		clearTimeout(timeOutStoper);
+	przyciskKontynuuj.onclick = function(){
+		stoper.kontynuuj();
 	};
 
-
+	przyciskZatrzymaj.onclick = function(){
+		stoper.zatrzymaj();
+	};
 	//Liczniki
 
 	function licznik() {
