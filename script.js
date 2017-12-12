@@ -193,9 +193,6 @@ window.onload = function () {
 
 
 
-
-
-
 	// ********* PRZYCISK - TO TOP PAGE
 
 	var przyciskTop = document.getElementById("przyciskTop");
@@ -302,14 +299,14 @@ window.onload = function () {
 		this.uchwytStopera = uchwytStopera;
 		this.timeOutRef = undefined;
 		this.odpal = function (poczatkowaWartosc) {
-		this.poczatkowaWartosc = poczatkowaWartosc;
-		this.tablicaWynikow = [];
-		this.wyniki = document.getElementById("wyniki");
+			this.poczatkowaWartosc = poczatkowaWartosc;
+			this.tablicaWynikow = [];
+			this.wyniki = document.getElementById("wyniki");
 
-		if(this.timeOutRef)
-			clearTimeout(this.timeOutRef);
+			if (this.timeOutRef)
+				clearTimeout(this.timeOutRef);
 
-		this.startStoper();
+			this.startStoper();
 		};
 		this.startStoper = function () {
 
@@ -351,11 +348,11 @@ window.onload = function () {
 		stoper.odpal(poczatkowaWartosc);
 
 	};
-	przyciskKontynuuj.onclick = function(){
+	przyciskKontynuuj.onclick = function () {
 		stoper.kontynuuj();
 	};
 
-	przyciskZatrzymaj.onclick = function(){
+	przyciskZatrzymaj.onclick = function () {
 		stoper.zatrzymaj();
 	};
 	//Liczniki
@@ -459,10 +456,10 @@ window.onload = function () {
 		var self = this;
 		var fixed = obrazek.style.position = "fixed";
 		document.onmousemove = function (e) {
-			var lokalizacja = document.getElementById("lokalizacja");
-			lokalizacja.innerHTML = " Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
-			ruchObrazka(e, self);
-			fixed;
+		var lokalizacja = document.getElementById("lokalizacja");
+		lokalizacja.innerHTML = " Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
+		ruchObrazka(e, self);
+		fixed;
 		};
 
 	};

@@ -3,21 +3,32 @@ h1 {
 	padding: 3%;
 	font-family: 'Exo', sans-serif;
 	font-weight: 600;
-	    background-color: #49627d;
+	background-color: #49627d;
+	margin: 10px 0;
+	box-shadow:  0 6px 4px -4px #AAA;
 }
 a:hover {
 	    text-decoration: none;
 	}
 body {
-	background-image: url('img/title.png');
+	border-left: 36px solid #49627d;
+
 	background-color: #f7f7f7;
 }
-
-.container {
-	background-color: #f7f7f773;
+body .first {
+	background-image: url('img/web-2643093_1920.png');
+	background-position: 990px 160px;
+	background-size: 20%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+section {
+	border-left: 6px solid #49627d;
+	box-shadow: 1px 1px 12px 3px grey inset;
 	font-family: 'Fira Sans', sans-serif;
 	padding: 1% 0;
 	margin-bottom: 2px;
+	margin: 2% 0;
 }
 
 h6 {
@@ -528,7 +539,7 @@ button {
     padding: 35px 0px 10px;
 	border-radius: 50%;
 	position: relative;
-	background-color: #ffffff;
+	background-color: transparent;
 	text-transform: uppercase;
 	position:relative;
 	text-align: center;
@@ -542,7 +553,7 @@ button {
 	transition: all 0.75s;
 	border:6px solid;
 	border-right-color: ;
-  border-left-color: #ffffff;
+  border-left-color: transparent;
   border-top-color: #000 !important;
   border-bottom-color: #000000 !important;
 	border-radius:50%;

@@ -32,11 +32,13 @@
 </head>
 
 <body>
-	<section class="container">
+	<header class="container">
 		<h1> Moje przykłady JavaScript </h1><br />
 
 		<h6 id="testowy">Witaj, odwiedziłeś mnie <span id="zegar"></span> o godzinie <span id="godzina"></span></h6><br />
+	</header>
 
+<section class="first container">
 		<div id="accordion" role="tablist">
 			<!-- Dice -->
 			<div class="card">
@@ -185,7 +187,8 @@
 								<p class="liczba"></p>
 							</div>
 						</div><br>
-						<button id="losuj" onclick="totolotek()"><span>LOSUJ</span></button><h4>Losowanie 6 przypadkowych liczb</h4>
+						<button id="losuj" onclick="totolotek()"><span>LOSUJ</span></button>
+						<h4>Losowanie 6 przypadkowych liczb</h4>
 
 					</div>
 				</div>
@@ -270,28 +273,29 @@
 					</div>
 				</div>
 			</div>
-				<section class="container licznikiflex">
-		<div class="liczniki">
-			<h4>Bomba</h4>
+			<section class="container licznikiflex">
+				<div class="liczniki">
+					<h4>Bomba</h4>
 
-			<input type="text" id="poczatkowaWartosc1" value="30">
+					<input type="text" id="poczatkowaWartosc1" value="30">
 
 
-			<div id="stoper">
-				<p><br /><span id="boom">Boom!</span>Bomba wybuchnie za:<br /><span id="uchwytStopera1"></span></p>
-			</div>
-		</div>
-		<div class="liczniki">
-			<h4>Licznik</h4>
-			<input type="text" id="poczatkowaWartosc2" value="0">
-			<div id="stoper2">
-				<p><span id="uchwytStopera2"></span><br />Lat doświadczenia</p>
-			</div>
-		</div>
-	</section>
-			<aside><h4>Umieść jabłko w dowolnym miejscu na stronie:) <span id="lokalizacja"></span></h4>
+					<div id="stoper">
+						<p><br /><span id="boom">Boom!</span>Bomba wybuchnie za:<br /><span id="uchwytStopera1"></span></p>
+					</div>
+				</div>
+				<div class="liczniki">
+					<h4>Licznik</h4>
+					<input type="text" id="poczatkowaWartosc2" value="0">
+					<div id="stoper2">
+						<p><span id="uchwytStopera2"></span><br />Lat doświadczenia</p>
+					</div>
+				</div>
+			</section>
+			<aside>
+				<h4>Umieść jabłko w dowolnym miejscu na stronie:) <span id="lokalizacja"></span></h4>
 
-			<div><img   id="obrazek" class="fliud rounded" src="img/title_7.png" alt="obrazek" name="obrazek" /></div><br></aside>
+				<div><img id="obrazek" class="fliud rounded" src="img/title_7.png" alt="obrazek" name="obrazek" /></div><br></aside>
 
 
 			<!-- przykład javascript- scroll -->
