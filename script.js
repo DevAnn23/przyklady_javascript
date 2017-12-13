@@ -510,6 +510,12 @@ window.onload = function () {
 		c.fillStyle = '#aaa';
 		c.fillRect(230, 330, 10, 15);
 		c.fillRect(260, 330, 10, 15);
+		c.moveTo(260,345);
+		c.lineTo(280,345);
+		c.lineTo(270,337);
+		c.moveTo(240,345);
+		c.lineTo(220,345);
+		c.lineTo(230,337);
 
 		//ręce
 
@@ -589,8 +595,6 @@ window.onload = function () {
 		c.font = "italic bold 16px Arial";
 		c.textBaseline = "bottom";
 		c.strokeText('Canvas', 220, 280);
-
-
 
 	}
 
