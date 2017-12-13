@@ -24,7 +24,7 @@ body .first {
 }
 section {
 	border-left: 6px solid #49627d;
-	box-shadow: 1px 1px 12px 3px grey inset;
+	box-shadow: 1px 6px 4px -4px #AAA;
 	font-family: 'Fira Sans', sans-serif;
 	padding: 1% 0;
 	margin-bottom: 2px;

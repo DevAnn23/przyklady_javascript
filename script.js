@@ -456,10 +456,10 @@ window.onload = function () {
 		var self = this;
 		var fixed = obrazek.style.position = "fixed";
 		document.onmousemove = function (e) {
-		var lokalizacja = document.getElementById("lokalizacja");
-		lokalizacja.innerHTML = " Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
-		ruchObrazka(e, self);
-		fixed;
+			var lokalizacja = document.getElementById("lokalizacja");
+			lokalizacja.innerHTML = " Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
+			ruchObrazka(e, self);
+			fixed;
 		};
 
 	};
@@ -471,4 +471,132 @@ window.onload = function () {
 	obrazek.ondragstart = function (e) {
 		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
 	};
+
+
+	//Rysowanie w canvas
+	var canvas = document.getElementById('can');
+	if (canvas.getContext) {
+		var c = canvas.getContext('2d'); /* pobieram zawartość canvas */
+
+		//Rysuje
+		/* fillRect(x,y,width,height) - rysuje wypełniony prostokąt
+		strokeRect(x,y,width,height) - rysuje obramowanie prostokąta
+		clearRext(x,y,width,height) - czyści określony obszar i czyni go przezroczystym */
+
+
+		// MOJ OBRAZEK :)s
+
+
+		c.fillStyle = 'yellow';
+		c.fillRect(0, 0, 100, 100);
+		c.strokeRect(0, 0, 100, 100);
+		c.fillStyle = 'red';
+		c.fillRect(5, 5, 90, 90);
+		c.fillStyle = 'pink';
+		c.fillRect(10, 10, 80, 80);
+		c.fillStyle = 'green';
+		c.fillRect(15, 15, 70, 70);
+		c.fillStyle = 'white';
+		c.fillRect(20, 20, 60, 60);
+		c.bezierCurveTo(215, 55, 25, 55, 120, 100);
+		c.font = "italic bold 16px Arial";
+		c.textBaseline = "bottom";
+		c.strokeText('Canvas', 20, 60);
+
+		//rysuję robota
+		c.beginPath();
+
+		c.fillStyle = '#aaa';
+		c.fillRect(200,100,100,100);
+
+		c.beginPath();
+
+		//rysuje czułka robota
+		c.moveTo(250,100);
+		c.lineTo(200,50);
+		c.moveTo(250,100);
+		c.lineTo(300,50);
+		c.moveTo(190,60);
+		c.lineTo(210,40);
+		c.moveTo(310,60);
+		c.lineTo(290,40);
+
+		//brwi
+
+		c.moveTo(230,110);
+		c.lineTo(210,115);
+		c.moveTo(270,110);
+		c.lineTo(290,115);
+
+		//oczy
+  		c.fillStyle = '#fff';
+		c.fillRect(220,120,10,10);
+		c.fillStyle = '#000';
+		c.fillRect(222,125,5,5);
+
+		c.fillStyle = '#fff';
+		c.fillRect(270,120,10,10);
+		c.fillStyle = '#000';
+		c.fillRect(272,125,5,5);
+
+		//nos
+		c.fillStyle = '#45000f';
+		c.fillRect(245,140, 10,20);
+
+		//zeby
+
+		c.fillStyle = '#45000f';
+		c.fillRect(205,170, 90,25);
+
+		c.fillStyle = '#fff';
+		c.fillRect(207,170, 5,3);
+		c.fillStyle = '#fff';
+		c.fillRect(217,170, 5,7);
+		c.fillStyle = '#fff';
+		c.fillRect(240,170, 5,9);
+		c.fillStyle = '#fff';
+		c.fillRect(257,170, 5,7);
+		c.fillStyle = '#fff';
+		c.fillRect(283,170, 5,2);
+		c.fillStyle = '#fff';
+		c.fillRect(277,170, 5,6);
+
+		c.fillStyle = '#fff';
+		c.fillRect(217,195, 5,-7);
+		c.fillStyle = '#fff';
+		c.fillRect(257,195, 5,-2);
+		c.fillStyle = '#fff';
+		c.fillRect(250,195, 5,-7);
+		c.fillStyle = '#fff';
+		c.fillRect(280,195, 5,-9);
+    c.stroke();
+	}
+
+	var canvas1 = document.getElementById('canvas1');
+	if (canvas1.getContext) {
+		var c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
+
+		c1.fillStyle = 'black';
+		c1.fillRect(0, 120, 500, 500);/* wysokość 500+120= 620 */
+		c1.fillStyle = 'white';
+		c1.fillRect(250, 120, 5, 10);
+		c1.fillRect(250, 150, 5, 10);
+		c1.fillRect(250, 200, 5, 10);
+		c1.fillRect(250, 250, 5, 10);
+		c1.fillRect(250, 300, 5, 10);
+		c1.fillRect(250, 350, 5, 10);
+		c1.fillRect(250, 400, 5, 10);
+		c1.fillRect(250, 450, 5, 10);
+		c1.fillRect(250, 500, 5, 10);
+		c1.fillRect(250, 550, 5, 10);
+		c1.fillRect(250, 610, 5, 10);
+
+		//rysuje paletki
+
+		c1.fillRect(490, 320, 5, 50);
+		c1.fillRect(5, 320, 5, 50);
+
+
+	};
+
 };
