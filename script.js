@@ -487,89 +487,111 @@ window.onload = function () {
 		// MOJ OBRAZEK :)s
 
 
-		c.fillStyle = 'yellow';
-		c.fillRect(0, 0, 100, 100);
-		c.strokeRect(0, 0, 100, 100);
-		c.fillStyle = 'red';
-		c.fillRect(5, 5, 90, 90);
-		c.fillStyle = 'pink';
-		c.fillRect(10, 10, 80, 80);
-		c.fillStyle = 'green';
-		c.fillRect(15, 15, 70, 70);
-		c.fillStyle = 'white';
-		c.fillRect(20, 20, 60, 60);
-		c.bezierCurveTo(215, 55, 25, 55, 120, 100);
-		c.font = "italic bold 16px Arial";
-		c.textBaseline = "bottom";
-		c.strokeText('Canvas', 20, 60);
 
 		//rysuję robota
 		c.beginPath();
 
 		c.fillStyle = '#aaa';
-		c.fillRect(200,100,100,100);
+		c.fillRect(200, 100, 100, 100);
 
 		c.beginPath();
 
 		//rysuje czułka robota
-		c.moveTo(250,100);
-		c.lineTo(200,50);
-		c.moveTo(250,100);
-		c.lineTo(300,50);
-		c.moveTo(190,60);
-		c.lineTo(210,40);
-		c.moveTo(310,60);
-		c.lineTo(290,40);
+		c.moveTo(250, 100);
+		c.lineTo(200, 50);
+		c.moveTo(250, 100);
+		c.lineTo(300, 50);
+		c.moveTo(190, 60);
+		c.lineTo(210, 40);
+		c.moveTo(310, 60);
+		c.lineTo(290, 40);
 
+		//nogi
+		c.fillStyle = '#aaa';
+		c.fillRect(230, 330, 10, 15);
+		c.fillRect(260, 330, 10, 15);
+
+		//ręce
+
+		c.moveTo(300, 260);
+		c.lineTo(310, 290);
+		c.lineTo(300, 280);
+
+		c.moveTo(200, 260);
+		c.lineTo(190, 290);
+		c.lineTo(200, 280);
+		c.fill();
 		//brwi
 
-		c.moveTo(230,110);
-		c.lineTo(210,115);
-		c.moveTo(270,110);
-		c.lineTo(290,115);
+		c.moveTo(230, 110);
+		c.lineTo(210, 115);
+		c.moveTo(270, 110);
+		c.lineTo(290, 115);
 
 		//oczy
-  		c.fillStyle = '#fff';
-		c.fillRect(220,120,10,10);
+		c.fillStyle = '#fff';
+		c.fillRect(220, 120, 10, 10);
 		c.fillStyle = '#000';
-		c.fillRect(222,125,5,5);
+		c.fillRect(222, 125, 5, 5);
 
 		c.fillStyle = '#fff';
-		c.fillRect(270,120,10,10);
+		c.fillRect(270, 120, 10, 10);
 		c.fillStyle = '#000';
-		c.fillRect(272,125,5,5);
+		c.fillRect(272, 125, 5, 5);
 
 		//nos
 		c.fillStyle = '#45000f';
-		c.fillRect(245,140, 10,20);
+		c.fillRect(245, 140, 10, 20);
 
 		//zeby
 
 		c.fillStyle = '#45000f';
-		c.fillRect(205,170, 90,25);
+		c.fillRect(205, 170, 90, 25);
 
 		c.fillStyle = '#fff';
-		c.fillRect(207,170, 5,3);
+		c.fillRect(207, 170, 5, 3);
 		c.fillStyle = '#fff';
-		c.fillRect(217,170, 5,7);
+		c.fillRect(217, 170, 5, 7);
 		c.fillStyle = '#fff';
-		c.fillRect(240,170, 5,9);
+		c.fillRect(240, 170, 5, 9);
 		c.fillStyle = '#fff';
-		c.fillRect(257,170, 5,7);
+		c.fillRect(257, 170, 5, 7);
 		c.fillStyle = '#fff';
-		c.fillRect(283,170, 5,2);
+		c.fillRect(283, 170, 5, 2);
 		c.fillStyle = '#fff';
-		c.fillRect(277,170, 5,6);
+		c.fillRect(277, 170, 5, 6);
 
 		c.fillStyle = '#fff';
-		c.fillRect(217,195, 5,-7);
+		c.fillRect(217, 195, 5, -7);
 		c.fillStyle = '#fff';
-		c.fillRect(257,195, 5,-2);
+		c.fillRect(257, 195, 5, -2);
 		c.fillStyle = '#fff';
-		c.fillRect(250,195, 5,-7);
+		c.fillRect(250, 195, 5, -7);
 		c.fillStyle = '#fff';
-		c.fillRect(280,195, 5,-9);
-    c.stroke();
+		c.fillRect(280, 195, 5, -9);
+
+		//szyja
+		c.fillStyle = '#aaa';
+		c.fillRect(240, 200, 20, 30);
+
+		c.stroke();
+		c.fillStyle = 'yellow';
+		c.fillRect(200, 230, 100, 100);
+		c.strokeRect(200, 230, 100, 100);
+		c.fillStyle = 'red';
+		c.fillRect(205, 235, 90, 90);
+		c.fillStyle = 'pink';
+		c.fillRect(210, 240, 80, 80);
+		c.fillStyle = 'green';
+		c.fillRect(215, 245, 70, 70);
+		c.fillStyle = 'white';
+		c.fillRect(220, 250, 60, 60);
+		c.font = "italic bold 16px Arial";
+		c.textBaseline = "bottom";
+		c.strokeText('Canvas', 220, 280);
+
+
+
 	}
 
 	var canvas1 = document.getElementById('canvas1');
@@ -577,7 +599,7 @@ window.onload = function () {
 		var c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
 
 		c1.fillStyle = 'black';
-		c1.fillRect(0, 120, 500, 500);/* wysokość 500+120= 620 */
+		c1.fillRect(0, 120, 500, 500); /* wysokość 500+120= 620 */
 		c1.fillStyle = 'white';
 		c1.fillRect(250, 120, 5, 10);
 		c1.fillRect(250, 150, 5, 10);
