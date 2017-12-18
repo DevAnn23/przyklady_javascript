@@ -224,7 +224,9 @@
 				</div>
 				<div id="collapseOne7" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body bgblack">
-
+						<canvas id="canvas1">
+   					 ...treść alternatywna...
+						</canvas>
 					</div>
 				</div>
 			</div>
@@ -232,14 +234,14 @@
 				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
 						<a onmousemove="initialize()" data-toggle="collapse" href="#collapseOne8" aria-expanded="true" aria-controls="collapseOne8">
-         Kalkulator
+         Kalkulator i Silnia
         </a>
 					</h5>
 				</div>
 				<div id="collapseOne8" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
-						<h1>Kalkulator</h1>
-						<p>wpisz pierwszą liczbe</p><input type="text" id="num1">
+						<h3>Kalkulator</h3>
+						<p>wpisz pierwszą liczbę</p><input type="text" id="num1">
 						<p>wpisz drugą liczbę</p><input style="float:left" type="text" id="num2">
 						<div>Wynik to <span id="wynikDzialania"></span></div><br />
 						<p>Wybierz działanie</p>
@@ -248,9 +250,11 @@
 							<p id="mnozenie">Pomnóż</p>
 							<p id="dodawanie">Dodaj</p>
 							<p id="odejmowanie">Odejmij</p>
-
-
 						</div>
+						<h3>Silnia</h3>
+						<input id="getNumber" type="text">
+						<div id="factorialResult"></div>
+						<button id="fact">Oblicz</button>
 
 					</div>
 				</div>
@@ -319,9 +323,7 @@
     ...treść alternatywna...
 		</canvas>
 	</section>
-	<canvas id="canvas1">
-    ...treść alternatywna...
-		</canvas>
+
 	<br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<div id="map"></div>
 

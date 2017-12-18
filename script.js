@@ -145,8 +145,7 @@ function drawNumber(number, ourNumber) {
 		drawnNumbers.push(ourNumber);
 		number[i].innerHTML = ourNumber;
 	}
-
-}
+};
 
 window.onload = function () {
 	function dateAndtime() {
@@ -223,6 +222,36 @@ window.onload = function () {
 
 	exclamationMark.addEventListener("mousedown", enlargeFont);
 	stop.addEventListener("click", confirmFontSize);
+
+	//silnia
+	var result = 1;
+	var factorialResult = document.getElementById('factorialResult');
+
+	function factorial(n) {
+		result = 1;
+		for (var i = 1; i < n + 1; i++) {
+			result = result * i;
+
+		}
+		console.log(result);
+		if (n === 0) {
+			console.log(1);
+			return;
+		}
+		factorialResult.innerHTML = result;
+	}
+
+	function factorial1() {
+
+		var getNumber = document.getElementById('getNumber').value;
+
+		factorial(parseInt(getNumber));
+
+	};
+	fact.addEventListener("click", factorial1);
+
+
+
 
 
 	//kalkulator

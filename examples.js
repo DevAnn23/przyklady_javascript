@@ -330,36 +330,36 @@ function totolotek(liczba, wylosowanaLiczba) {
 // Rozwiązanie z setInterval
 
 var odniesienieDoInterwal;
-	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
-	var przyciskWlacz = document.getElementById("przyciskWlacz");
-	var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
-	var uchwytStopera = document.getElementById("uchwytStopera");
+var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
+var przyciskWlacz = document.getElementById("przyciskWlacz");
+var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
+var uchwytStopera = document.getElementById("uchwytStopera");
 
-	var odniesienieDoInterwal;
+var odniesienieDoInterwal;
 
-	//funkcja stopwatchInterval - silnik stopera
-	function stopwatchInterval(uchwytStopera, liczba) {
+//funkcja stopwatchInterval - silnik stopera
+function stopwatchInterval(uchwytStopera, liczba) {
 
-		var odniesienieDoInterwal = setInterval(function(){
-			if( liczba-- <= 0 ) {
-				clearInterval(odniesienieDoInterwal);
-				return;
-			}
-			uchwytStopera.innerHTML = liczba;
-		},1000);
-		return odniesienieDoInterwal;
-	}
-
-	// wywołanie funkcji po nacisnieciu na przycisk
-	przyciskWlacz.onclick = function () {
-		var poczatkowaValue = poczatkowaWartosc.value;
-		uchwytStopera.innerHTML = poczatkowaValue;
-
-		if(odniesienieDoInterwal)
+	var odniesienieDoInterwal = setInterval(function () {
+		if (liczba-- <= 0) {
 			clearInterval(odniesienieDoInterwal);
-		odniesienieDoInterwal = stopwatchInterval(uchwytStopera, poczatkowaValue);
-	};
-przyciskZatrzymaj.onclick = function(){
+			return;
+		}
+		uchwytStopera.innerHTML = liczba;
+	}, 1000);
+	return odniesienieDoInterwal;
+}
+
+// wywołanie funkcji po nacisnieciu na przycisk
+przyciskWlacz.onclick = function () {
+	var poczatkowaValue = poczatkowaWartosc.value;
+	uchwytStopera.innerHTML = poczatkowaValue;
+
+	if (odniesienieDoInterwal)
+		clearInterval(odniesienieDoInterwal);
+	odniesienieDoInterwal = stopwatchInterval(uchwytStopera, poczatkowaValue);
+};
+przyciskZatrzymaj.onclick = function () {
 	clearInterval(odniesienieDoInterwal);
 
 }

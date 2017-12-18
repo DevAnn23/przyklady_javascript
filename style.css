@@ -1,14 +1,18 @@
 /* Calc */
+
 #num2 {
 	margin-right: 2%;
 }
+
 .calc p {
 	padding: 2px;
 	border: 1px solid #aaa;
 	margin: 10px;
 	cursor: pointer;
 }
+
 /* map */
+
 #map {
 	width: 100%;
 	height: 400px;
@@ -16,12 +20,23 @@
 	position: relative;
 	z-index: 1;
 }
+
 /* Global */
+
 h1 {
 	padding: 3%;
 	font-family: 'Exo', sans-serif;
 	font-weight: 600;
 	background-color: #49627d;
+	margin: 10px 0;
+	box-shadow: 0 6px 4px -4px #AAA;
+}
+
+h3 {
+	padding: 1%;
+	font-family: 'Exo', sans-serif;
+	font-weight: 600;
+	border-bottom: 4px solid #45aada;
 	margin: 10px 0;
 	box-shadow: 0 6px 4px -4px #AAA;
 }
@@ -642,8 +657,7 @@ button {
 
 /* animacja - wykrzyknik */
 
-#exclamationMark
- {
+#exclamationMark {
 	padding: 1%;
 	background-color: #13a6aa;
 }
