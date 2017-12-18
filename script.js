@@ -202,21 +202,21 @@ window.onload = function () {
 		wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
 		wykrzyknik.removeAttribute("class");
 	}
-	var testowy = document.getElementById("godzina");
-	var testowy2 = document.getElementById("zegar");
-	var testowy3 = document.getElementById("odpDzienTygodnia");
-	var tablicaKolor = [testowy, testowy2, testowy3];
+	var testAddEvent = document.getElementById("godzina");
+	var testAddEvent2 = document.getElementById("zegar");
+	var testAddEvent3 = document.getElementById("odpDzienTygodnia");
+	var tablicaKolor = [testAddEvent, testAddEvent2, testAddEvent3];
 	var wykrzyknik = document.getElementById("wykrzyknik");
 	var stop = document.getElementById("stop");
 
 
-	/* testowy.onmouseover = zmienKolor;
-	 testowy2.onmouseover = zmienKolor;
-	 testowy.onmouseout = zmienKolor2;
-	 testowy2.onmouseout = zmienKolor2;*/
+	/* testAddEvent.onmouseover = zmienKolor;
+	 testAddEvent2.onmouseover = zmienKolor;
+	 testAddEvent.onmouseout = zmienKolor2;
+	 testAddEvent2.onmouseout = zmienKolor2;*/
 
-	//testowy.addEventListener("mouseover", zmienKolor);
-	//testowy.addEventListener("mouseout", zmienKolor2);
+	//testAddEvent.addEventListener("mouseover", zmienKolor);
+	//testAddEvent.addEventListener("mouseout", zmienKolor2);
 
 	for (var i = 0; i < tablicaKolor.length; i++) {
 		tablicaKolor[i].addEventListener("mouseover", zmienKolor);
@@ -227,8 +227,8 @@ window.onload = function () {
 	stop.addEventListener("click", zastopujPowiekszanie);
 
 
-	//kalkulator
-function kalkulator() {
+	//calc
+function calc() {
 
 	function odejmowanieLiczb(num1, num2) {
 
@@ -282,7 +282,7 @@ if (num2 == 0) {
 
 
 };
-	kalkulator();
+	calc();
 
 
 	// ********* PRZYCISK - TO TOP PAGE
