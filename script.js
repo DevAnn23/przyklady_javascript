@@ -15,7 +15,6 @@ function initMap() {
 	});
 }
 
-
 // DICE
 var button1 = document.querySelector('#button1');
 var button2 = document.querySelector('#button2');
@@ -23,23 +22,23 @@ var counter = 1;
 var suma_total = 0;
 var suma;
 var combo = 0;
-var przod = document.getElementById("przod");
-var comboPole = document.querySelector('.combo')
-var przod1 = document.getElementById("przod1");
-var przod2 = document.getElementById("przod2");
-var wynik = document.querySelector('.wynik');
-var licznik = document.querySelector('.licznik');
-var sumaTotalPole = document.querySelector('.suma_total');
+var faceDice = document.getElementById("faceDice");
+var comboField = document.querySelector('.combo')
+var faceDice1 = document.getElementById("faceDice1");
+var faceDice2 = document.getElementById("faceDice2");
+var result = document.querySelector('.result');
+var roundField = document.querySelector('.roundField');
+var totalField = document.querySelector('.suma_total');
 
 button2.onclick = function gameOver() {
 	counter = 0;
 	suma_total = 0;
 	suma = 0;
 	button1.innerHTML = "Rozpocznij grę";
-	wynik.innerHTML = "Twój wynik to: " + suma;
-	comboPole.innerHTML = "";
-	licznik.innerHTML = "Tura " + counter;
-	sumaTotalPole.innerHTML = "Suma " + suma_total;
+	result.innerHTML = "Twój wynik to: " + suma;
+	comboField.innerHTML = "";
+	roundField.innerHTML = "Tura " + counter;
+	totalField.innerHTML = "Suma " + suma_total;
 }
 
 button1.onclick = function roll() {
@@ -47,11 +46,11 @@ button1.onclick = function roll() {
 	var d2 = Math.floor(Math.random() * 6 + 1);
 	var d3 = Math.floor(Math.random() * 6 + 1);
 	if (d1 === d2 && d1 === d3 && d2 === d3) {
-		comboPole.innerHTML = "EXTRA +10 punktów";
-		comboPole.style.color = "red";
+		comboField.innerHTML = "EXTRA +10 punktów";
+		comboField.style.color = "red";
 		combo = 10;
 	} else {
-		comboPole.innerHTML = "";
+		comboField.innerHTML = "";
 		combo = 0;
 	}
 	counter++;
@@ -60,111 +59,110 @@ button1.onclick = function roll() {
 
 
 	button1.innerHTML = "Rzut ";
-	wynik.innerHTML = "Twój wynik to: " + suma;
-	licznik.innerHTML = "Tura " + counter;
-	sumaTotalPole.innerHTML = "Suma " + suma_total;
+	result.innerHTML = "Twój wynik to: " + suma;
+	roundField.innerHTML = "Tura " + counter;
+	totalField.innerHTML = "Suma " + suma_total;
 
 	switch (d1) {
 		case (1):
-			przod.style.backgroundImage = "url('img/title_1.png')";
+			faceDice.style.backgroundImage = "url('img/title_1.png')";
 			break;
 		case (2):
-			przod.style.backgroundImage = "url('img/title_2.png')";
+			faceDice.style.backgroundImage = "url('img/title_2.png')";
 			break;
 		case (3):
-			przod.style.backgroundImage = "url('img/title_3.png')";
+			faceDice.style.backgroundImage = "url('img/title_3.png')";
 			break;
 		case (4):
-			przod.style.backgroundImage = "url('img/title_4.png')";
+			faceDice.style.backgroundImage = "url('img/title_4.png')";
 			break;
 		case (5):
-			przod.style.backgroundImage = "url('img/title_5.png')";
+			faceDice.style.backgroundImage = "url('img/title_5.png')";
 			break;
 		case (6):
-			przod.style.backgroundImage = "url('img/title_6.png')";
+			faceDice.style.backgroundImage = "url('img/title_6.png')";
 			break;
 		default:
-			przod.style.backgroundImage = 'none';
+			faceDice.style.backgroundImage = 'none';
 	}
 	switch (d2) {
 		case (1):
-			przod1.style.backgroundImage = "url('img/title_1.png')";
+			faceDice1.style.backgroundImage = "url('img/title_1.png')";
 			break;
 		case (2):
-			przod1.style.backgroundImage = "url('img/title_2.png')";
+			faceDice1.style.backgroundImage = "url('img/title_2.png')";
 			break;
 		case (3):
-			przod1.style.backgroundImage = "url('img/title_3.png')";
+			faceDice1.style.backgroundImage = "url('img/title_3.png')";
 			break;
 		case (4):
-			przod1.style.backgroundImage = "url('img/title_4.png')";
+			faceDice1.style.backgroundImage = "url('img/title_4.png')";
 			break;
 		case (5):
-			przod1.style.backgroundImage = "url('img/title_5.png')";
+			faceDice1.style.backgroundImage = "url('img/title_5.png')";
 			break;
 		case (6):
-			przod1.style.backgroundImage = "url('img/title_6.png')";
+			faceDice1.style.backgroundImage = "url('img/title_6.png')";
 			break;
 		default:
-			przod1.style.backgroundImage = 'none';
+			faceDice1.style.backgroundImage = 'none';
 	}
 	switch (d3) {
 		case (1):
-			przod2.style.backgroundImage = "url('img/title_1.png')";
+			faceDice2.style.backgroundImage = "url('img/title_1.png')";
 			break;
 		case (2):
-			przod2.style.backgroundImage = "url('img/title_2.png')";
+			faceDice2.style.backgroundImage = "url('img/title_2.png')";
 			break;
 		case (3):
-			przod2.style.backgroundImage = "url('img/title_3.png')";
+			faceDice2.style.backgroundImage = "url('img/title_3.png')";
 			break;
 		case (4):
-			przod2.style.backgroundImage = "url('img/title_4.png')";
+			faceDice2.style.backgroundImage = "url('img/title_4.png')";
 			break;
 		case (5):
-			przod2.style.backgroundImage = "url('img/title_5.png')";
+			faceDice2.style.backgroundImage = "url('img/title_5.png')";
 			break;
 		case (6):
-			przod2.style.backgroundImage = "url('img/title_6.png')";
+			faceDice2.style.backgroundImage = "url('img/title_6.png')";
 			break;
 		default:
-			przod2.style.backgroundImage = 'none';
+			faceDice2.style.backgroundImage = 'none';
 	}
 };
 
 
 // TOTOLOTEK
-function totolotek(liczba, wylosowanaLiczba) {
+function drawNumber(number, ourNumber) {
 	/* Math.floor zaokragla w dół, dlatego dodaje się 1*/
-	var liczba = document.getElementsByClassName('liczba');
-	var wylosowaneLiczby = [];
-	for (var i = 0; i < liczba.length; i++) {
-		var wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
-		while (wylosowaneLiczby.includes(wylosowanaLiczba)) {
-			wylosowanaLiczba = Math.floor(Math.random() * 10 + 1);
+	var number = document.getElementsByClassName('number');
+	var drawnNumbers = [];
+	for (var i = 0; i < number.length; i++) {
+		var ourNumber = Math.floor(Math.random() * 10 + 1);
+		while (drawnNumbers.includes(ourNumber)) {
+			ourNumber = Math.floor(Math.random() * 10 + 1);
 		}
-		wylosowaneLiczby.push(wylosowanaLiczba);
-		console.log('wylosowanaLiczba: ' + wylosowanaLiczba + '\n' + 'wylosowaneLiczby: ' + wylosowaneLiczby);
-		liczba[i].innerHTML = wylosowanaLiczba;
+		drawnNumbers.push(ourNumber);
+		number[i].innerHTML = ourNumber;
 	}
 
 }
 
 window.onload = function () {
-	function dataIczas() {
-		// data
-		var dzisiaj = new Date();
+	function dateAndtime() {
+		// dateAndtime
+		var today = new Date();
 
-		var dzien = dzisiaj.getDate();
-		var dzienTygodnia = dzisiaj.getDay();
-		var miesiac = dzisiaj.getMonth() + 1;
-		var rok = dzisiaj.getFullYear();
-		var godzina = dzisiaj.getHours();
-		var minuta = dzisiaj.getMinutes();
-		var sekunda = dzisiaj.getSeconds();
-		var odpDzien = document.getElementById('odpDzienTygodnia');
-		var zegar = document.getElementById("zegar");
-		var czas = document.getElementById("godzina");
+		var ourDay = today.getDate();
+		var ourWeekDay = today.getDay();
+		var ourMonth = today.getMonth() + 1;
+		var ourYear = today.getFullYear();
+		var ourHour = today.getHours();
+		var ourMinute = today.getMinutes();
+		var ourSecond = today.getSeconds();
+		var weekDay = document.getElementById('weekDay');
+		var clock = document.getElementById("clock");
+		var hour = document.getElementById("hour");
 		//sprawdzanie dnia tygodnia
 
 		var days = ["niedzielę", "poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę"];
@@ -175,114 +173,114 @@ window.onload = function () {
 			return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
 		};
 
-		zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
-		czas.innerHTML = leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
-		odpDzien.innerHTML = days[dzienTygodnia];
+		clock.innerHTML = leadingZero(ourDay) + "/" + leadingZero(ourMonth) + "/" + ourYear;
+		hour.innerHTML = leadingZero(ourHour) + ':' + leadingZero(ourMinute) + ':' + leadingZero(ourSecond) + '<br>';
+		weekDay.innerHTML = days[ourWeekDay];
 
 	};
 
-	dataIczas();
+	dateAndtime();
 
 
-	function zmienKolor() {
-		this.className = "zmienKolor";
+	function changeColor() {
+		this.className = "changeColor";
 	}
 
-	function zmienKolor2() {
+	function changeColor2() {
 		this.removeAttribute("class");
 	}
 
-	function powiekszCzcionke() {
+	function enlargeFont() {
 		var fontSize = parseInt(window.getComputedStyle(this).fontSize);
 		this.style.fontSize = (++fontSize) + "px";
-		wykrzyknik.className = "cursor";
+		exclamationMark.className = "cursor";
 	}
 
-	function zastopujPowiekszanie() {
-		wykrzyknik.removeEventListener("mousedown", powiekszCzcionke);
-		wykrzyknik.removeAttribute("class");
+	function confirmFontSize() {
+		exclamationMark.removeEventListener("mousedown", enlargeFont);
+		exclamationMark.removeAttribute("class");
 	}
-	var testAddEvent = document.getElementById("godzina");
-	var testAddEvent2 = document.getElementById("zegar");
-	var testAddEvent3 = document.getElementById("odpDzienTygodnia");
-	var tablicaKolor = [testAddEvent, testAddEvent2, testAddEvent3];
-	var wykrzyknik = document.getElementById("wykrzyknik");
+	var testData = document.getElementById("hour");
+	var testData2 = document.getElementById("clock");
+	var testData3 = document.getElementById("weekDay");
+	var tablicaKolor = [testData, testData2, testData3];
+	var exclamationMark = document.getElementById("exclamationMark");
 	var stop = document.getElementById("stop");
 
 
-	/* testAddEvent.onmouseover = zmienKolor;
-	 testAddEvent2.onmouseover = zmienKolor;
-	 testAddEvent.onmouseout = zmienKolor2;
-	 testAddEvent2.onmouseout = zmienKolor2;*/
+	/* testData.onmouseover = changeColor;
+	 testData2.onmouseover = changeColor;
+	 testData.onmouseout = changeColor2;
+	 testData2.onmouseout = changeColor2;*/
 
-	//testAddEvent.addEventListener("mouseover", zmienKolor);
-	//testAddEvent.addEventListener("mouseout", zmienKolor2);
+	//testData.addEventListener("mouseover", changeColor);
+	//testData.addEventListener("mouseout", changeColor2);
 
 	for (var i = 0; i < tablicaKolor.length; i++) {
-		tablicaKolor[i].addEventListener("mouseover", zmienKolor);
-		tablicaKolor[i].addEventListener("mouseout", zmienKolor2);
+		tablicaKolor[i].addEventListener("mouseover", changeColor);
+		tablicaKolor[i].addEventListener("mouseout", changeColor2);
 	}
 
-	wykrzyknik.addEventListener("mousedown", powiekszCzcionke);
-	stop.addEventListener("click", zastopujPowiekszanie);
+	exclamationMark.addEventListener("mousedown", enlargeFont);
+	stop.addEventListener("click", confirmFontSize);
 
 
-	//calc
-function calc() {
+	//kalkulator
+	function kalkulator() {
 
-	function odejmowanieLiczb(num1, num2) {
+		function odejmowanieLiczb(num1, num2) {
 
-		var num1 = document.getElementById('num1').value;
-		var num2 = document.getElementById('num2').value;
-var wynik = document.getElementById('wynikDzialania');
-		wynik.innerHTML = num1 - num2;
-	}
-
-	function dodawanieLiczb(x, y) {
-parseInt(document.getElementById('num2').value);
-parseInt(document.getElementById('num2').value);
-		var num1 = parseInt(document.getElementById('num1').value);
-		var num2 = parseInt(document.getElementById('num2').value);
-		var wynik = document.getElementById('wynikDzialania');
-		wynik.innerHTML = num1 + num2;
-
-	}
-
-	function mnozenieLiczb(num1, num2) {
-var num1 = document.getElementById('num1').value;
-		var num2 = document.getElementById('num2').value;
-		var wynikDzialania = document.getElementById('wynikDzialania');
-		var wynik = document.getElementById('wynikDzialania');
-		wynik.innerHTML = num1 * num2;
-
-	}
-
-	function dzielenieLiczb(x, y) {
-
-		var num1 = document.getElementById('num1').value;
-		var num2 = document.getElementById('num2').value;
-		var wynik = document.getElementById('wynikDzialania');
-		wynik.innerHTML = num1 + num2;
-if (num2 == 0) {
-			wynik.innerHTML = "nie dzielimy przez 0";
-	return;
+			var num1 = document.getElementById('num1').value;
+			var num2 = document.getElementById('num2').value;
+			var wynik = document.getElementById('wynikDzialania');
+			wynik.innerHTML = num1 - num2;
 		}
-		wynik.innerHTML = (num1 / num2);
 
-	}
-	var odejmowanie = document.getElementById('odejmowanie');
-	var dodawanie = document.getElementById('dodawanie');
-	var mnozenie = document.getElementById('mnozenie');
-	var dzielenie = document.getElementById('dzielenie');
+		function dodawanieLiczb(x, y) {
+			parseInt(document.getElementById('num2').value);
+			parseInt(document.getElementById('num2').value);
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var wynik = document.getElementById('wynikDzialania');
+			wynik.innerHTML = num1 + num2;
 
-	odejmowanie.addEventListener("click", odejmowanieLiczb);
-	dodawanie.addEventListener("click", dodawanieLiczb);
-	mnozenie.addEventListener("click", mnozenieLiczb);
-	dzielenie.addEventListener("click", dzielenieLiczb);
+		}
+
+		function mnozenieLiczb(num1, num2) {
+			var num1 = document.getElementById('num1').value;
+			var num2 = document.getElementById('num2').value;
+			var wynikDzialania = document.getElementById('wynikDzialania');
+			var wynik = document.getElementById('wynikDzialania');
+			wynik.innerHTML = num1 * num2;
+
+		}
+
+		function dzielenieLiczb(x, y) {
+
+			var num1 = document.getElementById('num1').value;
+			var num2 = document.getElementById('num2').value;
+			var wynik = document.getElementById('wynikDzialania');
+			wynik.innerHTML = num1 + num2;
+			if (num2 == 0) {
+				wynik.innerHTML = "nie dzielimy przez 0";
+				return;
+			}
+			wynik.innerHTML = (num1 / num2);
+
+		}
+		var odejmowanie = document.getElementById('odejmowanie');
+		var dodawanie = document.getElementById('dodawanie');
+		var mnozenie = document.getElementById('mnozenie');
+		var dzielenie = document.getElementById('dzielenie');
+
+		odejmowanie.addEventListener("click", odejmowanieLiczb);
+		dodawanie.addEventListener("click", dodawanieLiczb);
+		mnozenie.addEventListener("click", mnozenieLiczb);
+		dzielenie.addEventListener("click", dzielenieLiczb);
 
 
-};
-	calc();
+	};
+	kalkulator();
 
 
 	// ********* PRZYCISK - TO TOP PAGE
@@ -536,31 +534,31 @@ if (num2 == 0) {
 
 
 
-	var obrazek = document.getElementById("obrazek");
+	var picture = document.getElementById("picture");
 
-	function ruchObrazka(e, obr) {
+	function pictureMove(e, move) {
 
-		obr.style.left = e.clientX - obrazek.width / 2 + "px";
-		obr.style.top = e.clientY - obrazek.height / 2 + "px"; /* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
+		move.style.left = e.clientX - picture.width / 2 + "px";
+		move.style.top = e.clientY - picture.height / 2 + "px"; /* e - obiekt, argument funkcji; client X,Y - położenie kursora*/
 
 	}
-	obrazek.onmousedown = function () {
+	picture.onmousedown = function () {
 		var self = this;
-		var fixed = obrazek.style.position = "fixed";
+		var fixed = picture.style.position = "fixed";
 		document.onmousemove = function (e) {
-			var lokalizacja = document.getElementById("lokalizacja");
-			lokalizacja.innerHTML = " Lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
-			ruchObrazka(e, self);
+			var location = document.getElementById("location");
+			location.innerHTML = " location obrazka: " + e.clientX + " x " + e.clientY;
+			pictureMove(e, self);
 			fixed;
 		};
 
 	};
-	/* teraz obrazek ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką obrazek ma szerokosć w właściwościach obrazka*/
+	/* teraz picture ucieka przy styczności kursora z lwym górnym rogiem, a ja chcę nim poruszać, na środku obrazka, dlatego odejmujemy połwę wartości szerokości obrazka- sprawdzam jaką picture ma szerokosć w właściwościach obrazka*/
 
-	obrazek.onmouseup = function () {
+	picture.onmouseup = function () {
 		document.onmousemove = null;
 	};
-	obrazek.ondragstart = function (e) {
+	picture.ondragstart = function (e) {
 		e.preventDefault(); // wytłączenie domyślnego przesuwania, gdy puścimy to sie nie przes
 	};
 

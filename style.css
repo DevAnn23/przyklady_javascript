@@ -91,8 +91,8 @@ h5 a {
 	padding-top: 1%;
 }
 
-.wynik,
-.licznik,
+.result,
+.roundField,
 .combo,
 .suma {
 	font-size: 20px;
@@ -141,7 +141,7 @@ h5 a {
 	background-color: #c0c0c0;
 }
 
-.rodzic {
+.parent {
 
 	width: 100%;
 	height: 100%;
@@ -161,7 +161,7 @@ h5 a {
 	-webkit-animation-duration: 5s;
 }
 
-#perspektywa {
+#perspective {
 	width: 80px;
 	margin: 15px 20px;
 	height: 80px;
@@ -170,7 +170,7 @@ h5 a {
 	-webkit-perspective: 300px;
 }
 
-.rodzic > div {
+.parent > div {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -193,38 +193,38 @@ h5 a {
 
 }
 
-#tyl {
+#back {
 	transform: translateZ(-35px);
 	-webkit-transform: translateZ(-35px);
 	background-image: url('img/title_1.png');
 	background-position: center;
 }
 
-#lewo {
+#leftSide {
 	transform: rotateY(-90deg) translateZ(35px);
 	-webkit-transform: rotateY(-90deg) translateZ(35px);
 	background-image: url(img/title_4.png);
 }
 
-#prawo {
+#rightSide {
 	transform: rotateY(90deg) translateZ(35px);
 	-webkit-transform: rotateY(90deg) translateZ(35px);
 	background-image: url(img/title_3.png);
 }
 
-#gora {
+#topSide {
 	transform: rotateX(-90deg) translateZ(35px);
 	-webkit-transform: rotateX(-90deg) translateZ(35px);
 	background-image: url(img/title_5.png);
 }
 
-#dol {
+#bottomSide {
 	transform: rotateX(90deg) translateZ(35px);
 	-webkit-transform: rotateX(90deg) translateZ(35px);
 	background-image: url(img/title_6.png);
 }
 
-.rodzic > div > div {
+.parent > div > div {
 	position: absolute;
 	width: 10px;
 	height: 10px;
@@ -307,13 +307,13 @@ h5 a {
 	background: linear-gradient(#ffd66d, #ffbc4a);
 }
 
-#losuj {
+#draw {
 	margin-top: 5%;
 }
 
 /*******Obrazek przesuwany myszką*/
 
-#obrazek {
+#picture {
 	position: absolute;
 }
 
@@ -322,7 +322,7 @@ h4 {
 	font-family: sans-serif;
 }
 
-.zmienKolor {
+.changeColor {
 	color: red;
 	cursor: default;
 }
@@ -466,7 +466,7 @@ button {
 
 /* style liczniki */
 
-#losuj {
+#draw {
 	font-family: 'Roboto', Arial, sans-serif;
 	text-align: center;
 	text-transform: uppercase;
@@ -479,24 +479,24 @@ button {
 	border-radius: 3px;
 }
 
-#losuj * {
+#draw * {
 	box-sizing: border-box;
 }
 
-#losuj:before,
-#losuj:after {
+#draw:before,
+#draw:after {
 	display: block;
 }
 
-#losuj:before {
+#draw:before {
 	bottom: 0%;
 }
 
-#losuj:after {
+#draw:after {
 	bottom: 75%;
 }
 
-#losuj span {
+#draw span {
 	backface-visibility: hidden;
 	color: #000;
 	display: block;
@@ -506,22 +506,22 @@ button {
 	text-decoration: none;
 }
 
-#losuj span:hover {
+#draw span:hover {
 	color: #ffffff;
 }
 
-#losuj span:before {
+#draw span:before {
 	bottom: 25%;
 }
 
-#losuj span:after {
+#draw span:after {
 	bottom: 50%;
 }
 
-#losuj:before,
-#losuj:after,
-#losuj span:before,
-#losuj span:after {
+#draw:before,
+#draw:after,
+#draw span:before,
+#draw span:after {
 	background-color: #962d22;
 	position: absolute;
 	height: 100%;
@@ -536,32 +536,32 @@ button {
 	transition: all 0.5s steps(5);
 }
 
-#losuj:hover:before,
-#losuj:hover:after,
-#losuj:hover span:before,
-#losuj:hover span:after {
+#draw:hover:before,
+#draw:hover:after,
+#draw:hover span:before,
+#draw:hover span:after {
 	-webkit-transform: translateX(0%);
 	transform: translateX(0%);
 	opacity: 1;
 }
 
-#losuj:hover:before {
+#draw:hover:before {
 	-webkit-transition-delay: 0.225s;
 	transition-delay: 0.225s;
 
 }
 
-#losuj:hover:after {
+#draw:hover:after {
 	-webkit-transition-delay: 0s;
 	transition-delay: 0s;
 }
 
-#losuj:hover span:before {
+#draw:hover span:before {
 	-webkit-transition-delay: 0.15s;
 	transition-delay: 0.15s;
 }
 
-#losuj:hover span:after {
+#draw:hover span:after {
 	-webkit-transition-delay: 0.075s;
 	transition-delay: 0.075s;
 }
@@ -642,7 +642,8 @@ button {
 
 /* animacja - wykrzyknik */
 
-#wykrzyknik {
+#exclamationMark
+ {
 	padding: 1%;
 	background-color: #13a6aa;
 }

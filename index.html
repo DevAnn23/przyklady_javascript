@@ -31,8 +31,8 @@
 	<header class="container">
 		<h1> Moje przykłady JavaScript </h1><br />
 
-		<h6 id="test1">Witaj, odwiedziłeś mnie w
-			<span id="odpDzienTygodnia"></span> <span id="zegar"> </span> o godzinie <span id="godzina"></span></h6><br />
+		<h6 id="testData">Witaj, odwiedziłeś mnie w
+			<span id="weekDay"></span> <span id="clock"> </span> o godzinie <span id="hour"></span></h6><br />
 	</header>
 	<section class="first container">
 		<div id="accordion" role="tablist">
@@ -41,7 +41,7 @@
 				<div class="card-header" role="tab" id="headingThree">
 					<h5 class="mb-0">
 						<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Play the Dice Game
+          Zagraj w kości
         </a>
 					</h5>
 				</div>
@@ -50,49 +50,49 @@
 						<section id="second">
 							<div class="box">
 								<article class="float">
-									<div id="perspektywa">
+									<div id="perspective">
 
-										<div id="kostka" class="rodzic">
-											<div id="przod" class="dice"></div>
-											<div id="tyl"></div>
-											<div id="lewo"></div>
+										<div class="parent">
+											<div id="faceDice" class="dice"></div>
+											<div id="back"></div>
+											<div id="leftSide"></div>
 
-											<div id="prawo">
+											<div id="rightSide">
 
 											</div>
 
-											<div id="gora"></div>
-											<div id="dol"></div>
+											<div id="topSide"></div>
+											<div id="bottomSide"></div>
 										</div>
 									</div>
-									<div id="perspektywa">
+									<div id="perspective">
 
-										<div class="rodzic">
-											<div id="przod1" class="dice"></div>
-											<div id="tyl"></div>
-											<div id="lewo"></div>
+										<div class="parent">
+											<div id="faceDice1" class="dice"></div>
+											<div id="back"></div>
+											<div id="leftSide"></div>
 
-											<div id="prawo">
+											<div id="rightSide">
 
 											</div>
 
-											<div id="gora"></div>
-											<div id="dol"></div>
+											<div id="topSide"></div>
+											<div id="bottomSide"></div>
 										</div>
 									</div>
-									<div id="perspektywa">
+									<div id="perspective">
 
-										<div class="rodzic">
-											<div id="przod2" class="dice"></div>
-											<div id="tyl"></div>
-											<div id="lewo"></div>
+										<div class="parent">
+											<div id="faceDice2" class="dice"></div>
+											<div id="back"></div>
+											<div id="leftSide"></div>
 
-											<div id="prawo">
+											<div id="rightSide">
 
 											</div>
 
-											<div id="gora"></div>
-											<div id="dol"></div>
+											<div id="topSide"></div>
+											<div id="bottomSide"></div>
 										</div>
 									</div>
 
@@ -102,7 +102,7 @@
 								<button id="button1" onclick="roll()">Rozpocznij grę! <br>Rzut 1</button>
 
 								<div class="data">
-									<h2 class="wynik">0</h2>
+									<h2 class="result">0</h2>
 								</div>
 								<div class="data">
 									<h2 class="combo"></h2>
@@ -111,7 +111,7 @@
 									<h2 class="suma_total">0</h2>
 								</div>
 								<div class="data">
-									<h2 class="licznik">TURA 1</h2>
+									<h2 class="roundField">TURA 1</h2>
 									<button id="button2" onclick="gameOver()">Koniec Gry</button>
 								</div>
 							</div>
@@ -143,30 +143,30 @@
 						<div class="losowanie">
 							<p>Liczba nr 1 to</p>
 							<div>
-								<p class="liczba"></p>
+								<p class="number"></p>
 							</div>
 							<p>Liczba nr 2 to </p>
 							<div>
-								<p class="liczba"></p>
+								<p class="number"></p>
 							</div>
 							<p>Liczba nr 3 to </p>
 							<div>
-								<p class="liczba"></p>
+								<p class="number"></p>
 							</div>
 							<p>Liczba nr 4 to </p>
 							<div>
-								<p class="liczba"></p>
+								<p class="number"></p>
 							</div>
 							<p>Liczba nr 5 to </p>
 							<div>
-								<p class="liczba"></p>
+								<p class="number"></p>
 							</div>
 							<p>Liczba nr 6 to </p>
 							<div>
-								<p class="liczba"></p>
+								<p class="number"></p>
 							</div>
 						</div><br>
-						<button id="losuj" onclick="totolotek()"><span>LOSUJ</span></button>
+						<button id="draw" onclick="drawNumber()"><span>LOSUJ</span></button>
 						<h4>Losowanie 6 przypadkowych liczb</h4>
 
 					</div>
@@ -182,7 +182,7 @@
 				</div>
 				<div id="collapseOne4" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
-						<h4>Powiększ wykrzyknik <button id="wykrzyknik"> !</button></h4>
+						<h4>Powiększ wykrzyknik <button id="exclamationMark"> !</button></h4>
 						<button id="stop">Potwierdź rozmiar</button>
 
 
@@ -299,9 +299,9 @@
 				</div>
 			</section>
 			<aside>
-				<h4>Umieść jabłko w dowolnym miejscu na stronie:) <span id="lokalizacja"></span></h4>
+				<h4>Umieść jabłko w dowolnym miejscu na stronie:) <span id="location"></span></h4>
 
-				<div><img id="obrazek" class="fliud rounded" src="img/title_7.png" alt="obrazek" name="obrazek" /></div><br></aside>
+				<div><img id="picture" class="fliud rounded" src="img/title_7.png" alt="obrazek" name="obrazek" /></div><br></aside>
 
 
 			<!-- przykład javascript- scroll -->
