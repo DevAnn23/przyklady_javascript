@@ -1,3 +1,21 @@
+//Google Map
+
+function initMap() {
+	var uluru = {
+		lat: 52.2296756,
+		lng: 21.012228700000037
+	};
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 10,
+		center: uluru
+	});
+	var marker = new google.maps.Marker({
+		position: uluru,
+		map: map
+	});
+}
+
+
 // DICE
 var button1 = document.querySelector('#button1');
 var button2 = document.querySelector('#button2');
@@ -133,25 +151,37 @@ function totolotek(liczba, wylosowanaLiczba) {
 }
 
 window.onload = function () {
-	// data
-	var dzisiaj = new Date();
+	function dataIczas() {
+		// data
+		var dzisiaj = new Date();
 
-	var dzien = dzisiaj.getDate();
-	var miesiac = dzisiaj.getMonth() + 1;
-	var rok = dzisiaj.getFullYear();
-	var godzina = dzisiaj.getHours();
-	var minuta = dzisiaj.getMinutes();
-	var sekunda = dzisiaj.getSeconds();
-	var zegar = document.getElementById("zegar");
-	var czas = document.getElementById("godzina");
+		var dzien = dzisiaj.getDate();
+		var dzienTygodnia = dzisiaj.getDay();
+		var miesiac = dzisiaj.getMonth() + 1;
+		var rok = dzisiaj.getFullYear();
+		var godzina = dzisiaj.getHours();
+		var minuta = dzisiaj.getMinutes();
+		var sekunda = dzisiaj.getSeconds();
+		var odpDzien = document.getElementById('odpDzienTygodnia');
+		var zegar = document.getElementById("zegar");
+		var czas = document.getElementById("godzina");
+		//sprawdzanie dnia tygodnia
 
-	function leadingZero(i) {
-		return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
-	}
+		var days = ["niedzielę", "poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę"];
 
-	zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
-	czas.innerHTML = leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
 
+
+		function leadingZero(i) {
+			return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
+		};
+
+		zegar.innerHTML = leadingZero(dzien) + "/" + leadingZero(miesiac) + "/" + rok;
+		czas.innerHTML = leadingZero(godzina) + ':' + leadingZero(minuta) + ':' + leadingZero(sekunda) + '<br>';
+		odpDzien.innerHTML = days[dzienTygodnia];
+
+	};
+
+	dataIczas();
 
 
 	function zmienKolor() {
@@ -174,6 +204,8 @@ window.onload = function () {
 	}
 	var testowy = document.getElementById("godzina");
 	var testowy2 = document.getElementById("zegar");
+	var testowy3 = document.getElementById("odpDzienTygodnia");
+	var tablicaKolor = [testowy, testowy2, testowy3];
 	var wykrzyknik = document.getElementById("wykrzyknik");
 	var stop = document.getElementById("stop");
 
@@ -183,14 +215,74 @@ window.onload = function () {
 	 testowy.onmouseout = zmienKolor2;
 	 testowy2.onmouseout = zmienKolor2;*/
 
-	testowy.addEventListener("mouseover", zmienKolor);
-	testowy.addEventListener("mouseout", zmienKolor2);
-	testowy2.addEventListener("mouseover", zmienKolor);
-	testowy2.addEventListener("mouseout", zmienKolor2);
+	//testowy.addEventListener("mouseover", zmienKolor);
+	//testowy.addEventListener("mouseout", zmienKolor2);
+
+	for (var i = 0; i < tablicaKolor.length; i++) {
+		tablicaKolor[i].addEventListener("mouseover", zmienKolor);
+		tablicaKolor[i].addEventListener("mouseout", zmienKolor2);
+	}
+
 	wykrzyknik.addEventListener("mousedown", powiekszCzcionke);
 	stop.addEventListener("click", zastopujPowiekszanie);
 
 
+	//kalkulator
+function kalkulator() {
+
+	function odejmowanieLiczb(num1, num2) {
+
+		var num1 = document.getElementById('num1').value;
+		var num2 = document.getElementById('num2').value;
+var wynik = document.getElementById('wynikDzialania');
+		wynik.innerHTML = num1 - num2;
+	}
+
+	function dodawanieLiczb(x, y) {
+parseInt(document.getElementById('num2').value);
+parseInt(document.getElementById('num2').value);
+		var num1 = parseInt(document.getElementById('num1').value);
+		var num2 = parseInt(document.getElementById('num2').value);
+		var wynik = document.getElementById('wynikDzialania');
+		wynik.innerHTML = num1 + num2;
+
+	}
+
+	function mnozenieLiczb(num1, num2) {
+var num1 = document.getElementById('num1').value;
+		var num2 = document.getElementById('num2').value;
+		var wynikDzialania = document.getElementById('wynikDzialania');
+		var wynik = document.getElementById('wynikDzialania');
+		wynik.innerHTML = num1 * num2;
+
+	}
+
+	function dzielenieLiczb(x, y) {
+
+		var num1 = document.getElementById('num1').value;
+		var num2 = document.getElementById('num2').value;
+		var wynik = document.getElementById('wynikDzialania');
+		wynik.innerHTML = num1 + num2;
+if (num2 == 0) {
+			wynik.innerHTML = "nie dzielimy przez 0";
+	return;
+		}
+		wynik.innerHTML = (num1 / num2);
+
+	}
+	var odejmowanie = document.getElementById('odejmowanie');
+	var dodawanie = document.getElementById('dodawanie');
+	var mnozenie = document.getElementById('mnozenie');
+	var dzielenie = document.getElementById('dzielenie');
+
+	odejmowanie.addEventListener("click", odejmowanieLiczb);
+	dodawanie.addEventListener("click", dodawanieLiczb);
+	mnozenie.addEventListener("click", mnozenieLiczb);
+	dzielenie.addEventListener("click", dzielenieLiczb);
+
+
+};
+	kalkulator();
 
 
 	// ********* PRZYCISK - TO TOP PAGE
@@ -475,6 +567,11 @@ window.onload = function () {
 
 	//Rysowanie w canvas
 	var canvas = document.getElementById('can');
+	canvas.width = 600;
+	canvas.height = 400;
+	var cWeight = canvas.weight;
+	var cHeight = canvas.height;
+
 	if (canvas.getContext) {
 		var c = canvas.getContext('2d'); /* pobieram zawartość canvas */
 
@@ -484,7 +581,7 @@ window.onload = function () {
 		clearRext(x,y,width,height) - czyści określony obszar i czyni go przezroczystym */
 
 
-		// MOJ OBRAZEK :)s
+		// MOJ OBRAZEK :)
 
 
 
@@ -510,12 +607,12 @@ window.onload = function () {
 		c.fillStyle = '#aaa';
 		c.fillRect(230, 330, 10, 15);
 		c.fillRect(260, 330, 10, 15);
-		c.moveTo(260,345);
-		c.lineTo(280,345);
-		c.lineTo(270,337);
-		c.moveTo(240,345);
-		c.lineTo(220,345);
-		c.lineTo(230,337);
+		c.moveTo(260, 345);
+		c.lineTo(280, 345);
+		c.lineTo(270, 337);
+		c.moveTo(240, 345);
+		c.lineTo(220, 345);
+		c.lineTo(230, 337);
 
 		//ręce
 
@@ -597,32 +694,111 @@ window.onload = function () {
 		c.strokeText('Canvas', 220, 280);
 
 	}
+	/* const - stała wartości stałe, nie bedą zmieniane, var lub let - zmienna - przypisanie wartości, ale będzie ona zmieniana na różnych etapach programu*/
+	const canvas1 = document.getElementById('canvas1');
+	const c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
+	canvas1.width = 1000;
+	canvas1.height = 500;
 
-	var canvas1 = document.getElementById('canvas1');
-	if (canvas1.getContext) {
-		var c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
+	const c1Width = canvas1.width;
+	const c1Heihgt = canvas1.height;
+	const ballSize = 20; /*rozmiar piłki*/
+	const paddleWidth = 20; /* wysokosc i szerokosc paletek */
+	const paddleHeight = 100;
+	const playerX = 70; /* położenie paletek oś X - wartość stała/ paletka gracza margines 70px */
+	const cpuX = c1Width - (playerX + paddleWidth);
+	const lineHeight = 16; /* linie na srodku boiska */
+	const lineWidth = 6;
 
-		c1.fillStyle = 'black';
-		c1.fillRect(0, 120, 500, 500); /* wysokość 500+120= 620 */
-		c1.fillStyle = 'white';
-		c1.fillRect(250, 120, 5, 10);
-		c1.fillRect(250, 150, 5, 10);
-		c1.fillRect(250, 200, 5, 10);
-		c1.fillRect(250, 250, 5, 10);
-		c1.fillRect(250, 300, 5, 10);
-		c1.fillRect(250, 350, 5, 10);
-		c1.fillRect(250, 400, 5, 10);
-		c1.fillRect(250, 450, 5, 10);
-		c1.fillRect(250, 500, 5, 10);
-		c1.fillRect(250, 550, 5, 10);
-		c1.fillRect(250, 610, 5, 10);
-
-		//rysuje paletki
-
-		c1.fillRect(490, 320, 5, 50);
-		c1.fillRect(5, 320, 5, 50);
+	//zmienne okreslające położenie piłki - poczatkowe
+	var ballX = c1Width / 2 - ballSize / 2; /* 490 do 510 */
+	var ballY = c1Heihgt / 2 - ballSize / 2; /*  240 do 260 */
+	//zmienne określajace położenie paletek względem osi Y
+	var playerY = 200;
+	var cpuY = 200;
+	// zmienne określające zmiany połozenia piłki
+	var ballspeedX = 3;
+	var ballspeedY = 3;
 
 
-	};
+
+	function player() {
+		//rysuję piłkę
+		c1.fillStyle = '#ffff00';
+		c1.fillRect(playerX, playerY, paddleWidth, paddleHeight);
+
+
+	}
+
+	function cpu() {
+		//rysuję paletki
+		c1.fillStyle = '#5ccc00';
+		c1.fillRect(cpuX, cpuY, paddleWidth, paddleHeight);
+	}
+
+
+	function ball() {
+
+		//rysuję piłkę
+		c1.fillStyle = '#aaaaaa'
+		c1.fillRect(ballX, ballY, ballSize, ballSize);
+		//przy zmianie szybkości położenie piłki zmienia się o 1px
+
+		ballX += ballspeedX;
+		ballY += ballspeedY;
+
+
+
+		if (ballY <= 0 || ballY + ballSize > c1Heihgt) {
+			ballspeedY = -ballspeedY;
+		}
+		if (ballX <= 0 || ballX + ballSize > c1Width) { // jesli piłka dotrze ddo krawędzi naszego stołu odbijamy ją zmieniając znak minus
+			ballspeedX = -ballspeedX;
+		}
+	}
+
+
+	function table() {
+		c1.fillStyle = '#000000';
+		c1.fillRect(0, 0, c1Width, c1Heihgt);
+		c1.fillStyle = '#ffffff';
+		// rysuję line na srodku boiska, za pomoca pętli for
+
+		for (var i = 20; i < c1Heihgt; i += 30) {
+			c1.fillStyle = '#5ccc00';
+			c1.fillRect(c1Width / 2 - lineWidth / 2, i, lineWidth, lineHeight);
+		}
+
+	}
+
+	function game() {
+
+		table();
+		ball();
+		player();
+		cpu();
+	}
+
+	// funkcja, wywołująca co okreslony czas wywołanie funkcji, za każdym wywołaniem funkcji ballX +=ballspeedX;
+	/* podajemy co ma sie wykonać i ile razy 1000ms / 50ms = 20 razy na 1s*/
+	function boiskoPlayer() {
+		setInterval(game, 50);
+	}
+	//sprawdzamy odległośc jaka jest od początku okna przeglądarki do danego elementu, w wtym przypadku canvas
+
+	var topCanvas1 = canvas1.offsetTop;
+	console.log("odległośc canvas od początku strony to " + topCanvas1);
+	//ruch paletek
+	function playerPosition(e) {
+		console.log(e);
+	}
+	canvas1.addEventListener("mousemove", playerPosition);
+
+	boiskoPlayer();
+
+
+
+
+
 
 };

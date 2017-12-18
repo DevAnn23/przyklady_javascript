@@ -363,3 +363,42 @@ przyciskZatrzymaj.onclick = function(){
 	clearInterval(odniesienieDoInterwal);
 
 }
+// GRA W TENIS - boisko samodzielnie narysowane mechanicznie (bez pomocy pętli), odliczone odległości
+/*
+var canvas1 = document.getElementById('canvas1');
+	canvas1.width = 900;
+	canvas1.height = 700;
+
+		var c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas
+		function table() {
+			c1.fillStyle = '#00af00';
+		c1.fillRect(0, 120, 500, 500);
+		c1.fillStyle = 'white';
+		c1.fillRect(250, 120, 5, 10);
+		c1.fillRect(250, 150, 5, 10);
+		c1.fillRect(250, 200, 5, 10);
+		c1.fillRect(250, 250, 5, 10);
+		c1.fillRect(250, 300, 5, 10);
+		c1.fillRect(250, 350, 5, 10);
+		c1.fillRect(250, 400, 5, 10);
+		c1.fillRect(250, 450, 5, 10);
+		c1.fillRect(250, 500, 5, 10);
+		c1.fillRect(250, 550, 5, 10);
+		c1.fillRect(250, 610, 5, 10);
+
+		//rysuje paletki
+		c1.fillStyle= 'brown';
+		c1.fillRect(475, 280, 5, 50);
+		c1.fillRect(25, 270, 5, 20);
+
+		c1.fillStyle='red';
+		c1.arc(475,300,20,0,Math.PI*2,true);
+		c1.arc(25,300,20,0,Math.PI*2,true);
+		c1.closePath;
+		c1.fill();
+
+		}
+
+		table();
+
+*/

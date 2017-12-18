@@ -19,7 +19,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Exo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Fira+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoWZhtzmdRrSkBvWV8lIHu__uQWqEPS4Y&callback=initMap" type="text/javascript"></script>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer></script>
@@ -35,9 +35,9 @@
 	<header class="container">
 		<h1> Moje przykłady JavaScript </h1><br />
 
-		<h6 id="testowy">Witaj, odwiedziłeś mnie <span id="zegar"></span> o godzinie <span id="godzina"></span></h6><br />
+		<h6 id="testowy">Witaj, odwiedziłeś mnie w
+			<span id="odpDzienTygodnia"></span> <span id="zegar"> </span> o godzinie <span id="godzina"></span></h6><br />
 	</header>
-
 	<section class="first container">
 		<div id="accordion" role="tablist">
 			<!-- Dice -->
@@ -134,23 +134,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- mapka Google -->
-			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
-					<h5 class="mb-0">
-						<a onmousemove="initialize()" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Mapka Google
-        </a>
-					</h5>
-				</div>
-				<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-					<div class="card-body">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d313020.612540959!2d20.531932908561405!3d52.19844164548556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1512064170577" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-					</div>
-				</div>
-			</div>
-
 			<div class="card">
 				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
@@ -245,9 +228,34 @@
 				</div>
 				<div id="collapseOne7" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body bgblack">
-<canvas width="900" height="700" id="canvas1">
-    ...treść alternatywna...
-		</canvas>
+
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab" id="headingOne">
+					<h5 class="mb-0">
+						<a onmousemove="initialize()" data-toggle="collapse" href="#collapseOne8" aria-expanded="true" aria-controls="collapseOne8">
+         Kalkulator
+        </a>
+					</h5>
+				</div>
+				<div id="collapseOne8" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body">
+						<h1>Kalkulator</h1>
+						<p>wpisz pierwszą liczbe</p><input type="text" id="num1">
+						<p>wpisz drugą liczbę</p><input style="float:left" type="text" id="num2">
+						<div>Wynik to <span id="wynikDzialania"></span></div><br />
+						<p>Wybierz działanie</p>
+						<div class="float kalkulator">
+							<p id="dzielenie">Podziel</p>
+							<p id="mnozenie">Pomnóż</p>
+							<p id="dodawanie">Dodaj</p>
+							<p id="odejmowanie">Odejmij</p>
+
+
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -306,13 +314,23 @@
 			<!-- onmouseover - font-size -->
 
 			<br><br>
+
+
+
+
 		</div>
-		<canvas width="900" height="400" id="can">
+		<canvas id="can">
     ...treść alternatywna...
 		</canvas>
 	</section>
-
+	<canvas id="canvas1">
+    ...treść alternatywna...
+		</canvas>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="map"></div>
+
+
+
 </body>
 
 </html>
