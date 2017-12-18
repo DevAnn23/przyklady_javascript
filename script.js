@@ -57,7 +57,6 @@ button1.onclick = function roll() {
 	suma = d1 + d2 + d3;
 	suma_total += suma + combo;
 
-
 	button1.innerHTML = "Rzut ";
 	result.innerHTML = "Twój wynik to: " + suma;
 	roundField.innerHTML = "Tura " + counter;
@@ -166,16 +165,12 @@ window.onload = function () {
 
 		var days = ["niedzielę", "poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę"];
 
-
-
 		function leadingZero(i) {
 			return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
 		};
-
 		clock.innerHTML = leadingZero(ourDay) + "/" + leadingZero(ourMonth) + "/" + ourYear;
 		hour.innerHTML = leadingZero(ourHour) + ':' + leadingZero(ourMinute) + ':' + leadingZero(ourSecond) + '<br>';
 		weekDay.innerHTML = days[ourWeekDay];
-
 	};
 
 	dateAndtime();
@@ -230,8 +225,7 @@ window.onload = function () {
 	function factorial(n) {
 		result = 1;
 		for (var i = 1; i < n + 1; i++) {
-			result = result * i;
-
+			result *= i;
 		}
 		console.log(result);
 		if (n === 0) {
@@ -249,10 +243,6 @@ window.onload = function () {
 
 	};
 	fact.addEventListener("click", factorial1);
-
-
-
-
 
 	//kalkulator
 	function kalkulator() {
@@ -285,7 +275,6 @@ window.onload = function () {
 		}
 
 		function dzielenieLiczb(x, y) {
-
 			var num1 = document.getElementById('num1').value;
 			var num2 = document.getElementById('num2').value;
 			var wynik = document.getElementById('wynikDzialania');
@@ -295,8 +284,8 @@ window.onload = function () {
 				return;
 			}
 			wynik.innerHTML = (num1 / num2);
-
 		}
+
 		var odejmowanie = document.getElementById('odejmowanie');
 		var dodawanie = document.getElementById('dodawanie');
 		var mnozenie = document.getElementById('mnozenie');
@@ -306,8 +295,6 @@ window.onload = function () {
 		dodawanie.addEventListener("click", dodawanieLiczb);
 		mnozenie.addEventListener("click", mnozenieLiczb);
 		dzielenie.addEventListener("click", dzielenieLiczb);
-
-
 	};
 	kalkulator();
 
@@ -493,15 +480,11 @@ window.onload = function () {
 				uchwytStopera1.style.display = "none";
 				span.style.display = "block";
 				return;
-
 			}
-
 			setTimeout(function () {
 				stopwatch1(uchwytStopera1, liczbaA)
 			}, 1000)
 		}
-
-
 		uchwytStopera1.innerHTML = poczatkowaValue1;
 		setTimeout(function () {
 			stopwatch1(uchwytStopera1, poczatkowaValue1);
@@ -517,19 +500,14 @@ window.onload = function () {
 
 
 		function stopwatch2(uchwytStopera2, liczba2) {
-
 			uchwytStopera2.innerHTML = ++liczba2;
-
 			if (liczba2 >= 30) {
 				return;
 			}
-
 			setTimeout(function () {
 				stopwatch2(uchwytStopera2, liczba2)
 			}, 100)
 		}
-
-
 		uchwytStopera2.innerHTML = poczatkowaValue2;
 		setTimeout(function () {
 			stopwatch2(uchwytStopera2, poczatkowaValue2);
@@ -560,7 +538,6 @@ window.onload = function () {
 		}, 1000);*/
 
 	//********** przesuwany  ruchami myszki
-
 
 
 	var picture = document.getElementById("picture");
@@ -617,7 +594,6 @@ window.onload = function () {
 
 		c.fillStyle = '#aaa';
 		c.fillRect(200, 100, 100, 100);
-
 		c.beginPath();
 
 		//rysuje czułka robota
@@ -719,8 +695,8 @@ window.onload = function () {
 		c.font = "italic bold 16px Arial";
 		c.textBaseline = "bottom";
 		c.strokeText('Canvas', 220, 280);
-
 	}
+
 	/* const - stała wartości stałe, nie bedą zmieniane, var lub let - zmienna - przypisanie wartości, ale będzie ona zmieniana na różnych etapach programu*/
 	const canvas1 = document.getElementById('canvas1');
 	const c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
@@ -747,14 +723,10 @@ window.onload = function () {
 	var ballspeedX = 3;
 	var ballspeedY = 3;
 
-
-
 	function player() {
 		//rysuję piłkę
 		c1.fillStyle = '#ffff00';
 		c1.fillRect(playerX, playerY, paddleWidth, paddleHeight);
-
-
 	}
 
 	function cpu() {
@@ -763,9 +735,7 @@ window.onload = function () {
 		c1.fillRect(cpuX, cpuY, paddleWidth, paddleHeight);
 	}
 
-
 	function ball() {
-
 		//rysuję piłkę
 		c1.fillStyle = '#aaaaaa'
 		c1.fillRect(ballX, ballY, ballSize, ballSize);
@@ -774,8 +744,6 @@ window.onload = function () {
 		ballX += ballspeedX;
 		ballY += ballspeedY;
 
-
-
 		if (ballY <= 0 || ballY + ballSize > c1Heihgt) {
 			ballspeedY = -ballspeedY;
 		}
@@ -783,7 +751,6 @@ window.onload = function () {
 			ballspeedX = -ballspeedX;
 		}
 	}
-
 
 	function table() {
 		c1.fillStyle = '#000000';
@@ -795,7 +762,6 @@ window.onload = function () {
 			c1.fillStyle = '#5ccc00';
 			c1.fillRect(c1Width / 2 - lineWidth / 2, i, lineWidth, lineHeight);
 		}
-
 	}
 
 	function game() {
@@ -822,10 +788,4 @@ window.onload = function () {
 	canvas1.addEventListener("mousemove", playerPosition);
 
 	boiskoPlayer();
-
-
-
-
-
-
 };

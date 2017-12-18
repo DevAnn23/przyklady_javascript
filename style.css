@@ -73,7 +73,6 @@ section {
 h6 {
 	float: right;
 	font-size: 20px;
-
 }
 
 h5 a {
@@ -138,7 +137,6 @@ h5 a {
 /* zasady DICE */
 
 .box {
-
 	background-color: silver;
 	text-align: center;
 	padding: 3%;
@@ -148,7 +146,6 @@ h5 a {
 
 .float {
 	display: flex;
-
 }
 
 #second {
@@ -157,7 +154,6 @@ h5 a {
 }
 
 .parent {
-
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -168,7 +164,6 @@ h5 a {
 	border-radius: 10px;
 	left: 60px;
 	transform: rotateX(350deg) rotateZ(355deg);
-
 }
 
 .obrot {
@@ -204,8 +199,6 @@ h5 a {
 	border-radius: 10px;
 	background-color: #0040855e;
 	border: 1px solid grey;
-
-
 }
 
 #back {
@@ -248,8 +241,6 @@ h5 a {
 	box-shadow: 0 0 1px 2px #000, 0 0 3px 1px #00F inset;
 }
 
-
-
 @keyframes obrot {
 	0% {
 		transform: rotateX(0) rotateZ(0);
@@ -267,7 +258,6 @@ h5 a {
 		-webkit-transform: rotateX(360deg) rotateZ(360deg);
 	}
 }
-
 
 /* ************przycisk top */
 
@@ -640,7 +630,6 @@ button {
 	border-left-color: #000000;
 	border-top-color: #ffffff !important;
 	border-bottom-color: #ffffff !important;
-
 }
 
 @-webkit-keyframes obrot2 {
@@ -696,7 +685,6 @@ button {
 	right: 0;
 	height: 0;
 	border-left: 1px solid black;
-
 }
 
 #stop:hover:after {
@@ -705,5 +693,4 @@ button {
 
 #stop:hover:before {
 	height: 100%;
-
 }
