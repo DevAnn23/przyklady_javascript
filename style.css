@@ -159,17 +159,20 @@ h5 a {
 	position: relative;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-	-webkit-animation-name: obrot;
-	-webkit-animation-duration: 5s;
+	/*-webkit-animation-name: rotation;
+	-webkit-animation-duration: 5s;*/
 	border-radius: 10px;
 	left: 60px;
 	transform: rotateX(350deg) rotateZ(355deg);
 }
-
-.obrot {
-	-webkit-animation-name: obrot;
+.animation {
+	animation-name: rotation;
+	animation-duration: 5s
+	-webkit-animation-name: rotation;
 	-webkit-animation-duration: 5s;
+
 }
+
 
 #perspective {
 	width: 80px;
@@ -241,7 +244,7 @@ h5 a {
 	box-shadow: 0 0 1px 2px #000, 0 0 3px 1px #00F inset;
 }
 
-@keyframes obrot {
+@keyframes rotation {
 	0% {
 		transform: rotateX(0) rotateZ(0);
 	}
@@ -250,7 +253,7 @@ h5 a {
 	}
 }
 
-@-webkit-keyframes obrot {
+@-webkit-keyframes rotation {
 	0% {
 		-webkit-transform: rotateX(0) rotateZ(0);
 	}
@@ -259,9 +262,9 @@ h5 a {
 	}
 }
 
-/* ************przycisk top */
+/* *********** button to top page */
 
-#przyciskTop {
+#buttonTopPage {
 	padding: 2px;
 	background-color: #45aada;
 	font-size: 30px;
@@ -273,7 +276,7 @@ h5 a {
 	display: none;
 }
 
-#przyciskDown {
+#buttonDownPage {
 
 	background-color: #45aada;
 	font-size: 30px;
@@ -285,20 +288,20 @@ h5 a {
 	transform: rotate(180deg);
 }
 
-#przyciskTop:hover,
-#przyciskDown:hover {
+#buttonTopPage:hover,
+#buttonDownPage:hover {
 	color: #f00;
 }
 
-/************ totolotek */
+/************ lotery */
 
-.losowanie {
+.lottery {
 	display: flex;
 	white-space: nowrap;
 	padding-top: 2%;
 }
 
-.losowanie > div {
+.lottery > div {
 	margin-left: 5px;
 	margin-right: 15px;
 	padding-top: 3px;
@@ -345,7 +348,7 @@ button {
 	cursor: pointer;
 }
 
-/* Formularz*/
+/* Form*/
 
 #tmp,
 #tmp2,
@@ -355,15 +358,15 @@ button {
 }
 
 #tmp3,
-#poczatkowaWartosc1,
-#poczatkowaWartosc2 {
+#initialValue1,
+#initialValue2 {
 	display: none;
 	color: #f00;
 }
 
-/* Stoper */
+/* register */
 
-/*#stoper {
+/*#register {
 	border: 2px dotted #bcbac4;
 	border-radius: 50%;
 	padding-top: 20px;
@@ -375,11 +378,11 @@ button {
 	vertical-align: middle;
 }*/
 
-#stoper * {
+#register * {
 	vertical-align: middle;
 }
 
-#stoper {
+#register {
 	line-height: 1em;
 	margin: 15px 40px;
 	outline: none;
@@ -399,8 +402,8 @@ button {
 	vertical-align: middle;
 }
 
-#stoper:before,
-#stoper:after {
+#register:before,
+#register:after {
 	-webkit-transition: all 0.75s;
 	transition: all 0.75s;
 	border: 2px dotted #bcbac4;
@@ -413,7 +416,7 @@ button {
 
 }
 
-#stoper:before {
+#register:before {
 	border-color: #49627d;
 	border-left-width: 2px;
 	border-top-width: 2px;
@@ -421,7 +424,7 @@ button {
 	top: -8px;
 }
 
-#stoper:after {
+#register:after {
 	border-bottom-width: 2px;
 	border-color: #49627d;
 	border-right-width: 2px;
@@ -429,14 +432,14 @@ button {
 	right: -8px;
 }
 
-#stoper:hover {
+#register:hover {
 	background-color: #49627d;
 	-webkit-transition: all 0.75s;
 	transition: all 0.75s
 }
 
-#stoper:hover:before,
-#stoper:hover:after {
+#register:hover:before,
+#register:hover:after {
 	height: 100%;
 	width: 100%;
 
@@ -446,7 +449,7 @@ button {
 	padding-left: 5%;
 }
 
-/* Liczniki */
+/* reg */
 
 #boom {
 	display: none;
@@ -460,16 +463,16 @@ button {
 	transform: rotate(-5deg);
 }
 
-.licznikiflex {
+.regflex {
 	display: flex;
 }
 
-.licznikiflex > div.liczniki {
+.regflex > div.reg {
 	width: 50%;
 	margin-left: 5%;
 }
 
-/* style liczniki */
+/* style reg */
 
 #draw {
 	font-family: 'Roboto', Arial, sans-serif;
@@ -573,7 +576,7 @@ button {
 
 /* Animacja licznik 2 */
 
-#stoper2 {
+#register2 {
 	padding: 35px 0px 10px;
 	border-radius: 50%;
 	position: relative;
@@ -585,8 +588,8 @@ button {
 	height: 160px;
 }
 
-#stoper2:before,
-#stoper2:after {
+#register2:before,
+#register2:after {
 	-webkit-transition: all 0.75s;
 	transition: all 0.75s;
 	border: 6px solid;
@@ -601,7 +604,7 @@ button {
 	height: 100%;
 }
 
-#stoper2:before {
+#register2:before {
 	border-color: #49627d;
 	border-left-width: 2px;
 	border-top-width: 2px;
@@ -609,7 +612,7 @@ button {
 	top: 0;
 }
 
-#stoper2:after {
+#register2:after {
 	border-bottom-width: 2px;
 	border-color: #49627d;
 	border-right-width: 2px;
@@ -617,22 +620,22 @@ button {
 	right: 0;
 }
 
-#stoper2:hover {
+#register2:hover {
 	-webkit-transition: all 0.75s;
 	transition: all 0.75s
 }
 
-#stoper2:hover:before,
-#stoper2:hover:after {
+#register2:hover:before,
+#register2:hover:after {
 	border-color: transparent;
-	animation: obrot2 ease-out 1s;
+	animation: rotation2 ease-out 1s;
 	border-right-color: #000000;
 	border-left-color: #000000;
 	border-top-color: #ffffff !important;
 	border-bottom-color: #ffffff !important;
 }
 
-@-webkit-keyframes obrot2 {
+@-webkit-keyframes rotation2 {
 	0% {
 		-webkit-transform: rotate(0) rotateZ(0);
 	}

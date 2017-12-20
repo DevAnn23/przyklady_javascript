@@ -163,7 +163,7 @@ window.onload = function () {
 		var hour = document.getElementById("hour");
 		//sprawdzanie dnia tygodnia
 
-		var days = ["niedzielę", "poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę"];
+		var days = ["w niedzielę", "w poniedziałek", "we wtorek", "w środę", "w czwartek", "w piątek", "w sobotę"];
 
 		function leadingZero(i) {
 			return (i < 10) ? '0' + i : i; /* jesli liczba mniejsza od 10 - wypisz 0 + liczbę, w innym wypadku - wypisz liczbę*/
@@ -175,6 +175,9 @@ window.onload = function () {
 
 	dateAndtime();
 
+	function animationDice() {
+		this.className = "changeColor";
+	}
 
 	function changeColor() {
 		this.className = "changeColor";
@@ -245,64 +248,61 @@ window.onload = function () {
 	fact.addEventListener("click", factorial1);
 
 	//kalkulator
-	function kalkulator() {
-
-		function odejmowanieLiczb(num1, num2) {
+	function calculator() {
+		function substractionNumbers(num1, num2) {
 
 			var num1 = document.getElementById('num1').value;
 			var num2 = document.getElementById('num2').value;
-			var wynik = document.getElementById('wynikDzialania');
-			wynik.innerHTML = num1 - num2;
+			var resultOperation = document.getElementById('resultOperation');
+			resultOperation.innerHTML = num1 - num2;
 		}
 
-		function dodawanieLiczb(x, y) {
-			parseInt(document.getElementById('num2').value);
-			parseInt(document.getElementById('num2').value);
+		function additionNumbers(num1, num2) {
+
 			var num1 = parseInt(document.getElementById('num1').value);
 			var num2 = parseInt(document.getElementById('num2').value);
-			var wynik = document.getElementById('wynikDzialania');
-			wynik.innerHTML = num1 + num2;
+			var resultOperation = document.getElementById('resultOperation');
+
+			resultOperation.innerHTML = num1 + num2;
+			console.log(num2);
+		}
+
+		function multiplicationNumbers(num1, num2) {
+			var num1 = document.getElementById('num1').value;
+			var num2 = document.getElementById('num2').value;
+			var resultOperation = document.getElementById('resultOperation');
+			resultOperation.innerHTML = num1 * num2;
 
 		}
 
-		function mnozenieLiczb(num1, num2) {
+		function divisionNumbers(x, y) {
 			var num1 = document.getElementById('num1').value;
 			var num2 = document.getElementById('num2').value;
-			var wynikDzialania = document.getElementById('wynikDzialania');
-			var wynik = document.getElementById('wynikDzialania');
-			wynik.innerHTML = num1 * num2;
-
-		}
-
-		function dzielenieLiczb(x, y) {
-			var num1 = document.getElementById('num1').value;
-			var num2 = document.getElementById('num2').value;
-			var wynik = document.getElementById('wynikDzialania');
-			wynik.innerHTML = num1 + num2;
+			var resultOperation = document.getElementById('resultOperation');
 			if (num2 == 0) {
-				wynik.innerHTML = "nie dzielimy przez 0";
+				resultOperation.innerHTML = "Nie dzielimy przez 0";
 				return;
 			}
-			wynik.innerHTML = (num1 / num2);
+			resultOperation.innerHTML = (num1 / num2);
 		}
 
-		var odejmowanie = document.getElementById('odejmowanie');
-		var dodawanie = document.getElementById('dodawanie');
-		var mnozenie = document.getElementById('mnozenie');
-		var dzielenie = document.getElementById('dzielenie');
+		var substraction = document.getElementById('substraction');
+		var addition = document.getElementById('addition');
+		var multiplication = document.getElementById('multiplication');
+		var division = document.getElementById('division');
 
-		odejmowanie.addEventListener("click", odejmowanieLiczb);
-		dodawanie.addEventListener("click", dodawanieLiczb);
-		mnozenie.addEventListener("click", mnozenieLiczb);
-		dzielenie.addEventListener("click", dzielenieLiczb);
+		substraction.addEventListener("click", substractionNumbers);
+		addition.addEventListener("click", additionNumbers);
+		multiplication.addEventListener("click", multiplicationNumbers);
+		division.addEventListener("click", divisionNumbers);
 	};
-	kalkulator();
+	calculator();
 
 
 	// ********* PRZYCISK - TO TOP PAGE
 
-	var przyciskTop = document.getElementById("przyciskTop");
-	przyciskTop.onclick = function () {
+	var buttonTopPage = document.getElementById("buttonTopPage");
+	buttonTopPage.onclick = function () {
 		// - window.scrollBy(0, -100);/* wartości ujemne - do góry */
 		window.scrollBy(0, -1 * window.pageYOffset);
 	}
@@ -311,19 +311,19 @@ window.onload = function () {
 
 	window.onscroll = function () {
 		var test = document.getElementById("test");
-		var przyciskTop = document.getElementById("przyciskTop");
+		var buttonTopPage = document.getElementById("buttonTopPage");
 		var yScrollAxis = Math.floor(window.pageYOffset);
 
 		// przycisk nawigujący w górę pojawia sie od danej wartości px
 		if (yScrollAxis > 100) {
-			przyciskTop.style.display = "block";
+			buttonTopPage.style.display = "block";
 		} else {
-			przyciskTop.style.display = "none";
+			buttonTopPage.style.display = "none";
 		}
 		test.innerHTML = yScrollAxis;
 	}
-	przyciskDown.onclick = function () {
-		var przycisDown = document.getElementById("przyciskDown");
+	buttonDownPage.onclick = function () {
+		var przycisDown = document.getElementById("buttonDownPage");
 
 		//pierwsza liczba w poziomie(x), druga w pionie(y)
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
@@ -365,49 +365,49 @@ window.onload = function () {
 		var timeOutStoper;
 		// timeOutStoper musi być zmienną globalna
 
-		function stopwatch(uchwytStopera, liczba) {
+		function stopwatch(display, liczba) {
 
-			uchwytStopera.innerHTML = liczba--;
+			display.innerHTML = liczba--;
 			if (liczba < 0)
 				return;
 
 			timeOutStoper = setTimeout(function () {
-				stopwatch(uchwytStopera, liczba);
+				stopwatch(display, liczba);
 			}, 1000);
 			return timeOutStoper;
 		}
 
-		var poczatkowaWartosc = document.getElementById("poczatkowaWartosc");
-		var przyciskWlacz = document.getElementById("przyciskWlacz");
-		var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
-		var uchwytStopera = document.getElementById("uchwytStopera");
+		var initialValue = document.getElementById("initialValue");
+		var buttonStart = document.getElementById("buttonStart");
+		var buttonStop = document.getElementById("buttonStop");
+		var display = document.getElementById("display");
 
 
-		przyciskWlacz.onclick = function () {
-			var poczatkowaValue = poczatkowaWartosc.value;
-			uchwytStopera.innerHTML = poczatkowaValue;
+		buttonStart.onclick = function () {
+			var valueOnDisplay = initialValue.value;
+			display.innerHTML = valueOnDisplay;
 
 			if (timeOutStoper)
 				clearTimeout(timeOutStoper);
 
 			/*jeżeli timeOutStoper już istniał to czyści, jesli nie ma wartości - NaN - fałszwarunek niespełniony i przechodzi dalej
-			timeOutStoper = stopwatch(uchwytStopera, poczatkowaValue);
+			timeOutStoper = stopwatch(display, valueOnDisplay);
 		};
-		przyciskZatrzymaj.onclick = function () {
+		buttonStop.onclick = function () {
 			clearTimeout(timeOutStoper);
 		};
 
 	*/
 	// stworzenie stopera metodą obiektową
 
-	function stopWatchClass(uchwytStopera) {
-		this.poczatkowaWartosc;
-		this.uchwytStopera = uchwytStopera;
+	function stopWatchClass(display) {
+		this.initialValue;
+		this.display = display;
 		this.timeOutRef = undefined;
-		this.odpal = function (poczatkowaWartosc) {
-			this.poczatkowaWartosc = poczatkowaWartosc;
-			this.tablicaWynikow = [];
-			this.wyniki = document.getElementById("wyniki");
+		this.odpal = function (initialValue) {
+			this.initialValue = initialValue;
+			this.tableResults = [];
+			this.partResult = document.getElementById("partResult");
 
 			if (this.timeOutRef)
 				clearTimeout(this.timeOutRef);
@@ -416,125 +416,125 @@ window.onload = function () {
 		};
 		this.startStoper = function () {
 
-			this.uchwytStopera.innerHTML = this.poczatkowaWartosc--;
+			this.display.innerHTML = this.initialValue--;
 
 
 			var self = this; /* trzeba napisać zmienną, bo nie można się odwołac za pomocą this */
 			this.timeOutRef = setTimeout(function () {
-				if (self.poczatkowaWartosc < 0)
+				if (self.initialValue < 0)
 					return;
 
 				self.startStoper();
 			}, 1000);
 		};
-		this.zatrzymaj = function () {
+		this.stop = function () {
 
 			clearTimeout(this.timeOutRef);
-			tablicaWynikow.push(" " + (1 + stoper.poczatkowaWartosc));
-			wyniki.innerHTML = "Twoje wyniki: " + tablicaWynikow;
+			tableResults.push(" " + (1 + stoper.initialValue));
+			partResult.innerHTML = "Twoje partResult: " + tableResults;
 		};
-		this.kontynuuj = function () {
+		this.continue = function () {
 			this.startStoper();
 		};
 	}
 
-	var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
-	var przyciskWlacz = document.getElementById("przyciskWlacz");
-	var przyciskKontynuuj = document.getElementById("przyciskKontynuuj");
-	var przyciskZatrzymaj = document.getElementById("przyciskZatrzymaj");
-	var uchwytStopera = document.getElementById("uchwytStopera");
+	var initialValue = document.getElementById("initialValue").value;
+	var buttonStart = document.getElementById("buttonStart");
+	var buttonContinue = document.getElementById("buttonContinue");
+	var buttonStop = document.getElementById("buttonStop");
+	var display = document.getElementById("display");
 
-	var tablicaWynikow = [];
-	var wyniki = document.getElementById("wyniki");
+	var tableResults = [];
+	var partResult = document.getElementById("partResult");
 
-	var stoper = new stopWatchClass(uchwytStopera);
+	var stoper = new stopWatchClass(display);
 
-	przyciskWlacz.onclick = function () {
-		var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
-		stoper.odpal(poczatkowaWartosc);
+	buttonStart.onclick = function () {
+		var initialValue = document.getElementById("initialValue").value;
+		stoper.odpal(initialValue);
 
 	};
-	przyciskKontynuuj.onclick = function () {
-		stoper.kontynuuj();
+	buttonContinue.onclick = function () {
+		stoper.continue();
 	};
 
-	przyciskZatrzymaj.onclick = function () {
-		stoper.zatrzymaj();
+	buttonStop.onclick = function () {
+		stoper.stop();
 	};
 	//Liczniki
 
-	function licznik() {
-		var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
-		var poczatkowaValue1 = poczatkowaWartosc1.value;
-		var uchwytStopera1 = document.getElementById("uchwytStopera1");
+	function register() {
+		var initialValue1 = document.getElementById("initialValue1");
+		var valueOnDisplay1 = initialValue1.value;
+		var display1 = document.getElementById("display1");
 		var span = document.getElementById("boom");
-		uchwytStopera1.style.font = "26px Tahoma";
-		uchwytStopera1.style.color = "#504a7d";
+		display1.style.font = "26px Tahoma";
+		display1.style.color = "#504a7d";
 
 
-		function stopwatch1(uchwytStopera1, liczbaA) {
+		function stopwatch1(display1, liczbaA) {
 
-			uchwytStopera1.innerHTML = --liczbaA;
+			display1.innerHTML = --liczbaA;
 
 			if (liczbaA <= 0) {
-				uchwytStopera1.style.display = "none";
+				display1.style.display = "none";
 				span.style.display = "block";
 				return;
 			}
 			setTimeout(function () {
-				stopwatch1(uchwytStopera1, liczbaA)
+				stopwatch1(display1, liczbaA)
 			}, 1000)
 		}
-		uchwytStopera1.innerHTML = poczatkowaValue1;
+		display1.innerHTML = valueOnDisplay1;
 		setTimeout(function () {
-			stopwatch1(uchwytStopera1, poczatkowaValue1);
+			stopwatch1(display1, valueOnDisplay1);
 		}, 1000);
 	};
 
-	function licznik2() {
-		var poczatkowaWartosc2 = document.getElementById("poczatkowaWartosc2");
-		var poczatkowaValue2 = poczatkowaWartosc2.value;
-		var uchwytStopera2 = document.getElementById("uchwytStopera2");
-		uchwytStopera2.style.font = "26px Tahoma";
-		uchwytStopera2.style.color = "#504a67";
+	function register2() {
+		var initialValue2 = document.getElementById("initialValue2");
+		var valueOnDisplay2 = initialValue2.value;
+		var display2 = document.getElementById("display2");
+		display2.style.font = "26px Tahoma";
+		display2.style.color = "#504a67";
 
 
-		function stopwatch2(uchwytStopera2, liczba2) {
-			uchwytStopera2.innerHTML = ++liczba2;
+		function stopwatch2(display2, liczba2) {
+			display2.innerHTML = ++liczba2;
 			if (liczba2 >= 30) {
 				return;
 			}
 			setTimeout(function () {
-				stopwatch2(uchwytStopera2, liczba2)
+				stopwatch2(display2, liczba2)
 			}, 100)
 		}
-		uchwytStopera2.innerHTML = poczatkowaValue2;
+		display2.innerHTML = valueOnDisplay2;
 		setTimeout(function () {
-			stopwatch2(uchwytStopera2, poczatkowaValue2);
+			stopwatch2(display2, valueOnDisplay2);
 		}, 500);
 	}
-	licznik();
-	licznik2();
+	register();
+	register2();
 
 	// *********Licznik
 	/*
-		function stopwatch1(uchwytStopera1, liczbaA) {
+		function stopwatch1(display1, liczbaA) {
 			setTimeout(function () {
-				stopwatch(uchwytStopera1, liczbaA);
+				stopwatch(display1, liczbaA);
 			}, 1000);
-			uchwytStopera1.innerHTML = ++liczbaA;
+			display1.innerHTML = ++liczbaA;
 		}
 
-		var poczatkowaWartosc1 = document.getElementById("poczatkowaWartosc1");
-		var poczatkowaValue1 = poczatkowaWartosc1.value;
-		var uchwytStopera1 = document.getElementById("uchwytStopera1");
+		var initialValue1 = document.getElementById("initialValue1");
+		var valueOnDisplay1 = initialValue1.value;
+		var display1 = document.getElementById("display1");
 		var span = document.getElementById("boom");
 
 
-		var poczatkowaValue1 = poczatkowaWartosc1.value;
-		uchwytStopera1.innerHTML = setTimeout(function () {
+		var valueOnDisplay1 = initialValue1.value;
+		display1.innerHTML = setTimeout(function () {
 			var span = document.getElementById("boom");
-			stopwatch1(uchwytStopera1, poczatkowaValue1);
+			stopwatch1(display1, valueOnDisplay1);
 		}, 1000);*/
 
 	//********** przesuwany  ruchami myszki
@@ -553,7 +553,7 @@ window.onload = function () {
 		var fixed = picture.style.position = "fixed";
 		document.onmousemove = function (e) {
 			var location = document.getElementById("location");
-			location.innerHTML = " location obrazka: " + e.clientX + " x " + e.clientY;
+			location.innerHTML = " lokalizacja obrazka: " + e.clientX + " x " + e.clientY;
 			pictureMove(e, self);
 			fixed;
 		};
