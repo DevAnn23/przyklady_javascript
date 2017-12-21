@@ -159,8 +159,8 @@ h5 a {
 	position: relative;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-	/*-webkit-animation-name: rotation;
-	-webkit-animation-duration: 5s;*/
+	-webkit-animation-name: rotation;
+	-webkit-animation-duration: 5s;
 	border-radius: 10px;
 	left: 60px;
 	transform: rotateX(350deg) rotateZ(355deg);
@@ -174,7 +174,7 @@ h5 a {
 }
 
 
-#perspective {
+.perspective {
 	width: 80px;
 	margin: 15px 20px;
 	height: 80px;

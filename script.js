@@ -720,8 +720,8 @@ window.onload = function () {
 	var playerY = 200;
 	var cpuY = 200;
 	// zmienne określające zmiany połozenia piłki
-	var ballspeedX = 3;
-	var ballspeedY = 3;
+	var ballspeedX = 1;
+	var ballspeedY = 1;
 
 	function player() {
 		//rysuję piłkę
@@ -746,6 +746,7 @@ window.onload = function () {
 
 		if (ballY <= 0 || ballY + ballSize > c1Heihgt) {
 			ballspeedY = -ballspeedY;
+			speedUp();
 		}
 		if (ballX <= 0 || ballX + ballSize > c1Width) { // jesli piłka dotrze ddo krawędzi naszego stołu odbijamy ją zmieniając znak minus
 			ballspeedX = -ballspeedX;
@@ -765,7 +766,6 @@ window.onload = function () {
 	}
 
 	function game() {
-
 		table();
 		ball();
 		player();
@@ -780,10 +780,28 @@ window.onload = function () {
 	//sprawdzamy odległośc jaka jest od początku okna przeglądarki do danego elementu, w wtym przypadku canvas
 
 	var topCanvas1 = canvas1.offsetTop;
-	console.log("odległośc canvas od początku strony to " + topCanvas1);
+
 	//ruch paletek
 	function playerPosition(e) {
-		console.log(e);
+var topCanvas1 = canvas1.offsetTop;
+		playerY = (e.clientY - topCanvas1) - (paddleHeight);
+
+		//playerY = (e.clientY - topCanvas1) - (paddleHeight / 2);
+		// zabezpiecznie, żeby paletka nie wyjezdzała poza Canvas
+
+		if (playerY >= c1Heihgt - paddleHeight){
+			playerY = c1Heihgt - paddleHeight;
+		}
+	 if (playerY < 0){
+			playerY = 0;
+		}
+		cpuY = playerY;
+	}
+	// przyśpieszenie piłeczki
+	// za każdym wywołaniem funkcji zmienia się wartośc speedball
+	function speedUp() {
+		console.log("przyśpieszam");
+
 	}
 	canvas1.addEventListener("mousemove", playerPosition);
 
