@@ -1,14 +1,30 @@
 /* Calc */
-
-#num2 {
-	margin-right: 2%;
+#hiddenResult {
+	border: 1px solid gray;
+	padding-top: 5px;
+	margin-left: 10%;
+	width:20%;
+	text-align: center;
+	border-bottom: 4px solid #49627d;
+	height:30px
 }
+.calc h3 ~ p {
+	margin-top: 2%;
+	background-color: #fff;
+}
+#resultOperation {
+	background-color:#ddd;
 
+}
+#num2, #num1 {
+	margin: 5px;
+}
 .calc p {
-	padding: 2px;
-	border: 1px solid #aaa;
+	background-color: #ddddddf2;
 	margin: 10px;
 	cursor: pointer;
+	text-transform:uppercase;
+	padding: 5px;
 }
 
 /* map */
@@ -16,7 +32,7 @@
 #map {
 	width: 100%;
 	height: 400px;
-	background-color: grey;
+	background-color: #818182;
 	position: relative;
 	z-index: 1;
 }
@@ -55,7 +71,7 @@ body * {}
 
 body .first {
 	background-image: url('img/web-2643093_1920.png');
-	background-position: 990px 160px;
+	background-position: 980px 160px;
 	background-size: 20%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -165,14 +181,13 @@ h5 a {
 	left: 60px;
 	transform: rotateX(350deg) rotateZ(355deg);
 }
+
 .animation {
 	animation-name: rotation;
-	animation-duration: 5s
-	-webkit-animation-name: rotation;
+	animation-duration: 5s -webkit-animation-name: rotation;
 	-webkit-animation-duration: 5s;
 
 }
-
 
 .perspective {
 	width: 80px;

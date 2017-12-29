@@ -390,7 +390,7 @@ window.onload = function () {
 			if (timeOutStoper)
 				clearTimeout(timeOutStoper);
 
-			/*jeżeli timeOutStoper już istniał to czyści, jesli nie ma wartości - NaN - fałszwarunek niespełniony i przechodzi dalej
+			/*jeżeli timeOutStoper już istniał to czyści, jesli nie ma wartości - NaN - fałsz warunek niespełniony i przechodzi dalej
 			timeOutStoper = stopwatch(display, valueOnDisplay);
 		};
 		buttonStop.onclick = function () {
@@ -462,6 +462,8 @@ window.onload = function () {
 		stoper.stop();
 	};
 	//Liczniki
+	var timeOutRegister;
+	var startRegister = document.getElementById("startRegister");
 
 	function register() {
 		var initialValue1 = document.getElementById("initialValue1");
@@ -474,6 +476,7 @@ window.onload = function () {
 
 		function stopwatch1(display1, liczbaA) {
 
+			clearTimeout(timeOutRegister);
 			display1.innerHTML = --liczbaA;
 
 			if (liczbaA <= 0) {
@@ -481,16 +484,17 @@ window.onload = function () {
 				span.style.display = "block";
 				return;
 			}
-			setTimeout(function () {
+			timeOutRegister = setTimeout(function () {
 				stopwatch1(display1, liczbaA)
 			}, 1000)
 		}
 		display1.innerHTML = valueOnDisplay1;
-		setTimeout(function () {
+		timeOutRegister = setTimeout(function () {
 			stopwatch1(display1, valueOnDisplay1);
 		}, 1000);
-	};
 
+	};
+	var timeOutRegister2;
 	function register2() {
 		var initialValue2 = document.getElementById("initialValue2");
 		var valueOnDisplay2 = initialValue2.value;
@@ -500,21 +504,28 @@ window.onload = function () {
 
 
 		function stopwatch2(display2, liczba2) {
+			clearTimeout(timeOutRegister2);
+
 			display2.innerHTML = ++liczba2;
 			if (liczba2 >= 30) {
 				return;
 			}
-			setTimeout(function () {
+			timeOutRegister2 = setTimeout(function () {
 				stopwatch2(display2, liczba2)
 			}, 100)
 		}
 		display2.innerHTML = valueOnDisplay2;
-		setTimeout(function () {
+		timeOutRegister2 = setTimeout(function () {
 			stopwatch2(display2, valueOnDisplay2);
 		}, 500);
 	}
-	register();
-	register2();
+
+	function functionsRegister() {
+		register();
+		register2();
+	}
+	startRegister.addEventListener("click", functionsRegister);
+
 
 	// *********Licznik
 	/*
@@ -587,14 +598,16 @@ window.onload = function () {
 
 		// MOJ OBRAZEK :)
 
-
+		var robotX = 200;
+		var robotY = 100;
+		var robotHeight = 100;
+		var robotWidth = 100;
 
 		//rysuję robota
-		c.beginPath();
 
 		c.fillStyle = '#aaa';
-		c.fillRect(200, 100, 100, 100);
-		c.beginPath();
+		c.fillRect(robotX, robotY, robotWidth, robotHeight);
+
 
 		//rysuje czułka robota
 		c.moveTo(250, 100);
@@ -702,7 +715,7 @@ window.onload = function () {
 	const c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
 	canvas1.width = 1000;
 	canvas1.height = 500;
-
+	const tenis = document.getElementById('tenis');
 	const c1Width = canvas1.width;
 	const c1Heihgt = canvas1.height;
 	const ballSize = 20; /*rozmiar piłki*/
@@ -720,8 +733,8 @@ window.onload = function () {
 	var playerY = 200;
 	var cpuY = 200;
 	// zmienne określające zmiany połozenia piłki
-	var ballspeedX = 1;
-	var ballspeedY = 1;
+	var ballspeedX = 2;
+	var ballspeedY = 2;
 
 	function player() {
 		//rysuję piłkę
@@ -739,7 +752,7 @@ window.onload = function () {
 		//rysuję piłkę
 		c1.fillStyle = '#aaaaaa'
 		c1.fillRect(ballX, ballY, ballSize, ballSize);
-		//przy zmianie szybkości położenie piłki zmienia się o 1px
+		// położenie piłki zmienia się o wartośc ballspeed
 
 		ballX += ballspeedX;
 		ballY += ballspeedY;
@@ -769,12 +782,15 @@ window.onload = function () {
 		table();
 		ball();
 		player();
+		//narysowanie paletki położenie początkowe cpuX cpuY, nastepnie położenie wyliczone w funkcji cpyPosition();
 		cpu();
+		//wyliczenie pozycji paletki komputera
+		cpuPosition();
 	}
 
 	// funkcja, wywołująca co okreslony czas wywołanie funkcji, za każdym wywołaniem funkcji ballX +=ballspeedX;
 	/* podajemy co ma sie wykonać i ile razy 1000ms / 50ms = 20 razy na 1s*/
-	function boiskoPlayer() {
+	function playPlayer() {
 		setInterval(game, 50);
 	}
 	//sprawdzamy odległośc jaka jest od początku okna przeglądarki do danego elementu, w wtym przypadku canvas
@@ -783,27 +799,45 @@ window.onload = function () {
 
 	//ruch paletek
 	function playerPosition(e) {
-var topCanvas1 = canvas1.offsetTop;
+		var topCanvas1 = canvas1.offsetTop;
 		playerY = (e.clientY - topCanvas1) - (paddleHeight);
 
 		//playerY = (e.clientY - topCanvas1) - (paddleHeight / 2);
 		// zabezpiecznie, żeby paletka nie wyjezdzała poza Canvas
 
-		if (playerY >= c1Heihgt - paddleHeight){
+		if (playerY >= c1Heihgt - paddleHeight) {
 			playerY = c1Heihgt - paddleHeight;
 		}
-	 if (playerY < 0){
+		if (playerY < 0) {
 			playerY = 0;
 		}
-		cpuY = playerY;
+		//cpuY = playerY;
 	}
 	// przyśpieszenie piłeczki
 	// za każdym wywołaniem funkcji zmienia się wartośc speedball
 	function speedUp() {
-		console.log("przyśpieszam");
+		//prędkość oś X
+		if (ballspeedX > 0 && ballspeedX < 1) {
+			ballspeedX += 0.5;
+		} else if (ballspeedX < 0 && ballspeedX > -14) {
+			ballspeedX -= 0.5;
+		}
+		//prędkość oś Y
+		if (ballspeedY > 0 && ballspeedY < 14) {
+			ballspeedY += 0.5;
+		} else if (ballspeedY < 0 && ballspeedY > -14) {
+			ballspeedY -= 0.5;
+		}
+		console.log(ballspeedY + " " + ballspeedX);
 
 	}
 	canvas1.addEventListener("mousemove", playerPosition);
 
-	boiskoPlayer();
+	//sztuczna inteligencja
+
+	function cpuPosition() {
+
+	}
+
+	tenis.addEventListener("click", playPlayer);
 };
