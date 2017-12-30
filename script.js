@@ -232,8 +232,11 @@ window.onload = function () {
 		}
 		console.log(result);
 		if (n === 0) {
-			console.log(1);
+			result = 1;
 			return;
+		}
+		if (n < 0) {
+			result = "Wpisz liczbę naturalną."
 		}
 		factorialResult.innerHTML = result;
 	}
@@ -431,7 +434,7 @@ window.onload = function () {
 
 			clearTimeout(this.timeOutRef);
 			tableResults.push(" " + (1 + stoper.initialValue));
-			partResult.innerHTML = "Twoje partResult: " + tableResults;
+			partResult.innerHTML = "Twoje wyniki: " + tableResults;
 		};
 		this.continue = function () {
 			this.startStoper();
@@ -446,8 +449,8 @@ window.onload = function () {
 
 	var tableResults = [];
 	var partResult = document.getElementById("partResult");
-
 	var stoper = new stopWatchClass(display);
+
 
 	buttonStart.onclick = function () {
 		var initialValue = document.getElementById("initialValue").value;
@@ -465,6 +468,7 @@ window.onload = function () {
 	var timeOutRegister;
 	var startRegister = document.getElementById("startRegister");
 
+
 	function register() {
 		var initialValue1 = document.getElementById("initialValue1");
 		var valueOnDisplay1 = initialValue1.value;
@@ -475,8 +479,9 @@ window.onload = function () {
 
 
 		function stopwatch1(display1, liczbaA) {
-
 			clearTimeout(timeOutRegister);
+			display1.style.display = "block";
+			span.style.display = "none";
 			display1.innerHTML = --liczbaA;
 
 			if (liczbaA <= 0) {
@@ -494,7 +499,10 @@ window.onload = function () {
 		}, 1000);
 
 	};
+
+
 	var timeOutRegister2;
+
 	function register2() {
 		var initialValue2 = document.getElementById("initialValue2");
 		var valueOnDisplay2 = initialValue2.value;
@@ -602,113 +610,168 @@ window.onload = function () {
 		var robotY = 100;
 		var robotHeight = 100;
 		var robotWidth = 100;
+		var eyeHeight = 4;
 
 		//rysuję robota
+		function bodyRobot() {
+			c.fillStyle = '#aaa';
+			c.fillRect(robotX, robotY, robotWidth, robotHeight);
 
-		c.fillStyle = '#aaa';
-		c.fillRect(robotX, robotY, robotWidth, robotHeight);
+		}
+
+		function antennas() {
+			//rysuje czułka robota
+			c.moveTo(250, 100);
+			c.lineTo(200, 50);
+			c.moveTo(250, 100);
+			c.lineTo(300, 50);
+			c.moveTo(190, 60);
+			c.lineTo(210, 40);
+			c.moveTo(310, 60);
+			c.lineTo(290, 40);
+
+		}
+
+		function legs() {
+			//nogi
+			c.fillStyle = '#aaa';
+			c.fillRect(230, 330, 10, 15);
+			c.fillRect(260, 330, 10, 15);
+			c.moveTo(260, 345);
+			c.lineTo(280, 345);
+			c.lineTo(270, 337);
+			c.moveTo(240, 345);
+			c.lineTo(220, 345);
+			c.lineTo(230, 337);
+		}
 
 
-		//rysuje czułka robota
-		c.moveTo(250, 100);
-		c.lineTo(200, 50);
-		c.moveTo(250, 100);
-		c.lineTo(300, 50);
-		c.moveTo(190, 60);
-		c.lineTo(210, 40);
-		c.moveTo(310, 60);
-		c.lineTo(290, 40);
+		function arm() {
+			//ręce
+			c.moveTo(300, 260);
+			c.lineTo(310, 290);
+			c.lineTo(300, 280);
 
-		//nogi
-		c.fillStyle = '#aaa';
-		c.fillRect(230, 330, 10, 15);
-		c.fillRect(260, 330, 10, 15);
-		c.moveTo(260, 345);
-		c.lineTo(280, 345);
-		c.lineTo(270, 337);
-		c.moveTo(240, 345);
-		c.lineTo(220, 345);
-		c.lineTo(230, 337);
+			c.moveTo(200, 260);
+			c.lineTo(190, 290);
+			c.lineTo(200, 280);
+			c.fill();
+		}
 
-		//ręce
+		function eyebrow() {
+			//brwi
 
-		c.moveTo(300, 260);
-		c.lineTo(310, 290);
-		c.lineTo(300, 280);
+			c.moveTo(230, 110);
+			c.lineTo(210, 115);
+			c.moveTo(270, 110);
+			c.lineTo(290, 115);
+		}
 
-		c.moveTo(200, 260);
-		c.lineTo(190, 290);
-		c.lineTo(200, 280);
-		c.fill();
-		//brwi
+		function eye() {
+			//oczy
 
-		c.moveTo(230, 110);
-		c.lineTo(210, 115);
-		c.moveTo(270, 110);
-		c.lineTo(290, 115);
+			c.fillStyle = '#fff';
+			c.fillRect(220, 120, 10, 10);
+			c.fillStyle = '#4c5763';
+			c.fillRect(220, 120, 10, eyeHeight);
+			c.fillStyle = '#4c576373';
+			c.fillRect(222, 125, 5, 5);
 
-		//oczy
-		c.fillStyle = '#fff';
-		c.fillRect(220, 120, 10, 10);
-		c.fillStyle = '#000';
-		c.fillRect(222, 125, 5, 5);
+			c.fillStyle = '#fff';
+			c.fillRect(270, 120, 10, 10);
+			c.fillStyle = '#4c5763';
+			c.fillRect(270, 120, 10, eyeHeight);
+			c.fillStyle = '#4c576373';
+			c.fillRect(272, 125, 5, 5);
+			if (eyeHeight > 8) {
+				eyeHeight = 2;
+			}
 
-		c.fillStyle = '#fff';
-		c.fillRect(270, 120, 10, 10);
-		c.fillStyle = '#000';
-		c.fillRect(272, 125, 5, 5);
 
-		//nos
-		c.fillStyle = '#45000f';
-		c.fillRect(245, 140, 10, 20);
+			eyeHeight += 4;
 
-		//zeby
 
-		c.fillStyle = '#45000f';
-		c.fillRect(205, 170, 90, 25);
+		}
 
-		c.fillStyle = '#fff';
-		c.fillRect(207, 170, 5, 3);
-		c.fillStyle = '#fff';
-		c.fillRect(217, 170, 5, 7);
-		c.fillStyle = '#fff';
-		c.fillRect(240, 170, 5, 9);
-		c.fillStyle = '#fff';
-		c.fillRect(257, 170, 5, 7);
-		c.fillStyle = '#fff';
-		c.fillRect(283, 170, 5, 2);
-		c.fillStyle = '#fff';
-		c.fillRect(277, 170, 5, 6);
+		function nose() {
+			//nos
+			c.fillStyle = '#45000f';
+			c.fillRect(245, 140, 10, 20);
+		}
 
-		c.fillStyle = '#fff';
-		c.fillRect(217, 195, 5, -7);
-		c.fillStyle = '#fff';
-		c.fillRect(257, 195, 5, -2);
-		c.fillStyle = '#fff';
-		c.fillRect(250, 195, 5, -7);
-		c.fillStyle = '#fff';
-		c.fillRect(280, 195, 5, -9);
+		function teeth() {
 
-		//szyja
-		c.fillStyle = '#aaa';
-		c.fillRect(240, 200, 20, 30);
+			//zeby
 
-		c.stroke();
-		c.fillStyle = 'yellow';
-		c.fillRect(200, 230, 100, 100);
-		c.strokeRect(200, 230, 100, 100);
-		c.fillStyle = 'red';
-		c.fillRect(205, 235, 90, 90);
-		c.fillStyle = 'pink';
-		c.fillRect(210, 240, 80, 80);
-		c.fillStyle = 'green';
-		c.fillRect(215, 245, 70, 70);
-		c.fillStyle = 'white';
-		c.fillRect(220, 250, 60, 60);
-		c.font = "italic bold 16px Arial";
-		c.textBaseline = "bottom";
-		c.strokeText('Canvas', 220, 280);
-	}
+			c.fillStyle = '#45000f';
+			c.fillRect(205, 170, 90, 25);
+
+			c.fillStyle = '#fff';
+			c.fillRect(207, 170, 5, 3);
+			c.fillStyle = '#fff';
+			c.fillRect(217, 170, 5, 7);
+			c.fillStyle = '#fff';
+			c.fillRect(240, 170, 5, 9);
+			c.fillStyle = '#fff';
+			c.fillRect(257, 170, 5, 7);
+			c.fillStyle = '#fff';
+			c.fillRect(283, 170, 5, 2);
+			c.fillStyle = '#fff';
+			c.fillRect(277, 170, 5, 6);
+
+			c.fillStyle = '#fff';
+			c.fillRect(217, 195, 5, -7);
+			c.fillStyle = '#fff';
+			c.fillRect(257, 195, 5, -2);
+			c.fillStyle = '#fff';
+			c.fillRect(250, 195, 5, -7);
+			c.fillStyle = '#fff';
+			c.fillRect(280, 195, 5, -9);
+		}
+
+		function neck() {
+			//szyja
+			c.fillStyle = '#aaa';
+			c.fillRect(240, 200, 20, 30);
+			c.stroke();
+			c.fillStyle = '#ffffff';
+			c.fillRect(200, 230, 100, 100);
+			c.strokeRect(200, 230, 100, 100);
+			c.fillStyle = '#225500';
+			c.fillRect(205, 235, 90, 90);
+			c.fillStyle = '#a0151a';
+			c.fillRect(210, 240, 80, 80);
+			c.fillStyle = '#11da70';
+			c.fillRect(215, 245, 70, 70);
+			c.fillStyle = '#ffffff';
+			c.fillRect(220, 250, 60, 60);
+			c.font = "italic bold 16px Arial";
+			c.textBaseline = "bottom";
+			c.strokeText('Canvas', 220, 280);
+		}
+
+		function robot() {
+			bodyRobot();
+			antennas();
+			legs();
+			arm();
+			eyebrow();
+			eye();
+			nose();
+			teeth();
+			neck();
+			console.log(eyeHeight);
+		}
+		robot();
+
+		function closeEye() {
+			setInterval(eye, 2500);
+			console.log(eyeHeight);
+		}
+		closeEye();
+		console.log(eyeHeight);
+	};
+
 
 	/* const - stała wartości stałe, nie bedą zmieniane, var lub let - zmienna - przypisanie wartości, ale będzie ona zmieniana na różnych etapach programu*/
 	const canvas1 = document.getElementById('canvas1');
