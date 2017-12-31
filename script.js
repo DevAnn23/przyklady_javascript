@@ -625,6 +625,7 @@ window.onload = function () {
 			c.lineTo(200, 50);
 			c.moveTo(250, 100);
 			c.lineTo(300, 50);
+
 			c.moveTo(190, 60);
 			c.lineTo(210, 40);
 			c.moveTo(310, 60);
@@ -656,6 +657,7 @@ window.onload = function () {
 			c.lineTo(190, 290);
 			c.lineTo(200, 280);
 			c.fill();
+
 		}
 
 		function eyebrow() {
@@ -686,17 +688,14 @@ window.onload = function () {
 			if (eyeHeight > 8) {
 				eyeHeight = 2;
 			}
-
-
 			eyeHeight += 4;
-
-
 		}
 
 		function nose() {
 			//nos
 			c.fillStyle = '#45000f';
 			c.fillRect(245, 140, 10, 20);
+
 		}
 
 		function teeth() {
@@ -737,7 +736,7 @@ window.onload = function () {
 			c.fillStyle = '#ffffff';
 			c.fillRect(200, 230, 100, 100);
 			c.strokeRect(200, 230, 100, 100);
-			c.fillStyle = '#225500';
+			c.fillStyle = '#2ac5f0';
 			c.fillRect(205, 235, 90, 90);
 			c.fillStyle = '#a0151a';
 			c.fillRect(210, 240, 80, 80);
@@ -747,7 +746,7 @@ window.onload = function () {
 			c.fillRect(220, 250, 60, 60);
 			c.font = "italic bold 16px Arial";
 			c.textBaseline = "bottom";
-			c.strokeText('Canvas', 220, 280);
+			c.strokeText('Canvas', 220, 288);
 		}
 
 		function robot() {
@@ -789,6 +788,7 @@ window.onload = function () {
 	const lineHeight = 16; /* linie na srodku boiska */
 	const lineWidth = 6;
 
+
 	//zmienne okreslające położenie piłki - poczatkowe
 	var ballX = c1Width / 2 - ballSize / 2; /* 490 do 510 */
 	var ballY = c1Heihgt / 2 - ballSize / 2; /*  240 do 260 */
@@ -798,6 +798,7 @@ window.onload = function () {
 	// zmienne określające zmiany połozenia piłki
 	var ballspeedX = 2;
 	var ballspeedY = 2;
+
 
 	function player() {
 		//rysuję piłkę
@@ -813,6 +814,7 @@ window.onload = function () {
 
 	function ball() {
 		//rysuję piłkę
+		var middleBall = ballY + ballSize / 2;
 		c1.fillStyle = '#aaaaaa'
 		c1.fillRect(ballX, ballY, ballSize, ballSize);
 		// położenie piłki zmienia się o wartośc ballspeed
@@ -824,8 +826,10 @@ window.onload = function () {
 			ballspeedY = -ballspeedY;
 			speedUp();
 		}
-		if (ballX <= 0 || ballX + ballSize > c1Width) { // jesli piłka dotrze ddo krawędzi naszego stołu odbijamy ją zmieniając znak minus
+		else if ((ballX <= 0 || ballX + ballSize > c1Width) || ((ballX < playerX + paddleWidth) && ( middleBall > playerY && middleBall < playerY + paddleHeight ))|| ((ballX + ballSize >= cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight ))){
+			// jesli piłka dotrze ddo krawędzi naszego stołu odbijamy ją zmieniając znak minus
 			ballspeedX = -ballspeedX;
+			console.log("kolizja");
 		}
 	}
 
@@ -874,22 +878,25 @@ window.onload = function () {
 		if (playerY < 0) {
 			playerY = 0;
 		}
-		//cpuY = playerY;
+		cpuY = playerY;
 	}
 	// przyśpieszenie piłeczki
 	// za każdym wywołaniem funkcji zmienia się wartośc speedball
 	function speedUp() {
 		//prędkość oś X
 		if (ballspeedX > 0 && ballspeedX < 1) {
-			ballspeedX += 0.5;
+			ballspeedX += 0.3;
+
 		} else if (ballspeedX < 0 && ballspeedX > -14) {
-			ballspeedX -= 0.5;
+			ballspeedX -= 0.3;
+
 		}
 		//prędkość oś Y
 		if (ballspeedY > 0 && ballspeedY < 14) {
-			ballspeedY += 0.5;
+			ballspeedY += 0.3;
 		} else if (ballspeedY < 0 && ballspeedY > -14) {
-			ballspeedY -= 0.5;
+			ballspeedY -= 0.3;
+
 		}
 		console.log(ballspeedY + " " + ballspeedX);
 
@@ -899,6 +906,39 @@ window.onload = function () {
 	//sztuczna inteligencja
 
 	function cpuPosition() {
+		var middlePaddle = cpuY + paddleHeight / 2;
+		var middleBall = ballY + ballSize / 2;
+		if (cpuY >= c1Heihgt - paddleHeight) {
+			cpuY = c1Heihgt - paddleHeight;
+		}
+		if (cpuY < 0) {
+			cpuY = 0;
+		}
+		if( ballX > 500) {
+			if(middlePaddle - middleBall > 200) {
+				cpuY -= 15;
+			} else if(middlePaddle - middleBall > 50) {
+				cpuY -= 5;
+			}
+			if(middlePaddle - middleBall < -200) {
+				cpuY += 15;
+			} else if(middlePaddle - middleBall < -50) {
+				cpuY += 5;
+			}
+			/*if (middlePaddle - middleBall < 200){
+				console.log('kolizja');
+			ballspeedX = -ballspeedX;
+		}*/
+
+		}
+		else if( ballX <= 500 && ballX < 150) {
+		if(middlePaddle - middleBall > 100) {
+				cpuY -= 5;
+			} else if(middlePaddle - middleBall < -100) {
+				cpuY += 5;
+			}
+
+		}
 
 	}
 
