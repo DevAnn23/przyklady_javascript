@@ -239,7 +239,7 @@
 			<div class="card">
 				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
-						<a id="tenis"  data-toggle="collapse" href="#collapseOne7" aria-expanded="true" aria-controls="collapseOne7">
+						<a id="tenis" data-toggle="collapse" href="#collapseOne7" aria-expanded="true" aria-controls="collapseOne7">
           Tenis
         </a>
 					</h5>
@@ -247,8 +247,10 @@
 				<div id="collapseOne7" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body bgblack">
 						<canvas id="canvas1">
-   					 ...treść alternatywna...
+   							Rysowanie tenisa
 						</canvas>
+						<button id="startTenis">Rozpocznij grę</button>
+						<button id="gamOve">Koniec gry</button>
 					</div>
 				</div>
 			</div>
@@ -264,7 +266,7 @@
 					<div class="card-body calc">
 						<h3>Kalkulator</h3>
 						<p>Wpisz pierwszą liczbę<br /></p><input type="text" id="num1" value="0">
-						<p >Wpisz drugą liczbę</p><input   type="text" id="num2" value ="0">
+						<p>Wpisz drugą liczbę</p><input type="text" id="num2" value="0">
 						<p>Wybierz działanie</p>
 						<div class="float calc">
 							<p id="division">Podziel</p>
@@ -272,7 +274,9 @@
 							<p id="addition">Dodaj</p>
 							<p id="substraction">Odejmij</p>
 						</div>
-						<div id="hiddenResult">Wynik to <p id="resultOperation"></p></div><br /><br>
+						<div id="hiddenResult">Wynik to
+							<p id="resultOperation"></p>
+						</div><br /><br>
 						<h3>Silnia</h3>
 						<input id="getNumber" type="text">
 						<div id="factorialResult"></div>
@@ -282,7 +286,7 @@
 				</div>
 			</div>
 
-				<div class="card">
+			<div class="card">
 				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
 						<a id="startRegister" data-toggle="collapse" href="#collapseOne9" aria-expanded="true" aria-controls="collapseOne9">
@@ -293,23 +297,23 @@
 				<div id="collapseOne9" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<section class="container regflex">
-				<div class="reg">
-					<h4>Bomba</h4>
+							<div class="reg">
+								<h4>Bomba</h4>
 
-					<input type="text" id="initialValue1" value="30">
+								<input type="text" id="initialValue1" value="30">
 
-					<div id="register">
-						<p><br /><span id="boom">Boom!</span>Bomba wybuchnie za:<br /><span id="display1"></span></p>
-					</div>
-				</div>
-				<div class="reg">
-					<h4>Licznik</h4>
-					<input type="text" id="initialValue2" value="0">
-					<div id="register2">
-						<p><span id="display2"></span><br />Lat doświadczenia</p>
-					</div>
-				</div>
-			</section>
+								<div id="register">
+									<p><br /><span id="boom">Boom!</span>Bomba wybuchnie za:<br /><span id="display1"></span></p>
+								</div>
+							</div>
+							<div class="reg">
+								<h4>Licznik</h4>
+								<input type="text" id="initialValue2" value="0">
+								<div id="register2">
+									<p><span id="display2"></span><br />Lat doświadczenia</p>
+								</div>
+							</div>
+						</section>
 
 					</div>
 				</div>
@@ -327,8 +331,9 @@
 			<br><br>
 
 		</div>
+
 		<canvas id="can">
-    ...treść alternatywna...
+   Narysowany robot w canvas
 		</canvas>
 	</section>
 

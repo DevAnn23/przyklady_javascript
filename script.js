@@ -267,7 +267,7 @@ window.onload = function () {
 			var resultOperation = document.getElementById('resultOperation');
 
 			resultOperation.innerHTML = num1 + num2;
-			console.log(num2);
+
 		}
 
 		function multiplicationNumbers(num1, num2) {
@@ -777,7 +777,8 @@ window.onload = function () {
 	const c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
 	canvas1.width = 1000;
 	canvas1.height = 500;
-	const tenis = document.getElementById('tenis');
+	const startTtenis = document.getElementById('startTenis');
+	const gamOve = document.getElementById('gamOve');
 	const c1Width = canvas1.width;
 	const c1Heihgt = canvas1.height;
 	const ballSize = 20; /*rozmiar piłki*/
@@ -787,6 +788,7 @@ window.onload = function () {
 	const cpuX = c1Width - (playerX + paddleWidth);
 	const lineHeight = 16; /* linie na srodku boiska */
 	const lineWidth = 6;
+	var timeOutTenis;
 
 
 	//zmienne okreslające położenie piłki - poczatkowe
@@ -826,15 +828,17 @@ window.onload = function () {
 			ballspeedY = -ballspeedY;
 			speedUp();
 		}
-		else if ((ballX <= 0 || ballX + ballSize > c1Width) || ((ballX < playerX + paddleWidth) && ( middleBall > playerY && middleBall < playerY + paddleHeight ))|| ((ballX + ballSize >= cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight ))){
+		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight))) {
 			// jesli piłka dotrze ddo krawędzi naszego stołu odbijamy ją zmieniając znak minus
 			ballspeedX = -ballspeedX;
 			console.log("kolizja");
+		} else if (ballX < playerX || ballX + ballSize > cpuX + paddleWidth) {
+			return gameOveTen();
 		}
 	}
 
 	function table() {
-		c1.fillStyle = '#000000';
+		c1.fillStyle = '#464a4e';
 		c1.fillRect(0, 0, c1Width, c1Heihgt);
 		c1.fillStyle = '#ffffff';
 		// rysuję line na srodku boiska, za pomoca pętli for
@@ -845,6 +849,19 @@ window.onload = function () {
 		}
 	}
 
+	function textOver() {
+		var overWid = c1.measureText("Koniec").width;
+		var gameWid = c1.measureText("Gry").width;
+		c1.font = "42pt Times New Roman";
+		c1.fillStyle = "#ffffff";
+		c1.fillText("Koniec", c1Width / 2 - c1.measureText("Koniec").width - 20, 50);
+		c1.fillText("Gry", c1Width / 2 + 20, 50);
+
+
+
+
+	}
+
 	function game() {
 		table();
 		ball();
@@ -853,12 +870,7 @@ window.onload = function () {
 		cpu();
 		//wyliczenie pozycji paletki komputera
 		cpuPosition();
-	}
 
-	// funkcja, wywołująca co okreslony czas wywołanie funkcji, za każdym wywołaniem funkcji ballX +=ballspeedX;
-	/* podajemy co ma sie wykonać i ile razy 1000ms / 50ms = 20 razy na 1s*/
-	function playPlayer() {
-		setInterval(game, 50);
 	}
 	//sprawdzamy odległośc jaka jest od początku okna przeglądarki do danego elementu, w wtym przypadku canvas
 
@@ -878,7 +890,7 @@ window.onload = function () {
 		if (playerY < 0) {
 			playerY = 0;
 		}
-		cpuY = playerY;
+		//cpuY = playerY;
 	}
 	// przyśpieszenie piłeczki
 	// za każdym wywołaniem funkcji zmienia się wartośc speedball
@@ -898,7 +910,7 @@ window.onload = function () {
 			ballspeedY -= 0.3;
 
 		}
-		console.log(ballspeedY + " " + ballspeedX);
+		//console.log(ballspeedY + " " + ballspeedX);
 
 	}
 	canvas1.addEventListener("mousemove", playerPosition);
@@ -914,33 +926,52 @@ window.onload = function () {
 		if (cpuY < 0) {
 			cpuY = 0;
 		}
-		if( ballX > 500) {
-			if(middlePaddle - middleBall > 200) {
+		if (ballX > 500) {
+			if (middlePaddle - middleBall > 200) {
 				cpuY -= 15;
-			} else if(middlePaddle - middleBall > 50) {
+			} else if (middlePaddle - middleBall > 50) {
 				cpuY -= 5;
 			}
-			if(middlePaddle - middleBall < -200) {
+			if (middlePaddle - middleBall < -200) {
 				cpuY += 15;
-			} else if(middlePaddle - middleBall < -50) {
+			} else if (middlePaddle - middleBall < -50) {
 				cpuY += 5;
 			}
-			/*if (middlePaddle - middleBall < 200){
-				console.log('kolizja');
-			ballspeedX = -ballspeedX;
-		}*/
-
-		}
-		else if( ballX <= 500 && ballX < 150) {
-		if(middlePaddle - middleBall > 100) {
+		} else if (ballX <= 500 && ballX < 150) {
+			if (middlePaddle - middleBall > 100) {
 				cpuY -= 5;
-			} else if(middlePaddle - middleBall < -100) {
+			} else if (middlePaddle - middleBall < -100) {
 				cpuY += 5;
 			}
 
 		}
 
 	}
+	// funkcja, wywołująca co okreslony czas wywołanie funkcji, za każdym wywołaniem funkcji ballX +=ballspeedX;
+	/* podajemy co ma sie wykonać i ile razy 1000ms / 50ms = 20 razy na 1s*/
 
-	tenis.addEventListener("click", playPlayer);
+
+	function playPlayer() {
+		ballspeedX = 2;
+		ballspeedY = 2;
+
+
+		clearInterval(timeOutTenis);
+		return timeOutTenis = setInterval(game, 50);
+	}
+
+	function gameOveTen() {
+		//przywracam pilkę na pozycję początkowa
+		ballX = c1Width / 2 - ballSize / 2; /* 490 do 510 */
+		ballY = c1Heihgt / 2 - ballSize / 2;
+		if (timeOutTenis) {
+			textOver();
+		}
+
+		return clearInterval(timeOutTenis);
+	}
+
+	game();
+	startTenis.addEventListener("click", playPlayer);
+	gamOve.addEventListener("click", gameOveTen);
 };

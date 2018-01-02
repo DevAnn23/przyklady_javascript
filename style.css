@@ -355,12 +355,12 @@ h4 {
 }
 
 button {
-	border-radius: 5px;
-	border-width: 2px;
-	border-style: outset;
-	border-color: #45aada;
-	border-image: initial;
-	cursor: pointer;
+    /* border-radius: 5px; */
+    border-width: 2px;
+    border-style: outset;
+    border-color: #868e96;
+    border-image: initial;
+    cursor: pointer;
 }
 
 /* Form*/
