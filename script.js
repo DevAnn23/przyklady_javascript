@@ -775,7 +775,7 @@ window.onload = function () {
 	/* const - stała wartości stałe, nie bedą zmieniane, var lub let - zmienna - przypisanie wartości, ale będzie ona zmieniana na różnych etapach programu*/
 	const canvas1 = document.getElementById('canvas1');
 	const c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
-	canvas1.width = 1000;
+	canvas1.width = 900;
 	canvas1.height = 500;
 	const startTtenis = document.getElementById('startTenis');
 	const gamOve = document.getElementById('gamOve');
@@ -828,8 +828,14 @@ window.onload = function () {
 			ballspeedY = -ballspeedY;
 			speedUp();
 		}
+		// jeśli paletka uderzy górną połowa w piłkę
+		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight / 2)) ||((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight / 2 ))) {
+			ballspeedY += 0.2;
+			//console.log("plus" +  ballspeedY);
+		}
+		// jesli piłka dotrze do krawędzi naszego stołu odbijamy ją zmieniając znak minus
 		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight))) {
-			// jesli piłka dotrze ddo krawędzi naszego stołu odbijamy ją zmieniając znak minus
+			// jesli piłka dotrze do krawędzi naszego stołu odbijamy ją zmieniając znak minus
 			ballspeedX = -ballspeedX;
 			console.log("kolizja");
 		} else if (ballX < playerX || ballX + ballSize > cpuX + paddleWidth) {
