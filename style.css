@@ -172,7 +172,7 @@ h5 a {
 	display: flex;
 }
 
-#second {
+.diceSection{
 	display: flex;
 	background-color: #c0c0c0;
 }
