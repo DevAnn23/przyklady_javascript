@@ -1,3 +1,84 @@
+//kalkulator
+	function calculator() {
+		var num1 = document.getElementById('num1').value;
+		var num2 = document.getElementById('num2').value;
+		var num1Int = parseInt(num1);
+		var num2Int = parseInt(num2);
+		var resultOperation = document.getElementById('resultOperation');
+		if (num1 === "" || num2 === "") {
+			console.log("puste");
+			resultOperation.innerHTML = "Wpisz obie liczby";
+		}
+		else {
+			function substractionNumbers(num1, num2) {
+
+			//var num1 = document.getElementById('num1').value;
+			//var num2 = document.getElementById('num2').value;
+			//var resultOperation = document.getElementById('resultOperation');
+			resultOperation.innerHTML = num1Int - num2Int;
+		}
+
+		function additionNumbers(num1, num2) {
+			var num1 = document.getElementById('num1').value;
+			var num2 = document.getElementById('num2').value;
+			//var num1a = parseInt(document.getElementById('num1').value);
+			//var num2b = parseInt(document.getElementById('num2').value);
+			var resultOperation = document.getElementById('resultOperation');
+			if (num1 === "" || num2 == "") {
+				console.log("puste");
+				resultOperation.innerHTML = "Wpisz obie liczby"
+			}
+
+			resultOperation.innerHTML = num1 + num2;
+
+
+
+		}
+
+		function multiplicationNumbers(num1, num2) {
+			var num1 = document.getElementById('num1').value;
+			var num2 = document.getElementById('num2').value;
+			var num1Int = parseInt(num1);
+			var num2Int = parseInt(num2);
+			var resultOperation = document.getElementById('resultOperation');
+			if (num1 === "" || num2 === "") {
+			console.log("puste1");
+			resultOperation.innerHTML = "Wpisz obie liczby";
+		}
+			else{
+			resultOperation.innerHTML = num1Int * num2Int;
+			}
+
+
+		}
+
+		function divisionNumbers(x, y) {
+			//var num1 = document.getElementById('num1').value;
+			//var num2 = document.getElementById('num2').value;
+			//var resultOperation = document.getElementById('resultOperation');
+			if (num2 == 0) {
+				resultOperation.innerHTML = "Nie dzielimy przez 0";
+				return;
+			}
+			resultOperation.innerHTML = (num1 / num2);
+		}
+		}
+
+
+		var substraction = document.getElementById('substraction');
+		var addition = document.getElementById('addition');
+		var multiplication = document.getElementById('multiplication');
+		var division = document.getElementById('division');
+
+		substraction.addEventListener("click", substractionNumbers);
+		addition.addEventListener("click", additionNumbers);
+		multiplication.addEventListener("click", multiplicationNumbers);
+		division.addEventListener("click", divisionNumbers);
+	};
+	calculator();
+
+
+
 // ------------KURS JAVASCRIPT---------------
 
 // Zmienne

@@ -253,41 +253,66 @@ window.onload = function () {
 	//kalkulator
 	function calculator() {
 		function substractionNumbers(num1, num2) {
-
-			var num1 = document.getElementById('num1').value;
-			var num2 = document.getElementById('num2').value;
+			var num1 = document.getElementById('num1').value.toString().replace(",", ".");
+			var num2 = document.getElementById('num2').value.toString().replace(",", ".");
+			var num1Int = parseFloat(num1);
+			var num2Int = parseFloat(num2);
 			var resultOperation = document.getElementById('resultOperation');
-			resultOperation.innerHTML = num1 - num2;
+			if (num1 === "" || num2 === "") {
+				resultOperation.innerHTML = "Wpisz obie liczby";
+			} else {
+				resultOperation.innerHTML = num1Int - num2Int;
+			}
 		}
 
 		function additionNumbers(num1, num2) {
-
-			var num1 = parseInt(document.getElementById('num1').value);
-			var num2 = parseInt(document.getElementById('num2').value);
+			var num1 = document.getElementById('num1').value.toString().replace(",", ".");
+			var num2 = document.getElementById('num2').value.toString().replace(",", ".");
+			var num1Int = parseFloat(num1);
+			var num2Int = parseFloat(num2);
 			var resultOperation = document.getElementById('resultOperation');
-
-			resultOperation.innerHTML = num1 + num2;
+			if (num1 === "" || num2 === "") {
+				console.log("puste1");
+				resultOperation.innerHTML = "Wpisz obie liczby";
+			} else {
+				resultOperation.innerHTML = num1Int + num2Int;
+			}
 
 		}
 
 		function multiplicationNumbers(num1, num2) {
-			var num1 = document.getElementById('num1').value;
-			var num2 = document.getElementById('num2').value;
+			var num1 = document.getElementById('num1').value.toString().replace(",", ".");
+			var num2 = document.getElementById('num2').value.toString().replace(",", ".");
+			var num1Int = parseFloat(num1);
+			var num2Int = parseFloat(num2);
 			var resultOperation = document.getElementById('resultOperation');
-			resultOperation.innerHTML = num1 * num2;
-
-		}
-
-		function divisionNumbers(x, y) {
-			var num1 = document.getElementById('num1').value;
-			var num2 = document.getElementById('num2').value;
-			var resultOperation = document.getElementById('resultOperation');
-			if (num2 == 0) {
-				resultOperation.innerHTML = "Nie dzielimy przez 0";
-				return;
+			if (num1 === "" || num2 === "") {
+				resultOperation.innerHTML = "Wpisz obie liczby";
+			} else {
+				resultOperation.innerHTML = num1Int * num2Int;
 			}
-			resultOperation.innerHTML = (num1 / num2);
+
+
 		}
+
+		function divisionNumbers(num1, num2) {
+			var num1 = document.getElementById('num1').value.toString().replace(",", ".");
+			var num2 = document.getElementById('num2').value.toString().replace(",", ".");
+			var num1Int = parseFloat(num1);
+			var num2Int = parseFloat(num2);
+			var resultOperation = document.getElementById('resultOperation');
+			if (num1 === "" || num2 === "") {
+				return resultOperation.innerHTML = "Wpisz obie liczby";
+			}
+			if (num2 === "0") {
+				resultOperation.innerHTML = "Nie dzielimy przez 0";
+
+			} else {
+				resultOperation.innerHTML = num1Int / num2Int;
+			}
+		}
+
+
 
 		var substraction = document.getElementById('substraction');
 		var addition = document.getElementById('addition');
@@ -298,7 +323,7 @@ window.onload = function () {
 		addition.addEventListener("click", additionNumbers);
 		multiplication.addEventListener("click", multiplicationNumbers);
 		division.addEventListener("click", divisionNumbers);
-	};
+	}
 	calculator();
 
 
@@ -332,10 +357,10 @@ window.onload = function () {
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
 	};
 
-	var email = document.getElementById("email");
+	var email = document.getElementById("newsletter").email;
 	var submit = document.querySelector("#newsletter input[type='submit']");
 	var tmp = document.getElementById("tmp");
-	var email2 = document.getElementById("email2");
+	var email2 = document.getElementById("newsletter").email2;
 	var email3 = document.getElementById("email3");
 	var tmp2 = document.getElementById("tmp2");
 	var tmp3 = document.getElementById("tmp3");
@@ -357,6 +382,7 @@ window.onload = function () {
 			tmp3.style.borderColor = "red";
 		} else {
 			tmp4.innerHTML = "";
+			tmp3.innerHTML = "";
 		}
 		tmp2.innerHTML = email2.value;
 		e.preventDefault();
@@ -418,26 +444,38 @@ window.onload = function () {
 			this.startStoper();
 		};
 		this.startStoper = function () {
+			var self = this; /* trzeba napisać zmienną, bo nie można się odwołac za pomocą this */
 
 			this.display.innerHTML = this.initialValue--;
-
-
-			var self = this; /* trzeba napisać zmienną, bo nie można się odwołac za pomocą this */
 			this.timeOutRef = setTimeout(function () {
 				if (self.initialValue < 0)
 					return;
 
 				self.startStoper();
 			}, 1000);
+
+
+
+
 		};
 		this.stop = function () {
 
 			clearTimeout(this.timeOutRef);
-			tableResults.push(" " + (1 + stoper.initialValue));
+			if (stoper.initialValue + 1 >= 0) {
+				tableResults.push(" " + (1 + stoper.initialValue));
+			}
+
 			partResult.innerHTML = "Twoje wyniki: " + tableResults;
 		};
 		this.continue = function () {
-			this.startStoper();
+
+			if (this.display.innerHTML > 0) {
+				this.startStoper();
+			}
+			//if (initialValue == false)
+			else {
+				this.display.innerHTML = "Wpisz liczbę dodatnia i włącz stoper.";
+			}
 		};
 	}
 
@@ -759,21 +797,18 @@ window.onload = function () {
 			nose();
 			teeth();
 			neck();
-			console.log(eyeHeight);
 		}
 		robot();
 
 		function closeEye() {
 			setInterval(eye, 2500);
-			console.log(eyeHeight);
 		}
 		closeEye();
-		console.log(eyeHeight);
 	};
 
 
 	/* const - stała wartości stałe, nie bedą zmieniane, var lub let - zmienna - przypisanie wartości, ale będzie ona zmieniana na różnych etapach programu*/
-	const canvas1 = document.getElementById('canvas1');
+	var canvas1 = document.getElementById('canvas1');
 	const c1 = canvas1.getContext('2d'); /* pobieram zawartość canvas */
 	canvas1.width = 900;
 	canvas1.height = 500;
@@ -829,7 +864,7 @@ window.onload = function () {
 			speedUp();
 		}
 		// jeśli paletka uderzy górną połowa w piłkę
-		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight / 2)) ||((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight / 2 ))) {
+		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight / 2)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight / 2))) {
 			ballspeedY += 0.2;
 			//console.log("plus" +  ballspeedY);
 		}
@@ -980,4 +1015,7 @@ window.onload = function () {
 	game();
 	startTenis.addEventListener("click", playPlayer);
 	gamOve.addEventListener("click", gameOveTen);
+
+	//ustawienie, zeby strona nie zjeżdzała w dół przy otwieraniu
+	window.scrollBy(0, -1 * window.pageYOffset);
 };

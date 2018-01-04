@@ -66,7 +66,9 @@ h3 {
 a:hover {
 	text-decoration: none;
 }
-
+.card-block {
+	padding: 5px;
+}
 body {
 	border-left: 36px solid #49627d;
 	background-color: #f7f7f7;
@@ -335,9 +337,105 @@ h5 a {
 	background: -moz-linear-gradient(#ffd66d, #ffbc4a);
 	background: linear-gradient(#ffd66d, #ffbc4a);
 }
-
 #draw {
+	font-family: 'Roboto', Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 500;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	margin: 0.5em 1em;
+	overflow: hidden;
+	position: relative;
+	border-radius: 3px;
 	margin-top: 5%;
+}
+
+#draw * {
+	box-sizing: border-box;
+}
+
+#draw:before,
+#draw:after {
+	display: block;
+}
+
+#draw:before {
+	bottom: 0%;
+}
+
+#draw:after {
+	bottom: 75%;
+}
+
+#draw span {
+	backface-visibility: hidden;
+	color: #000;
+	display: block;
+	padding: 0.5em 1em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+}
+
+#draw span:hover {
+	color: #ffffff;
+}
+
+#draw span:before {
+	bottom: 25%;
+}
+
+#draw span:after {
+	bottom: 50%;
+}
+
+#draw:before,
+#draw:after,
+#draw span:before,
+#draw span:after {
+	background-color: #962d22;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	content: '';
+	z-index: -1;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+	opacity: 0;
+	-webkit-transition: all 0.5s steps(5);
+	transition: all 0.5s steps(5);
+}
+
+#draw:hover:before,
+#draw:hover:after,
+#draw:hover span:before,
+#draw:hover span:after {
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
+	opacity: 1;
+}
+
+#draw:hover:before {
+	-webkit-transition-delay: 0.225s;
+	transition-delay: 0.225s;
+
+}
+
+#draw:hover:after {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+#draw:hover span:before {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+#draw:hover span:after {
+	-webkit-transition-delay: 0.075s;
+	transition-delay: 0.075s;
 }
 
 /*******Obrazek przesuwany myszką*/
@@ -380,8 +478,6 @@ button:hover {
 	display: none;
 	color: #000;
 }
-
-#tmp3,
 #initialValue1,
 #initialValue2 {
 	display: none;
@@ -498,105 +594,6 @@ button:hover {
 
 /* style reg */
 
-#draw {
-	font-family: 'Roboto', Arial, sans-serif;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 500;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	margin: 0.5em 1em;
-	overflow: hidden;
-	position: relative;
-	border-radius: 3px;
-}
-
-#draw * {
-	box-sizing: border-box;
-}
-
-#draw:before,
-#draw:after {
-	display: block;
-}
-
-#draw:before {
-	bottom: 0%;
-}
-
-#draw:after {
-	bottom: 75%;
-}
-
-#draw span {
-	backface-visibility: hidden;
-	color: #000;
-	display: block;
-	padding: 0.5em 1em;
-	position: relative;
-	text-align: center;
-	text-decoration: none;
-}
-
-#draw span:hover {
-	color: #ffffff;
-}
-
-#draw span:before {
-	bottom: 25%;
-}
-
-#draw span:after {
-	bottom: 50%;
-}
-
-#draw:before,
-#draw:after,
-#draw span:before,
-#draw span:after {
-	background-color: #962d22;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	content: '';
-	z-index: -1;
-	-webkit-transform: translateX(-100%);
-	transform: translateX(-100%);
-	opacity: 0;
-	-webkit-transition: all 0.5s steps(5);
-	transition: all 0.5s steps(5);
-}
-
-#draw:hover:before,
-#draw:hover:after,
-#draw:hover span:before,
-#draw:hover span:after {
-	-webkit-transform: translateX(0%);
-	transform: translateX(0%);
-	opacity: 1;
-}
-
-#draw:hover:before {
-	-webkit-transition-delay: 0.225s;
-	transition-delay: 0.225s;
-
-}
-
-#draw:hover:after {
-	-webkit-transition-delay: 0s;
-	transition-delay: 0s;
-}
-
-#draw:hover span:before {
-	-webkit-transition-delay: 0.15s;
-	transition-delay: 0.15s;
-}
-
-#draw:hover span:after {
-	-webkit-transition-delay: 0.075s;
-	transition-delay: 0.075s;
-}
 
 /* Animacja licznik 2 */
 

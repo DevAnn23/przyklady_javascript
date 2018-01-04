@@ -17,7 +17,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Exo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Fira+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoWZhtzmdRrSkBvWV8lIHu__uQWqEPS4Y&callback=initMap" type="text/javascript"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoWZhtzmdRrSkBvWV8lIHu__uQWqEPS4Y&callback=initMap"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous" defer></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous" defer></script>
@@ -37,14 +37,14 @@
 		<div id="accordion" role="tablist">
 			<!-- Dice -->
 			<div class="card">
-				<div class="card-header" role="tab" id="headingThree">
+				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
-						<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Zagraj w kości
         </a>
 					</h5>
 				</div>
-				<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+				<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<section id="second">
 							<div class="box">
@@ -130,14 +130,14 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingTwo">
 					<h5 class="mb-0">
-						<a data-toggle="collapse" href="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+						<a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         Totolotek
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne3" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
 					<div class="card-body">
 						<div class="lottery">
 							<p>Liczba nr 1 to</p>
@@ -172,14 +172,14 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingThree">
 					<h5 class="mb-0">
-						<a data-toggle="collapse" href="#collapseOne4" aria-expanded="true" aria-controls="collapseOne4">
+						<a data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
           Rosnący wykrzyknik
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne4" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
 					<div class="card-body">
 						<h4>Powiększ wykrzyknik <button id="exclamationMark"> !</button></h4>
 						<button id="stop">Potwierdź rozmiar</button>
@@ -188,20 +188,22 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingFour">
 					<h5 class="mb-0">
-						<a data-toggle="collapse" href="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5">
+						<a data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
           Formularz
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne5" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
 					<div class="card-body">
 						<form id="newsletter">
 							<p>Wupełnij wszystkie pola, a następnie potwierdź dane.</p>
-							Email: <input type="text" id="email" autofocus>
+							Imię <input type="text" id="name" autofocus>
+							Email: <input type="text" name="email">
+							Telefon: <input type="text" id="phone">
 							<p id="tmp"></p>
-							Hasło: <input type="text" id="email2"> Powtórz Hasło: <input type="text" id="email3">
+							Hasło: <input type="text" name="email2"> Powtórz Hasło: <input type="text" id="email3">
 
 							<input type="submit" value="Wyślij">
 							<p id="tmp2"></p>
@@ -213,14 +215,14 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingFive">
 					<h5 class="mb-0">
-						<a data-toggle="collapse" href="#collapseOne6" aria-expanded="true" aria-controls="collapseOne6">
+						<a data-toggle="collapse" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
           Stoper
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne6" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
 					<div class="card-body">
 						<h4>Stoper</h4>
 
@@ -237,14 +239,14 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingSix">
 					<h5 class="mb-0">
-						<a id="tenis" data-toggle="collapse" href="#collapseOne7" aria-expanded="true" aria-controls="collapseOne7">
+						<a id="tenis" data-toggle="collapse" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
           Tenis
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne7" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordion">
 					<div class="card-body bgblack">
 						<canvas id="canvas1">
    							Rysowanie tenisa
@@ -255,14 +257,14 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingSeven">
 					<h5 class="mb-0">
-						<a data-toggle="collapse" href="#collapseOne8" aria-expanded="true" aria-controls="collapseOne8">
+						<a data-toggle="collapse" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
          Kalkulator i Silnia
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne8" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordion">
 					<div class="card-body calc">
 						<h3>Kalkulator</h3>
 						<p>Wpisz pierwszą liczbę<br /></p><input type="text" id="num1" value="0">
@@ -285,16 +287,15 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingEight">
 					<h5 class="mb-0">
-						<a id="startRegister" data-toggle="collapse" href="#collapseOne9" aria-expanded="true" aria-controls="collapseOne9">
+						<a id="startRegister" data-toggle="collapse" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
           Liczniki
         </a>
 					</h5>
 				</div>
-				<div id="collapseOne9" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" data-parent="#accordion">
 					<div class="card-body">
 						<section class="container regflex">
 							<div class="reg">
@@ -319,21 +320,21 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
+				<div class="card-header" role="tab" id="headingTen">
 					<h5 class="mb-0">
-						<a id="startRegister" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<a id="startRegister" data-toggle="collapse" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
           Paint
         </a>
 					</h5>
 				</div>
-				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+				<div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#accordion">
 					<div class="card-body">
 						<p style="float:left">W planach - czeka na realizację</p>
-							<div id="emot">
-								<div></div>
-								<div></div>
-								<div>D</div>
-							</div>
+						<div id="emot">
+							<div></div>
+							<div></div>
+							<div>D</div>
+						</div>
 
 
 					</div>
@@ -358,7 +359,7 @@
 		</canvas>
 	</section>
 
-	<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br>
 	<div id="map"></div>
 
 </body>
