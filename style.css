@@ -227,32 +227,32 @@ h5 a {
 	border: 1px solid grey;
 }
 
-#back {
+.back {
 	transform: translateZ(-35px);
 	-webkit-transform: translateZ(-35px);
 	background-image: url('img/title_1.png');
 	background-position: center;
 }
 
-#leftSide {
+.leftSide {
 	transform: rotateY(-90deg) translateZ(35px);
 	-webkit-transform: rotateY(-90deg) translateZ(35px);
 	background-image: url(img/title_4.png);
 }
 
-#rightSide {
+.rightSide {
 	transform: rotateY(90deg) translateZ(35px);
 	-webkit-transform: rotateY(90deg) translateZ(35px);
 	background-image: url(img/title_3.png);
 }
 
-#topSide {
+.topSide {
 	transform: rotateX(-90deg) translateZ(35px);
 	-webkit-transform: rotateX(-90deg) translateZ(35px);
 	background-image: url(img/title_5.png);
 }
 
-#bottomSide {
+.bottomSide {
 	transform: rotateX(90deg) translateZ(35px);
 	-webkit-transform: rotateX(90deg) translateZ(35px);
 	background-image: url(img/title_6.png);
