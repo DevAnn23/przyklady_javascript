@@ -824,6 +824,11 @@ window.onload = function () {
 	const lineHeight = 16; /* linie na srodku boiska */
 	const lineWidth = 6;
 	var timeOutTenis;
+	var score = document.getElementById('score');
+	var scorePlayer = 0;
+
+
+
 
 
 	//zmienne okreslające położenie piłki - poczatkowe
@@ -865,14 +870,17 @@ window.onload = function () {
 		}
 		// jeśli paletka uderzy górną połowa w piłkę
 		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight / 2)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight / 2))) {
-			ballspeedY += 0.2;
-			//console.log("plus" +  ballspeedY);
+			ballY += 0.5;
+			console.log("ballspeedY to" +  ballspeedY + "a ballY to" + ballY);
 		}
 		// jesli piłka dotrze do krawędzi naszego stołu odbijamy ją zmieniając znak minus
-		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight))) {
+		if ((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight)) {
+			ballspeedX = -ballspeedX;
+			scorePlayer++;
+		}
+		if ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight)) {
 			// jesli piłka dotrze do krawędzi naszego stołu odbijamy ją zmieniając znak minus
 			ballspeedX = -ballspeedX;
-			console.log("kolizja");
 		} else if (ballX < playerX || ballX + ballSize > cpuX + paddleWidth) {
 			return gameOveTen();
 		}
@@ -911,6 +919,7 @@ window.onload = function () {
 		cpu();
 		//wyliczenie pozycji paletki komputera
 		cpuPosition();
+		score.innerHTML = scorePlayer;
 
 	}
 	//sprawdzamy odległośc jaka jest od początku okna przeglądarki do danego elementu, w wtym przypadku canvas
@@ -971,12 +980,12 @@ window.onload = function () {
 			if (middlePaddle - middleBall > 200) {
 				cpuY -= 15;
 			} else if (middlePaddle - middleBall > 50) {
-				cpuY -= 5;
+				cpuY -= 10;
 			}
 			if (middlePaddle - middleBall < -200) {
 				cpuY += 15;
 			} else if (middlePaddle - middleBall < -50) {
-				cpuY += 5;
+				cpuY += 10;
 			}
 		} else if (ballX <= 500 && ballX < 150) {
 			if (middlePaddle - middleBall > 100) {
@@ -993,8 +1002,11 @@ window.onload = function () {
 
 
 	function playPlayer() {
+		scorePlayer = 0;
 		ballspeedX = 2;
 		ballspeedY = 2;
+		ballX = c1Width / 2 - ballSize / 2; /* 490 do 510 */
+		ballY = c1Heihgt / 2 - ballSize / 2; /*  240 do 260 */
 
 
 		clearInterval(timeOutTenis);

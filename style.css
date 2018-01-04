@@ -159,7 +159,9 @@ h5 a {
 }
 
 /* zasady DICE */
-
+#score {
+	margin-left: 5px;
+}
 .box {
 	background-color: silver;
 	text-align: center;
@@ -442,6 +444,7 @@ h5 a {
 
 #picture {
 	position: absolute;
+	z-index: 1;
 }
 
 h4 {
