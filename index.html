@@ -175,16 +175,36 @@
 				</div>
 				<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
 					<div class="card-body">
-						<form id="newsletter">
-							<p>Wupełnij wszystkie pola, a następnie potwierdź dane.</p>
-							Imię <input type="text" id="name" autofocus> Email: <input type="text" name="email"> Telefon: <input type="text" id="phone">
-							<p id="tmp"></p>
-							Hasło: <input type="text" name="email2"> Powtórz Hasło: <input type="text" id="email3">
-							<input type="submit" value="Wyślij">
-							<p id="tmp2"></p>
-							<p id="tmp3"></p>
-							<p id="tmp4"></p>
-						</form>
+				<form class="form" id="form">
+						<h1 class="form-heading">Contact form</h1>
+						<label class="label" for="name">Your Name</label>
+						<input type="text" class="input" name="name" autofocus required />
+						<div class="tooltip"></div>
+
+						<label class="label" for="email">Your E-mail</label>
+						<input type="text" class="input" name="email" id="email" required/>
+						<div class="tooltip"></div>
+
+						<label class="label" for="phone">Your Phone Number</label>
+						<input type="text" class="input" name="phone" id="phone" required/>
+						<div class="tooltip" id="tooltipNumber"></div>
+
+						<label class="label" for="message">Speak Your Mind</label>
+						<textarea class="message" name="message" id="message" required></textarea>
+
+
+						<label class="label" id="labelAdd" for="addition"></label>
+						<input type="text" class="input" name="addition" id="addition" required />
+						<div class="tooltip" id="tooltipAdd"></div>
+
+						<p class="form-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
+						<div class="form-group">
+							<label for="exampleFormControlFile1"></label>
+							<input type="file" class="form-control-file" name="exampleFormControlFile1" id="exampleFormControlFile1">
+						</div>
+						<input type="submit" class="form-button" name="form-button" value="Submit" />
+						<div class="tooltip" id="tooltipSend"></div>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -321,6 +341,7 @@
 	</article>
 	<br>
 	<div id="map"></div>
+
 </body>
 
 </html>

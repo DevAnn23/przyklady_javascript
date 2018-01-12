@@ -357,37 +357,61 @@ window.onload = function () {
 		window.scrollBy(0, 100); /* wartości dodatnie dół*/
 	};
 
-	var email = document.getElementById("newsletter").email;
-	var submit = document.querySelector("#newsletter input[type='submit']");
-	var tmp = document.getElementById("tmp");
-	var email2 = document.getElementById("newsletter").email2;
-	var email3 = document.getElementById("email3");
-	var tmp2 = document.getElementById("tmp2");
-	var tmp3 = document.getElementById("tmp3");
-	var tmp4 = document.getElementById("tmp4");
+function validForm() {
+		var labelAdd = document.querySelector('#labelAdd');
+		var phoneField = document.querySelector('.form').phone;
+		var emailField = document.querySelector('.form').email;
+		var messageField = document.querySelector('.form').message;
+		var additionField = document.querySelector('.form').addition;
+		var formButton = document.querySelector('.form-button');
+		var tooltipSend = document.getElementById('tooltipSend');
+		var tooltipNumber = document.getElementById('tooltipNumber');
+		var tooltipAdd = document.getElementById('tooltipAdd');
+		var isOk = true;
+		var intAddNumber = parseInt(additionField.value);
 
-	submit.onclick = function (e) {
+		function addNumber() {
+			var num1 = Math.floor(Math.random() * 10);
+			var num2 = Math.floor(Math.random() * 10);
+			console.log(num1 + num2);
 
-		tmp.style.display = "block";
-		tmp.innerHTML = email.value;
-		if (email.value === "" || email.value === " " || email2.value === "" || email2.value === " ") {
-			tmp3.innerHTML = "Wypełnij wszystkie pola";
-			tmp3.style.display = "block";
+			labelAdd.innerHTML = num1 + "+" + num2;
+
+			additionField.onkeyup = function (e) {
+				if (parseInt(additionField.value) === num1 + num2 && parseInt(additionField.value) != null) {
+					console.log("jest ok");
+					isOk = true;
+
+				} else {
+					isOk = false;
+					console.log("jest none");
+				}
+			}
 		}
-		if (email2.value != email3.value) {
-			tmp4.innerHTML = "Hasła są różne";
-			tmp4.style.display = "block";
-			tmp2.style.display = "block";
-			tmp2.style.borderColor = "red";
-			tmp3.style.borderColor = "red";
-		} else {
-			tmp4.innerHTML = "";
-			tmp3.innerHTML = "";
+		addNumber();
+		phoneField.onkeyup = function (e) {
+			if (this.value === "" || isNaN(this.value)) {
+				tooltipNumber.innerHTML = "Invalid number";
+				isOk = false;
+
+			} else {
+				tooltipNumber.innerHTML = "";
+				isOk = true;
+			}
 		}
-		tmp2.innerHTML = email2.value;
-		e.preventDefault();
-		/* domyslnie  jak klikniemy wyślij to od razu wysyła i  zamyka formularz, żeby wyłączyć te domyślną akcję - e.preventDefault(); */
-	};
+		formButton.onclick = function (e) {
+			if (!isOk) {
+				e.preventDefault();
+				tooltipSend.innerHTML = "Incorrect data";
+			} else {
+				tooltipSend.innerHTML = "";
+			}
+
+		}
+
+	}
+	validForm();
+
 
 	// Stoper
 	/* Rozwiązanie z setTimeOut

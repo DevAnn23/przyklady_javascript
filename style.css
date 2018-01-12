@@ -477,11 +477,93 @@ button:hover {
 
 /* Form*/
 
-#tmp,
-#tmp2,
-#tmp3 {
-	display: none;
-	color: #000;
+/* Formularz */
+
+.form {
+	margin: 0 auto;
+	flex: 2;
+}
+
+.form-heading {
+	font-size: 1.2em;
+	padding: 5px 0 5px 5px;
+	font-weight: 100;
+}
+
+.label {
+	width: 100%;
+	display: block;
+	padding: 10px 0;
+	font-size: 1em;
+}
+
+.input {
+	padding: 10px 10px;
+	width: 50%;
+	border-bottom: 1px double #171717;
+	border-top: 1px double #171717;
+	border-left: 1px double #333333;
+	border-right: 1px double #333333;
+	position: relative;
+	display: inline-block;
+}
+
+#addition {
+	width: 5%;
+	float: left;
+}
+
+/* sprawdzanie danych formularza*/
+
+.tooltip {
+	position: relative;
+	background-color: #000;
+	color: #ffffff;
+	border-radius: 10px;
+	display: inline-block;
+	opacity: 1 !important;
+}
+
+.label:before {
+	content: "*";
+	position: relative;
+	top: 20px;
+	left: -20px;
+	visibility: visible;
+	color: #cc0000;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+}
+
+.message {
+	padding: 7px 7px;
+	width: 70%;
+	border-bottom: 1px double #171717;
+	border-top: 1px double #171717;
+	border-left: 1px double #333333;
+	border-right: 1px double #333333;
+	overflow: hidden;
+	height: 150px;
+}
+
+.form-button {
+	margin: 5px 0 10px 0;
+	padding: 4px 7px;
+	background: #cc0000;
+	border: 2px solid #cc0000;
+	width: 100px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-family: cursive;
+}
+
+.form-text {
+	width: 40% !important;
+	float: left;
+	margin: 0 3%;
+	font-size: 0.9em;
 }
 #initialValue1,
 #initialValue2 {
