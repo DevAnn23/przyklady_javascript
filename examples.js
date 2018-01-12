@@ -326,7 +326,7 @@ pobierzInformacje: function()
 {
 return this.imie + " " + this.nazwisko;
 },
-toString: finction() {
+toString: function() {
 return this.imie + " " + this.nazwisko;
 }
 };
