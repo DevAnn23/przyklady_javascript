@@ -362,7 +362,7 @@ function validForm() {
 		var phoneField = document.querySelector('.form').phone;
 		var emailField = document.querySelector('.form').email;
 		var messageField = document.querySelector('.form').message;
-		var additionField = document.querySelector('.form').addition;
+		var additionField = document.querySelector('.form').fieldAddition;
 		var formButton = document.querySelector('.form-button');
 		var tooltipSend = document.getElementById('tooltipSend');
 		var tooltipNumber = document.getElementById('tooltipNumber');
