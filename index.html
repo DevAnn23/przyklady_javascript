@@ -175,36 +175,43 @@
 				</div>
 				<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
 					<div class="card-body">
-				<form class="form" id="form">
-						<h1 class="form-heading">Contact form</h1>
-						<label class="label" for="name">Your Name</label>
-						<input type="text" class="input" name="name" autofocus required />
-						<div class="tooltip"></div>
+						<form class="form" id="form">
+							<h1 class="form-heading">Contact form</h1>
+							<label class="label" for="name">Your Name</label>
+							<input type="text" class="input" name="name" autofocus required />
+							<div class="tooltip"></div>
 
-						<label class="label" for="email">Your E-mail</label>
-						<input type="text" class="input" name="email" id="email" required/>
-						<div class="tooltip" id="tooltipEmail"></div>
+							<label class="label" for="email">Your E-mail</label>
+							<input type="email" class="input" name="email" id="email" required/>
+							<div class="tooltip" id="tooltipEmail"></div>
 
-						<label class="label" for="phone">Your Phone Number</label>
-						<input type="text" class="input" name="phone" id="phone" required/>
-						<div class="tooltip" id="tooltipNumber"></div>
+							<label class="label" for="psw">Enter Password</label>
+							<input type="password" class="input" name="psw" minlength="8" maxlength="8">
 
-						<label class="label" for="message">Speak Your Mind</label>
-						<textarea class="message" name="message" id="message" required></textarea>
+							<label class="label" for="reenterpsw">Reenter Password</label>
+							<input type="password" class="input" name="reenterpsw" minlength="8" maxlength="8">
 
 
-						<label class="label" id="labelAdd" for="fieldAddition"></label>
-						<input type="text" class="input" name="fieldAddition" id="fieldAddition" required />
-						<div class="tooltip" id="tooltipAdd"></div>
+							<label class="label" for="phone">Your Phone Number</label>
+							<input type="text" class="input" name="phone" id="phone" required/>
+							<div class="tooltip" id="tooltipNumber"></div>
 
-						<p class="form-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
-						<div class="form-group">
-							<label for="exampleFormControlFile1"></label>
-							<input type="file" class="form-control-file" name="exampleFormControlFile1" id="exampleFormControlFile1">
-						</div>
-						<input type="submit" class="form-button" name="form-button" value="Submit" />
-						<div class="tooltip" id="tooltipSend"></div>
-					</form>
+							<label class="label" for="message">Speak Your Mind</label>
+							<textarea class="message" name="message" id="message" required></textarea>
+
+
+							<label class="label" id="labelAdd" for="fieldAddition"></label>
+							<input type="text" class="input" name="fieldAddition" id="fieldAddition" required />
+							<div class="tooltip" id="tooltipAdd"></div>
+
+							<p class="form-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
+							<div class="form-group">
+								<label for="exampleFormControlFile1"></label>
+								<input type="file" class="form-control-file" name="exampleFormControlFile1" id="exampleFormControlFile1">
+							</div>
+							<input type="submit" class="form-button" name="form-button" value="Submit" />
+							<div class="tooltip" id="tooltipSend"></div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -317,11 +324,34 @@
 				</div>
 				<div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#accordion">
 					<div class="card-body">
-						<p style="float:left">W planach - czeka na realizację</p>
+						<!-- <p style="float:left">W planach - czeka na realizację</p>
 						<div id="emot">
 							<div></div>
 							<div></div>
 							<div>D</div>
+						</div> -->
+						<div class="paint">
+							<div class="paint-bar">
+								<input id="paintSize" type="range" class="paint-size" min="1" max="50" value="5">
+								<output for="paintSize" class="paint-size-val"></output>
+								<input type="color" class="paint-color">
+								<input type="date" name="bday">
+
+								<div class="paint-buttons-cnt">
+									<button data-mode="draw" class="button-mode" type="button">
+										Draw
+									</button>
+									<button data-mode="line" class="button-mode" type="button">
+										Line
+									</button>
+									<button data-mode="rectangle" class="button-mode" type="button">
+										Rectangle
+									</button>
+								</div>
+							</div>
+
+							<div class="paint-canvas-cnt">
+							</div>
 						</div>
 					</div>
 				</div>

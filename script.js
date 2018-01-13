@@ -363,6 +363,8 @@ window.onload = function () {
 		var emailField = document.querySelector('.form').email;
 		var messageField = document.querySelector('.form').message;
 		var fieldAddition = document.querySelector('.form').fieldAddition;
+		var pswField = document.querySelector('.form').psw;
+		var reenterpswField = document.querySelector('.form').reenterpsw;
 		var formButton = document.querySelector('.form-button');
 		var tooltipSend = document.getElementById('tooltipSend');
 		var tooltipNumber = document.getElementById('tooltipNumber');
@@ -418,7 +420,7 @@ window.onload = function () {
 		}
 		enterNumber();
 		formButton.onclick = function (e) {
-			if (!isOkEmail || !isOkPhone || !isOkAdd) {
+			if (!isOkEmail || !isOkPhone || !isOkAdd || reenterpswField.value != pswField.value) {
 				e.preventDefault();
 				tooltipSend.innerHTML = "Incorrect data";
 			} else {
