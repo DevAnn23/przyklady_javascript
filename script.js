@@ -390,12 +390,12 @@ window.onload = function () {
 		addNumber();
 
 		function addEmail() {
-			emailField.onkeyup = function (e) {
+			emailField.onblur = function (e) {
 
-				if (!(this.value.includes("@") && this.value.includes(".") && !this.value.includes(" "))) {
+				if (this.value && !(this.value.includes("@") && this.value.includes(".") && !this.value.includes(" "))) {
 					isOkEmail = false;
 					tooltipEmail.innerHTML = "Invalid email";
-					console.log("incl");
+					console.log('małpa i kropka');
 				} else {
 					isOkEmail = true;
 					console.log("ioppp");
@@ -403,11 +403,10 @@ window.onload = function () {
 				}
 			}
 		}
-
 		addEmail();
 		function enterNumber() {
-			phoneField.onkeyup = function (e) {
-				if (this.value === "" || e.which === 32 || isNaN(this.value)) { // 32 kod klawisza spacji
+		phoneField.onblur = function (e) {
+				if (this.value && (e.which === 32 || isNaN(this.value))) { // 32 kod klawisza spacji
 					tooltipNumber.innerHTML = "Invalid number";
 					isOkPhone = false;
 
