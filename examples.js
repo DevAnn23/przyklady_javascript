@@ -1,16 +1,15 @@
 //kalkulator
-	function calculator() {
-		var num1 = document.getElementById('num1').value;
-		var num2 = document.getElementById('num2').value;
-		var num1Int = parseInt(num1);
-		var num2Int = parseInt(num2);
-		var resultOperation = document.getElementById('resultOperation');
-		if (num1 === "" || num2 === "") {
-			console.log("puste");
-			resultOperation.innerHTML = "Wpisz obie liczby";
-		}
-		else {
-			function substractionNumbers(num1, num2) {
+function calculator() {
+	var num1 = document.getElementById('num1').value;
+	var num2 = document.getElementById('num2').value;
+	var num1Int = parseInt(num1);
+	var num2Int = parseInt(num2);
+	var resultOperation = document.getElementById('resultOperation');
+	if (num1 === "" || num2 === "") {
+		console.log("puste");
+		resultOperation.innerHTML = "Wpisz obie liczby";
+	} else {
+		function substractionNumbers(num1, num2) {
 
 			//var num1 = document.getElementById('num1').value;
 			//var num2 = document.getElementById('num2').value;
@@ -42,11 +41,10 @@
 			var num2Int = parseInt(num2);
 			var resultOperation = document.getElementById('resultOperation');
 			if (num1 === "" || num2 === "") {
-			console.log("puste1");
-			resultOperation.innerHTML = "Wpisz obie liczby";
-		}
-			else{
-			resultOperation.innerHTML = num1Int * num2Int;
+				console.log("puste1");
+				resultOperation.innerHTML = "Wpisz obie liczby";
+			} else {
+				resultOperation.innerHTML = num1Int * num2Int;
 			}
 
 
@@ -62,20 +60,20 @@
 			}
 			resultOperation.innerHTML = (num1 / num2);
 		}
-		}
+	}
 
 
-		var substraction = document.getElementById('substraction');
-		var addition = document.getElementById('addition');
-		var multiplication = document.getElementById('multiplication');
-		var division = document.getElementById('division');
+	var substraction = document.getElementById('substraction');
+	var addition = document.getElementById('addition');
+	var multiplication = document.getElementById('multiplication');
+	var division = document.getElementById('division');
 
-		substraction.addEventListener("click", substractionNumbers);
-		addition.addEventListener("click", additionNumbers);
-		multiplication.addEventListener("click", multiplicationNumbers);
-		division.addEventListener("click", divisionNumbers);
-	};
-	calculator();
+	substraction.addEventListener("click", substractionNumbers);
+	addition.addEventListener("click", additionNumbers);
+	multiplication.addEventListener("click", multiplicationNumbers);
+	division.addEventListener("click", divisionNumbers);
+};
+calculator();
 
 
 
@@ -307,8 +305,8 @@ div.innerHTML = osoba.imie;
 var osoba = {
 imie: "Arek",
 nazwisko: "Kowalski",
-pobierzInformacje: function(){                  ***** funkcja jest częścia obiektu
-return this.imie + " " + this.nazwisko;
+pobierzInformacje: function () { ** ** * funkcja jest częścia obiektu
+	return this.imie + " " + this.nazwisko;
 }
 };
 

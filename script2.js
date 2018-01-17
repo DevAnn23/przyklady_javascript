@@ -9,16 +9,15 @@ window.onload = function () {
 	var paintSizeVal = document.querySelector(".paint-size-val");
 	var active = false;
 	var borderRad = 0;
-	console.log("paint color" + paintColor.value);
+
 	paintSizeVal.innerText = paintSize.value;
 
-paintSize.oninput = function() {
-  paintSizeVal.innerHTML = this.value;
-}
-paintColor.oninput = function() {
-  this.innerHTML = this.value;
-	console.log("paint color" + paintColor.value);
-}
+	paintSize.oninput = function () {
+		paintSizeVal.innerHTML = this.value;
+	}
+	paintColor.oninput = function () {
+		this.innerHTML = this.value;
+	}
 
 	const drawRect = function (e) {
 		if (active === false) return;
