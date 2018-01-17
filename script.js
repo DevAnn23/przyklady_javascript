@@ -406,8 +406,9 @@ window.onload = function () {
 			}
 		}
 		addEmail();
+
 		function enterNumber() {
-		phoneField.onblur = function (e) {
+			phoneField.onblur = function (e) {
 				if (this.value && (e.which === 32 || isNaN(this.value))) { // 32 kod klawisza spacji
 					tooltipNumber.innerHTML = "Invalid number";
 					isOkPhone = false;
@@ -671,6 +672,7 @@ window.onload = function () {
 	};
 
 
+
 	//Rysowanie w canvas
 	var canvas = document.getElementById('can');
 	canvas.width = 600;
@@ -851,6 +853,7 @@ window.onload = function () {
 		closeEye();
 	};
 
+	///////////////// Gra w tenis
 
 	/* const - stała wartości stałe, nie bedą zmieniane, var lub let - zmienna - przypisanie wartości, ale będzie ona zmieniana na różnych etapach programu*/
 	var canvas1 = document.getElementById('canvas1');
@@ -871,10 +874,6 @@ window.onload = function () {
 	var timeOutTenis;
 	var score = document.getElementById('score');
 	var scorePlayer = 0;
-
-
-
-
 
 	//zmienne okreslające położenie piłki - poczatkowe
 	var ballX = c1Width / 2 - ballSize / 2; /* 490 do 510 */
@@ -916,7 +915,7 @@ window.onload = function () {
 		// jeśli paletka uderzy górną połowa w piłkę
 		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight / 2)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight / 2))) {
 			ballY += 0.5;
-			console.log("ballspeedY to" +  ballspeedY + "a ballY to" + ballY);
+			console.log("ballspeedY to" + ballspeedY + "a ballY to" + ballY);
 		}
 		// jesli piłka dotrze do krawędzi naszego stołu odbijamy ją zmieniając znak minus
 		if ((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight)) {
@@ -950,10 +949,6 @@ window.onload = function () {
 		c1.fillStyle = "#ffffff";
 		c1.fillText("Koniec", c1Width / 2 - c1.measureText("Koniec").width - 20, 50);
 		c1.fillText("Gry", c1Width / 2 + 20, 50);
-
-
-
-
 	}
 
 	function game() {
@@ -1075,4 +1070,5 @@ window.onload = function () {
 
 	//ustawienie, zeby strona nie zjeżdzała w dół przy otwieraniu
 	window.scrollBy(0, -1 * window.pageYOffset);
+
 };
