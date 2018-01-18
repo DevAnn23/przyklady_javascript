@@ -1,29 +1,29 @@
 window.onload = function () {
-
-	var paint = document.querySelector(".paint");
-	var paintColor = document.querySelector(".paint-color");
-	var body = document.querySelector(".body-index2");
-	var paintSize = document.querySelector(".paint-size");
-	var buttonRect = document.querySelector(".button-rect");
-	var buttonCircle = document.querySelector(".button-circle");
-	var paintSizeVal = document.querySelector(".paint-size-val");
-	var active = false;
-	var borderRad = 0;
+	"use strict";
+	var paint = document.querySelector(".paint"),
+		paintColor = document.querySelector(".paint-color"),
+		body = document.querySelector(".body-index2"),
+		paintSize = document.querySelector(".paint-size"),
+		buttonRect = document.querySelector(".button-rect"),
+		buttonCircle = document.querySelector(".button-circle"),
+		paintSizeVal = document.querySelector(".paint-size-val"),
+		active = false,
+		borderRad = 0;
 
 	paintSizeVal.innerText = paintSize.value;
 
 	paintSize.oninput = function () {
 		paintSizeVal.innerHTML = this.value;
-	}
+	};
 	paintColor.oninput = function () {
 		this.innerHTML = this.value;
-	}
+	};
 
-	const drawRect = function (e) {
+	var drawRect = function (e) {
 		if (active === false) return;
-		const x = e.clientX + 12;
-		const y = e.clientY + 2;
-		const span = document.createElement("span");
+		var x = e.clientX + 12;
+		var y = e.clientY + 2;
+		var span = document.createElement("span");
 		span.style.top = y + "px";
 		span.style.left = x + "px";
 		span.style.borderRadius = borderRad;
@@ -31,13 +31,13 @@ window.onload = function () {
 		span.style.width = paintSize.value + "px";
 		body.appendChild(span);
 		span.style.backgroundColor = paintColor.value;
-	}
+	};
 
-	const drawCircle = function (e) {
+	var drawCircle = function (e) {
 		if (active === false) return;
-		const x = e.clientX + 12;
-		const y = e.clientY + 2;
-		const span = document.createElement("span");
+		var x = e.clientX + 12;
+		var y = e.clientY + 2;
+		var span = document.createElement("span");
 		span.style.top = y + "px";
 		span.style.left = x + "px";
 		span.style.borderRadius = "50%";
@@ -46,22 +46,22 @@ window.onload = function () {
 		body.appendChild(span);
 		span.style.backgroundColor = paintColor.value;
 
-	}
-	const drawActive = function () {
+	};
+	var drawActive = function () {
 		active = true;
-	}
-	const drawNotActive = function () {
+	};
+	var drawNotActive = function () {
 		active = false;
-	}
+	};
 	buttonCircle.onclick = function () {
 		paint.removeEventListener("mousemove", drawRect);
 		paint.addEventListener("mousemove", drawCircle);
-	}
+	};
 	buttonRect.onclick = function () {
 		paint.removeEventListener("mousemove", drawCircle);
 		paint.addEventListener("mousemove", drawRect);
 		paintSizeVal.innerHTML = paintSize.value;
-	}
+	};
 	paint.addEventListener("mousedown", drawActive);
 	paint.addEventListener("mouseup", drawNotActive);
 

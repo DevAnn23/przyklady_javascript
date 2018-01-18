@@ -222,8 +222,8 @@ window.onload = function () {
 	stop.addEventListener("click", confirmFontSize);
 
 	//silnia
-	var result = 1;
-	var factorialResult = document.getElementById('factorialResult');
+	var result = 1,
+		factorialResult = document.getElementById('factorialResult');
 
 	function factorial(n) {
 		result = 1;
@@ -277,7 +277,6 @@ window.onload = function () {
 			} else {
 				resultOperation.innerHTML = num1Int + num2Int;
 			}
-
 		}
 
 		function multiplicationNumbers(num1, num2) {
@@ -915,7 +914,6 @@ window.onload = function () {
 		// jeśli paletka uderzy górną połowa w piłkę
 		if (((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight / 2)) || ((ballX + ballSize > cpuX) && (middleBall > cpuY && middleBall < cpuY + paddleHeight / 2))) {
 			ballY += 0.5;
-			console.log("ballspeedY to" + ballspeedY + "a ballY to" + ballY);
 		}
 		// jesli piłka dotrze do krawędzi naszego stołu odbijamy ją zmieniając znak minus
 		if ((ballX < playerX + paddleWidth) && (middleBall > playerY && middleBall < playerY + paddleHeight)) {
@@ -1035,7 +1033,6 @@ window.onload = function () {
 			}
 
 		}
-
 	}
 	// funkcja, wywołująca co okreslony czas wywołanie funkcji, za każdym wywołaniem funkcji ballX +=ballspeedX;
 	/* podajemy co ma sie wykonać i ile razy 1000ms / 50ms = 20 razy na 1s*/
