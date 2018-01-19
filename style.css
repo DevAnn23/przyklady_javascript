@@ -11,10 +11,12 @@ footer {
 footer:hover .oi {
 	color: #d8f07c;
 	transition: all 0.5s steps(5);
+	text-shadow: rgba(255,255,255, 0.8)0 0 40px;
 }
 
 .oi {
 	margin-left: 5px;
+
 }
 
 .project {
