@@ -881,8 +881,8 @@ window.onload = function () {
 	var playerY = 200;
 	var cpuY = 200;
 	// zmienne określające zmiany połozenia piłki
-	var ballspeedX = 2;
-	var ballspeedY = 2;
+	var ballspeedX;
+	var ballspeedY;
 
 
 	function player() {
@@ -938,6 +938,7 @@ window.onload = function () {
 			c1.fillStyle = '#5ccc00';
 			c1.fillRect(c1Width / 2 - lineWidth / 2, i, lineWidth, lineHeight);
 		}
+
 	}
 
 	function textOver() {
@@ -998,7 +999,7 @@ window.onload = function () {
 			ballspeedY -= 0.3;
 
 		}
-		//console.log(ballspeedY + " " + ballspeedX);
+
 
 	}
 	canvas1.addEventListener("mousemove", playerPosition);
@@ -1040,8 +1041,8 @@ window.onload = function () {
 
 	function playPlayer() {
 		scorePlayer = 0;
-		ballspeedX = 2;
-		ballspeedY = 2;
+		ballspeedX =4;
+		ballspeedY = 4;
 		ballX = c1Width / 2 - ballSize / 2; /* 490 do 510 */
 		ballY = c1Heihgt / 2 - ballSize / 2; /*  240 do 260 */
 
