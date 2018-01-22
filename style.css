@@ -5,8 +5,7 @@ footer {
 	color: #aaaaaa;
 	text-align: center;
 	width: 100%;
-	height: 130px;
-	padding-top: 10px;
+	padding: 10px 0;
 }
 footer:hover .oi {
 	color: #d8f07c;
