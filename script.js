@@ -175,9 +175,6 @@ window.onload = function () {
 
 	dateAndtime();
 
-	function animationDice() {
-		this.className = "changeColor";
-	}
 
 	function changeColor() {
 		this.className = "changeColor";
