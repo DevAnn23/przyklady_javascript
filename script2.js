@@ -1,4 +1,5 @@
 window.onload = function () {
+
 	"use strict";
 	var paint = document.querySelector(".paint"),
 		paintColor = document.querySelector(".paint-color"),

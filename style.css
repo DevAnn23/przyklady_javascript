@@ -528,7 +528,7 @@ button:hover {
 }
 
 .input {
-	padding: 10px 10px;
+	padding-left: 2px;
 	width: 50%;
 	border-bottom: 1px double #171717;
 	border-top: 1px double #171717;

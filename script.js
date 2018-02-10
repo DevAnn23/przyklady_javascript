@@ -1,6 +1,7 @@
 //Google Map
 
 function initMap() {
+	"use strict";
 	var uluru = {
 		lat: 52.2296756,
 		lng: 21.012228700000037
@@ -175,6 +176,9 @@ window.onload = function () {
 
 	dateAndtime();
 
+	function animationDice() {
+		this.className = "changeColor";
+	}
 
 	function changeColor() {
 		this.className = "changeColor";
