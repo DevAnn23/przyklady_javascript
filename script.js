@@ -499,10 +499,6 @@ window.onload = function () {
 
 				self.startStoper();
 			}, 1000);
-
-
-
-
 		};
 		this.stop = function () {
 
