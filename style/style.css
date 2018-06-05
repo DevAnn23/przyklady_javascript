@@ -1,0 +1,162 @@
+html {
+  font-size: 10px;
+}
+
+body > * {
+  overflow-x: hidden;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+  body > * {
+    overflow-x: hidden;
+    flex-direction: row;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+input {
+  font-size: 1.1em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 2em;
+  font-family: "Exo", sans-serif;
+  border-bottom: 4px solid #45aada;
+}
+
+h1 {
+  padding: 1%;
+  font-family: "Exo", sans-serif;
+  margin: 0;
+  font-size: 3.8em;
+}
+
+h6 {
+  font-size: 1.2em;
+}
+
+.arrow, main .section ol li, nav a span:before {
+  padding: 5px;
+  color: #45aada;
+  font-size: 1.1em;
+  transition: all .5s ease;
+}
+
+.header, footer {
+  background-color: #45aada;
+  box-shadow: 0 6px 4px -4px #AAA;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+main {
+  max-width: 1200px;
+  padding: 1%;
+  margin: 0 auto;
+  display: flex;
+  min-height: 68vh;
+}
+
+main .article {
+  background-color: #f0f0f0;
+  padding: 2%;
+  overflow: auto;
+  text-align: center;
+}
+
+main .section {
+  flex: 2;
+  text-align: center;
+}
+
+main .section ol {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+main .section ol li {
+  display: block;
+  overflow: hidden;
+}
+
+main .section ol li:hover {
+  padding-left: 17px;
+}
+
+main .section ol a {
+  padding: 5px;
+}
+
+button {
+  margin: 2%;
+  padding: 10px 5px;
+  min-width: 150px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+nav {
+  text-align: center;
+  padding: 5px;
+}
+
+nav a {
+  position: relative;
+}
+
+nav a span:before {
+  position: absolute;
+  padding-left: 0;
+  left: -3%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+nav a:hover .fa:before {
+  left: -8%;
+}
+
+footer {
+  margin-bottom: 0;
+  padding: 1em 0;
+  line-height: 1em;
+}
+
+footer h6 {
+  padding: 0;
+  margin: 0;
+}
+
+footer .fa-project-diagram {
+  color: #f0f0f0;
+  padding-left: 0.51em;
+}
+
+footer .project {
+  margin: 0 2px;
+  background-color: #f0f0f0;
+  padding: 3px;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=style.css.map */

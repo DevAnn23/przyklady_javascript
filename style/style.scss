@@ -1,0 +1,133 @@
+@import "_settings.scss";
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $primaryFontFamily;
+    font-weight: 400;
+}
+a {
+    color: #000;
+    text-decoration: none;
+    font-family: $primaryFontFamily;
+}
+input {
+    font-size: $basicSize;
+}
+h2 {
+    font-size: $h2fontSize;
+}
+
+h3 {
+    font-size: $h3fontSize;
+    font-family: $secondFontFamily;
+    border-bottom: 4px solid $primaryColor;
+    
+}
+h1 {
+    padding: 1%;
+    font-family: $secondFontFamily;
+    margin: 0;
+    font-size: $h1fontSize;
+}
+h6 {
+    font-size: $h6FontSize;
+}
+.arrow {
+    padding: 5px;
+    color: $primaryColor;
+    font-size: $basicSize;
+    transition: all .5s ease;
+
+}
+
+.header {
+    background-color: $primaryColor;
+    box-shadow: 0 6px 4px -4px #AAA;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+main {
+    max-width: 1200px;
+    padding: 1%;
+    margin: 0 auto;
+    display: flex;
+    min-height: 68vh;
+    .article {
+        background-color: $secondColor;
+        padding: 2%;
+        overflow: auto;
+        text-align: center;
+    }
+    .section {
+        flex: 2;
+        text-align: center;
+        ol {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+            li {
+                @extend .arrow;
+                display: block;
+                overflow: hidden;
+                &:hover {
+                    padding-left: 17px;
+                }
+            }
+            a {
+                padding: 5px;
+            
+            }
+        }
+    }
+}
+
+button {
+    margin: 2%;
+    padding: 10px 5px;
+    min-width: 150px;
+    cursor: pointer;
+    font-size: $basicSize;
+}
+nav {
+    text-align: center;
+    padding: 5px;
+    a {
+        position: relative;
+        span:before {
+            @extend .arrow;
+            position: absolute;
+            padding-left: 0;
+            left: -3%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:hover {
+            .fa:before {
+                left: -8%;
+            }
+           
+        }
+    }
+}
+footer {
+    @extend .header;
+    margin-bottom: 0;
+    padding: 1em 0;
+    line-height: 1em;
+    h6 {
+    padding: 0;
+    margin: 0;
+    }
+        .fa-project-diagram {
+            color: $secondColor;
+            padding-left: 0.51em;
+        
+    }
+    .project {
+        margin: 0 2px;
+        background-color: $secondColor;
+        padding: 3px;
+        text-transform: uppercase;
+    }
+}

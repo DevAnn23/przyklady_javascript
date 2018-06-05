@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tenis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../img/board-games-set.png">
+    <!-- <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="../style/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<style>
+ @media (max-width: 1025px) {
+
+   main {
+        overflow-x: hidden;
+           flex-direction: column;
+       }
+  
+}
+</style>
+</head>
+    <body>
+        <header class="header">
+            <h1>Hello, world!</h1>
+        </header>
+        <main>
+            <section class="section-canvas">
+
+                <canvas id="can">
+                    Robot in canvas
+
+                </canvas>
+            </section>
+            <section class="section section-factorial">
+                <article class="article">
+                        <h3>Tenis</h3>
+                    <canvas id="canvas1">
+                        Rysowanie tenisa
+                 </canvas>
+                 <button id="startTenis">Play</button>
+                 <div style="float: right" >Score <span id="score"></span></div>
+                 <button id="gamOve">Game Over</button>
+               
+                </article>
+            </section>
+        </main>
+        <nav >
+            <a  href="../apps.html"> <span class="fa fa-angle-double-left"></span> Home</a>
+        </nav>
+        <footer>
+            <h6> &copy; Created by Anna Banaszek</h6>
+            <p>Check out my other projects <span class="fas fa-project-diagram"></span></p>
+            <a class="project" href="https://devann23.github.io/about_me/">About me</a>
+            <a class="project" href="https://devann23.github.io/drone_zone/">DroneZone</a>
+            <a class="project" href="https://devann23.github.io/projekt_testowy//">Projekt Testowy</a>
+            <a class="project" href="https://devann23.github.io/python_creator//">Bootstrap</a>
+            
+     </footer>
+        
+        
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/tenis.js"></script>
+
+    </body>
+</html>

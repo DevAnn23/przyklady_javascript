@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Labirynth</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../img/board-games-set.png">
+    <link href="../style/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<style>
+     .field-labirynth {
+        width: 90%;
+    height: 52vh;
+    margin: 2% auto;
+    background-image: url(../img/labyrinth-153958_1280.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    position: relative;
+    }
+ 
+.info {
+
+    background-image: url(../img/android-logo.png);
+    background-repeat: repeat-x;
+    background-position: top 10% left 4%, top 5% left 5%;
+    position: absolute;
+    right: 17%;
+    top: 3%;
+    -webkit-filter: hue-rotate(139deg);
+    filter: hue-rotate(139deg);
+    padding: 8%;
+}
+.circle, .fruit {
+    position: absolute;
+    z-index: 2;
+    width: 5%;
+}
+.circle {
+    top: 70%;
+    left: 19%;
+    width: 4%;
+}
+</style>
+</head>
+    <body>
+        <header class="header">
+            <h1>Hello, world!</h1>
+        </header>
+        <main class="labirynth">
+            <section class="section-canvas">
+
+                <canvas id="can">
+                    Robot in canvas
+
+                </canvas>
+            </section>
+            <section class="section">
+                <article class="article">
+                    <h3>Help Andro come back to his family, by&nbsp;using <span><img src="../img/keyboard-2170063_1280.png" width="100px" height="auto" alt="keys"></span> <br> Try not to touch the walls of the labirynth</h3>
+                 
+                    <div class="field-labirynth">
+
+                   
+                        <div class="info"><div class="circle-daddy"></div>
+                        <div class="circle-mom"></div></div>
+                    
+                    
+                        <img class="circle" src="../img/android-logo.png" alt="">
+                        <img class="fruit" src="../img/title_4.png" alt="">
+                        <img class="fruit" src="../img/title_5.png" alt="">
+                        <img class="fruit" src="../img/title_7.png" alt="">
+                    </div>
+                </article>
+            </section>
+        </main>
+        <nav >
+            <a  href="../apps.html"> <span class="fa fa-angle-double-left"></span> Home</a>
+        </nav>
+        <footer>
+            <h6> &copy; Created by Anna Banaszek</h6>
+            <p>Check out my other projects <span class="fas fa-project-diagram"></span></p>
+            <a class="project" href="https://devann23.github.io/about_me/">About me</a>
+            <a class="project" href="https://devann23.github.io/drone_zone/">DroneZone</a>
+            <a class="project" href="https://devann23.github.io/projekt_testowy//">Projekt Testowy</a>
+            <a class="project" href="https://devann23.github.io/python_creator//">Bootstrap</a>
+            
+     </footer>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/labirynth.js"></script>
+
+    </body>
+    
+</html>
