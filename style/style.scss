@@ -131,3 +131,27 @@ footer {
         text-transform: uppercase;
     }
 }
+/* bar - img */
+.bg-bar {
+    width: 160px;
+    height: 32px;
+    margin: 0 auto;
+    position: relative;
+    
+    }
+    .bg-bar:after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/fire.png);
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+    }
+    .placeholder {
+        height: 100%;
+        width: 32px;
+        display: block;
+        background-image: url(../img/fire.png);
+    }

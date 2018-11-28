@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
 	//Rysowanie w canvas
 	var canvas = document.getElementById('can');
@@ -189,4 +189,3 @@ window.onload = function () {
 		}
 		closeEye();
 	};
-};
