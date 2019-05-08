@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tasks to do</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../img/board-games-set.png">
+    <link href="../style/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <style>
+        #display {
+            display: block;
+            max-width: 155px;
+            margin: 3% auto 1% auto;
+            height: 90px;
+            line-height: 90px;
+            font-size: 2em;
+            border: 4px solid #45aada;
+            text-align: center;
+        }
+
+        .counter-div {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .counter-div input {
+            max-width: 100px;
+            text-align: center;
+            margin-left: 8px;
+        }
+
+        .counter-div input::before {
+            content: "Start the countdown from";
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Hello, world!</h1>
+    </header>
+    <main class="labirynth">
+        <section class="section-canvas">
+
+            <canvas id="can">
+                Robot in canvas
+
+            </canvas>
+        </section>
+        <section class="section">
+            <article class="article">
+                <h3>To do</h3>
+                <div class="container container-to-do">
+                    <div class="module-filter">
+                        <input type="text" class="input-search"><span class="fas fa-search"></span>
+                    </div>
+                    <p class="align-left">Liczba zadań: <span class="counter-tasks">0</span></p>
+                    <ol class="task__list">
+                        <li class="tasks__item" data-key="1">Sass
+                            <button data-key="1" class="button--remove">Remove</button>
+                            <button class="button--strikethrought" data-key="1">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="2">Less <button data-key="2"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="2">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="3">React <button data-key="3"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="3">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="4">Vue <button data-key="4"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="4">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="5">HTML <button data-key="5"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="5">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="6">CSS <button data-key="6"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="6">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="7">Python <button data-key="7"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="7">Strikethrought</button></li>
+                        <li class="tasks__item" data-key="8">Javascript<button data-key="8"
+                                class="button--remove">Remove</button> <button class="button--strikethrought"
+                                data-key="8">Strikethrought</button></li>
+                    </ol>
+                </div>
+                <form action="">
+                    <input type="text">
+                    <button class="submit">Add new task</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <nav>
+        <a href="../index.html"> <span class="fa fa-angle-double-left"></span> Home</a>
+    </nav>
+    <footer>
+        <h6> &copy; Created by Anna Banaszek</h6>
+        <p>Check out my other projects <span class="fas fa-project-diagram"></span></p>
+        <a class="project" href="https://devann23.github.io/about_me/">About me</a>
+        <a class="project" href="https://devann23.github.io/drone_zone/">DroneZone</a>
+        <a class="project" href="https://devann23.github.io/projekt_testowy//">Projekt Testowy</a>
+        <a class="project" href="https://devann23.github.io/python_creator//">Bootstrap</a>
+
+    </footer>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/to-do.js"></script>
+
+</body>
+
+</html>

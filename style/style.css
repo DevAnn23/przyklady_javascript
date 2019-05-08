@@ -10,6 +10,10 @@ body > * {
           flex-direction: column;
 }
 
+.align-left {
+  text-align: left;
+}
+
 @media (min-width: 1024px) {
   html {
     font-size: 18px;
@@ -158,7 +162,7 @@ main .section {
 
 main .section ol {
   text-align: left;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -252,5 +256,73 @@ footer .project {
   width: 32px;
   display: block;
   background-image: url(../img/fire.png);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container-to-do {
+  padding: 12px;
+  background-color: #cccccc;
+}
+
+.container-to-do li {
+  cursor: pointer;
+  color: #000000 !important;
+  text-align: right;
+  -webkit-text-decoration-color: red !important;
+          text-decoration-color: red !important;
+  -webkit-text-decoration-style: wavy !important;
+          text-decoration-style: wavy !important;
+}
+
+.container-to-do button {
+  background-color: #2542c7;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 2px 5px;
+}
+
+.container-to-do button.button--strikethrought {
+  background-color: #a31f1f;
+}
+
+.module-filter {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.module-filter span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  color: #2542c7;
+  z-index: 19;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.module-filter input {
+  padding-left: 30px;
+  position: relative;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+  z-index: 9;
+}
+
+.module-filter input:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.module-filter input:focus + span {
+  left: -30px;
+  color: #a31f1f;
 }
 /*# sourceMappingURL=style.css.map */

@@ -8,11 +8,14 @@ body > * {
        flex-direction: column;
    }
 // colors
-
+.align-left {
+	text-align: left;
+}
 $primaryColor:  #45aada;
 $secondColor:  #f0f0f0;
 $greyColor: #cccccc;
-
+$black: #000000;
+$red: #a31f1f;
 // fonts
 
 $h1fontSize: 3.8em;

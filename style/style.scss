@@ -64,7 +64,7 @@ main {
         text-align: center;
         ol {
             text-align: left;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
             li {
                 @extend .arrow;
@@ -155,3 +155,61 @@ footer {
         display: block;
         background-image: url(../img/fire.png);
     }
+    // 
+    // Zadania to do 
+    // 
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    &-to-do {
+        padding: 12px;
+        background-color: $greyColor;
+        li {
+            cursor: pointer;
+            color: $black !important;
+            text-align: right;
+            text-decoration-color: red !important;
+            text-decoration-style: wavy !important;
+        }
+        button {
+            background-color: #2542c7;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 2px 5px;
+            // text-decoration: inherit;
+            
+            &.button--strikethrought {
+                background-color: $red; 
+            }
+        }
+    }
+}
+.module-filter {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(50%, -50%);
+        color: #2542c7;
+        z-index: 19;
+        transition: all .6s ease;
+    }
+    input {
+        padding-left: 30px;
+        position: relative;
+        transition: all .6s ease;
+        z-index: 9;
+        &:focus {
+            transform: scale(1.2);
+            & + span {
+                left: -30px;
+                color: $red;
+            }
+        }
+     
+}
+}
