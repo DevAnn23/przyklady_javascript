@@ -39,7 +39,9 @@ h6 {
     transition: all .5s ease;
 
 }
-
+.align-center {
+    text-align: center;
+}
 .header {
     background-color: $primaryColor;
     box-shadow: 0 6px 4px -4px #AAA;
@@ -161,6 +163,9 @@ footer {
 .container {
     max-width: 600px;
     margin: 0 auto;
+    // &--slider {
+        
+    // }
     &-to-do {
         padding: 12px;
         background-color: $greyColor;
@@ -212,4 +217,61 @@ footer {
         }
      
 }
+}
+.container-slider {
+       max-width: 1292px;
+    overflow: hidden;
+    max-height: 500px;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    h4 {
+        text-align: center;
+        font-size: 30px;
+        color: #000;
+        position: relative;
+        z-index: 23
+        ;
+    }
+    img {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 250%;
+        transform: translate(-50%, -50%);
+        transition: all 0.92s ease;
+        opacity: 0;
+        &.active {
+            left: 50%;
+            opacity: 0.9;
+        }
+        &.prev {
+            left: -150%;
+            opacity: 0;
+        }
+    }
+    .dots {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid red;
+            display: inline-block;
+            cursor: pointer;
+            margin: 10px;
+            &:hover {
+                background-color: red;             
+            }
+            &.active {
+                background-color: red;      
+                box-shadow: 0 0 0 5px white, 0 0 3px 10px red; 
+            }
+        }
+    }
+
 }

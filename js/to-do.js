@@ -1,8 +1,9 @@
 
 let ol = document.querySelector('ol');
 let olItems = document.querySelectorAll('li');
+let tasks = [...olItems];
 const removeTask = (event) => {
-
+    indexCounter--;
     const index = event.target.dataset.key;
     console.log(index);
     // event.target.parentNode.remove();
@@ -11,10 +12,12 @@ const removeTask = (event) => {
     ol = document.querySelector('ol');
     console.log(ol);
     olItems = document.querySelectorAll('li');
+    counterTasks.innerHTML = indexCounter;
 
 }
-
-document.querySelectorAll('.button--remove').forEach(item => item.addEventListener('click', removeTask))
+let buttonsSearch = document.querySelectorAll('.button--remove');
+let buttonsSearchTab = [...buttonsSearch];
+buttonsSearchTab.forEach(item => item.addEventListener('click', removeTask))
 
 const strikethroughtTask = (event) => {
     const index = event.target.dataset.key;
@@ -56,19 +59,27 @@ arr.forEach((number, index) => arr[index] = number * 2);
 const input = document.querySelector('.input-search');
 // muszę tu użyć querySelektor zeby potem appendChild
 
-
-
 const searchTask = (e) => {
     console.log(ol);
     const seachText = e.target.value.toLowerCase();
-    let tasks = [...olItems];
+   
     // filtruję li icj kontent zamieniam na male litery i czy zawiera
     tasks = tasks.filter(li => li.textContent.toLowerCase().includes(seachText))
     console.log(tasks);
-    ol.textContent = "";
+    counterTasks.innerHTML = tasks.length;
+    
     //  wyczyściłam listę i wkładam do niej taski które we wcześniejszym kroku są filtrowane
-    tasks.forEach(li => ol.appendChild(li));
+ 
+    if (!(e.target.value === "")) {
+        ol.textContent = "";
+        tasks.forEach(li => ol.appendChild(li));
+    } 
+    else {
+        olItems.forEach(itemsli => ol.appendChild(itemsli));
+        counterTasks.innerHTML = indexCounter;
+    }
 }
+
 // Parametr reszta składnia pozwala nam reprezentować nieokreśloną liczbę argumentów jako tablica.
 //  Za POMOCĄ rest ... zamieniłam listę wezłów - li na prawdziwą tablice elementów li
 
@@ -79,7 +90,7 @@ input.addEventListener('input', searchTask);
 const form = document.querySelector('form');
 const formInput = document.querySelector('form input');
 
-const counterTasks = document.getElementsByClassName('.counter-tasks');
+let counterTasks = document.querySelector('span.counter-tasks');
 const listItemsNew = document.querySelectorAll('li.tasks__item');
 let indexCounter = olItems.length;
 const addTask = (e) => {
@@ -93,9 +104,11 @@ const addTask = (e) => {
     data-key="${indexCounter}">Strikethrought</button>`;
     newTask.dataset.key = indexCounter;
     let newTaskButton1 = newTask.children;
+    tasks.push(newTask);
     ol.appendChild(newTask);
-    buttonSstrikethroughtTab.push(newTaskButton1[1]);
+    buttonsSearchTab.push(newTaskButton1[0]);
     console.log(buttonSstrikethroughtTab);
+    counterTasks.innerHTML = indexCounter;
 }
-
+counterTasks.innerHTML = indexCounter;
 form.addEventListener('submit', addTask);

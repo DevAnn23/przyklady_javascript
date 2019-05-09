@@ -1,56 +1,57 @@
-// counterValue = 39;
-var display = document.getElementById('display');
-var startStopwatch = document.getElementById('startStopwatch');
-var stopStopwatch = document.getElementById('stopStopwatch');
-var continueStopwatch = document.getElementById('continueStopwatch');
-var counter = new stopwatch(display);
-var counterON;
-var continueCounter;
-var init;
-
-startStopwatch.onclick = function() {
-    var counterNumber = document.getElementById('counterValue');
-    var counterValue = counterNumber.value;
-    if (counterON || !(init === null)) {
-        clearInterval(counterON);
-    }
+/////////////////////////////////////////////////////////////////////////////
+// Licznik dodawanie - mogęto wykorzystać przy dodaj do koszyka 
+// const add = (start = 0) => {
+//     let number = start;
+//     let counterValue = document.getElementById('counterValue');
     
-    counter.start(counterValue, display);
-   
-};
-stopStopwatch.onclick = function() {
-    counter.stop();
-}
-continueStopwatch.onclick = function() {
-    counter.continue();
-}
-function stopwatch(display) {
-    // var counterNumber = document.getElementById('counterValue');
-    // var counterValue = counterNumber.value;
-    this.display = display;
-    this.counterValue = counterValue;
-    // this.counterON = counterON;
-    this.start = function (liczba, display) {
+//     return () => {
+//         number++;
+//         counterValue.value= number;
+//     }
+// }
+// const counter = add();
+// const counterFrom5 = add(5);
 
-        counterON = setInterval(function () {
-            this.display.innerHTML = (liczba++);
-            continueCounter = (liczba);
-        }, 1000);
-    };
-    this.stop = function () {
-        clearInterval(counterON);
-        init = null;
 
-    };
-    this.continue = function () {
-        this.counterValue = display;
-           if (init === null) {
-             init = this.start(continueCounter, display);
-         }
-       else {
-           return;
-       }
-    };
-};
+// document.addEventListener('click', counter);
 
-stopwatch(display);
+///////////////////////////////////////////////////////////////////////////
+
+// /////////////////////////////////////////////////////////////////////////
+// Sprawdzanie wieku czy użytkownik może mić alkohol
+
+// const user = (name="", age) => {
+//     let userName = name;
+//     let userAge = age; 
+//     function showName() {
+//         console.log(`Cześć  ${userName}, ${userAge >= 18 ? 'możesz kupić piwo ' : 'nie możesz kupić piwa '}`);
+//     }
+//     return showName;
+// } 
+// // user("ada", 23);
+// const mieszko = user("mieszko", 12);
+// const jola = user("jola", 12);
+// const noName = user();
+
+
+// noName ();
+
+///////////////////////////////////////////////////////////////////////////
+
+// /////////////////////////////////////////////////////////////////////////
+
+//  LIcznik odwiedzin na strionie 
+
+// const clock = () => {
+//     let seconds = 0;
+//     document.body.textContent = 0 + " sekund";
+
+//     const timer = () => {
+//         seconds++;
+//         document.body.textContent = seconds + " sekund";
+//     }
+//     return timer
+// }
+// const start = clock();
+// // start();
+// setInterval(start, 1000);

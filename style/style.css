@@ -128,6 +128,10 @@ h6 {
   transition: all .5s ease;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .header, footer {
   background-color: #45aada;
   -webkit-box-shadow: 0 6px 4px -4px #AAA;
@@ -324,5 +328,73 @@ footer .project {
 .module-filter input:focus + span {
   left: -30px;
   color: #a31f1f;
+}
+
+.container-slider {
+  max-width: 1292px;
+  overflow: hidden;
+  max-height: 500px;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-slider h4 {
+  text-align: center;
+  font-size: 30px;
+  color: #000;
+  position: relative;
+  z-index: 23;
+}
+
+.container-slider img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 250%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.92s ease;
+  transition: all 0.92s ease;
+  opacity: 0;
+}
+
+.container-slider img.active {
+  left: 50%;
+  opacity: 0.9;
+}
+
+.container-slider img.prev {
+  left: -150%;
+  opacity: 0;
+}
+
+.container-slider .dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.container-slider .dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid red;
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.container-slider .dots span:hover {
+  background-color: red;
+}
+
+.container-slider .dots span.active {
+  background-color: red;
+  -webkit-box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
+          box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
 }
 /*# sourceMappingURL=style.css.map */
