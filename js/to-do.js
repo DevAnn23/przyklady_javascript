@@ -1,19 +1,21 @@
-
 let ol = document.querySelector('ol');
 let olItems = document.querySelectorAll('li');
 let tasks = [...olItems];
 const removeTask = (event) => {
     indexCounter--;
     const index = event.target.dataset.key;
-    console.log(index);
+   
     // event.target.parentNode.remove();
-    document.querySelector(`li[data-key="${index}"]`).remove();
-    // dataset - odnosimy się do atrybutu
-    ol = document.querySelector('ol');
-    console.log(ol);
-    olItems = document.querySelectorAll('li');
-    counterTasks.innerHTML = indexCounter;
 
+    // const removeLi = document.querySelector(`li[data-key="${index}"]`);
+     document.querySelector(`li[data-key="${index}"]`).remove();
+     const liRemoveFromTask =  tasks.findIndex(removeLi => removeLi.dataset.key = 123);
+     console.log(liRemoveFromTask);
+    // dataset - odnosimy się do atrybutu
+ 
+    console.log(ol);
+    counterTasks.innerHTML = indexCounter;
+    console.log('to nasze taski' + tasks);
 }
 let buttonsSearch = document.querySelectorAll('.button--remove');
 let buttonsSearchTab = [...buttonsSearch];
@@ -62,19 +64,23 @@ const input = document.querySelector('.input-search');
 const searchTask = (e) => {
     console.log(ol);
     const seachText = e.target.value.toLowerCase();
-   
+
     // filtruję li icj kontent zamieniam na male litery i czy zawiera
-    tasks = tasks.filter(li => li.textContent.toLowerCase().includes(seachText))
+
     console.log(tasks);
     counterTasks.innerHTML = tasks.length;
-    
+
     //  wyczyściłam listę i wkładam do niej taski które we wcześniejszym kroku są filtrowane
- 
+
     if (!(e.target.value === "")) {
+       
+        tasks = tasks.filter(li => li.textContent.toLowerCase().includes(seachText))
+        // najpierw wprowadzamy filter aby z całej listy mogło dpopasować z szukaną frazą 
+        //  następnie czyścimy tablicę 
         ol.textContent = "";
+        //  a nasztępnie do tej tablicy wkłądamy tylko to co zawiera szukaną frazę 
         tasks.forEach(li => ol.appendChild(li));
-    } 
-    else {
+    } else {
         olItems.forEach(itemsli => ol.appendChild(itemsli));
         counterTasks.innerHTML = indexCounter;
     }

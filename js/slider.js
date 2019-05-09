@@ -36,7 +36,7 @@ carouselSlide  = () => {
     const activeSlide = imageTab.findIndex(img => img.classList.contains('active'))
     const activeSlidePrev = imageTab.findIndex(img => img.classList.contains('prev'))
     let prevIndex = active + 1;
-    console.log(activeSlide);
+ 
     imageTab[activeSlide].classList.remove('active');
     imageTab[activeSlidePrev].classList.remove('prev');
     // const prevImageTab  = imageTab[active -1 ].classList.add('prev');
@@ -54,6 +54,7 @@ carouselSlide  = () => {
 const changeSlide = () => {
 
     active++;
+   
     if (active === slideList.length) {
         active = 0;
     }
@@ -66,9 +67,32 @@ const changeSlide = () => {
         let imageShow = document.querySelector('img.slider.active');
         imageShow.src = slideList[active].img;
     }
+    changeDots();
+   
 }
 
-setInterval(changeSlide, time)
-setInterval(changeDots, time)
+let indevInterval =  setInterval(changeSlide, time)
 
+const enterKeyPrev = (e) => {
+  
+    if (e.keyCode == 39 || e.keyCode == 37) {
+        clearInterval(indevInterval);
+        e.keyCode == 37 ? active++ : console.log(active);
+
+        if (active === slideList.length) {
+            active = 0;
+        }
+        if (active < 0) {
+            active = slideList.length -1;
+        }
+        changeSlide();
+        changeDots();
+       indevInterval = setInterval(changeSlide, time);
+    }
+         
+}
+
+
+// setInterval(changeDots, time)
+window.addEventListener('keydown', enterKeyPrev);
 // Implementacja
