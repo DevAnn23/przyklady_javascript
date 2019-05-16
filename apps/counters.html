@@ -8,81 +8,92 @@
 
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../img/board-games-set.png">
     <link href="../style/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<style>
-#display {
-    display: block;
-    max-width: 155px;
-    margin: 3% auto 1% auto;
-    height: 90px;
-    line-height: 90px;
-    font-size: 2em;
-    border: 4px solid #45aada;
-    text-align: center;
-}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <style>
+        #display {
+            display: block;
+            max-width: 155px;
+            margin: 3% auto 1% auto;
+            height: 90px;
+            line-height: 90px;
+            font-size: 2em;
+            border: 4px solid #45aada;
+            text-align: center;
+        }
 
-.counter-div {
-    max-width: 500px;
-    margin: 0 auto;
-}
-.counter-div input {
-    max-width: 100px;
-    text-align: center;
-    margin-left: 8px;
-}
-.counter-div input::before {
-    content: "Start the countdown from";
-}
+        .counter-div {
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-</style>
+        .counter-div input {
+            max-width: 100px;
+            text-align: center;
+            margin-left: 8px;
+        }
+
+        .counter-div input::before {
+            content: "Start the countdown from";
+        }
+    </style>
 </head>
 
-    <body>
-        <header class="header">
-            <h1>Hello, world!</h1>
-        </header>
-        <main class="labirynth">
-            <section class="section-canvas">
+<body>
+    <header class="header">
+        <h1>Hello, world!</h1>
+    </header>
+    <main class="labirynth">
+        <section class="section-canvas">
 
-                <canvas id="can">
-                    Robot in canvas
+            <canvas id="can">
+                Robot in canvas
 
-                </canvas>
-            </section>
-            <section class="section">
-                <article class="article">
-                    <h3>Counters</h3>
-                    <div class="counter-div">
-                    <label for="counterValue">Start the countdown from  <span class="fa fa-angle-double-right"></span></label>
-                        <input type="text" name="counterValue" id="counterValue" value="0"><span id="display">0</span>
-                            <button id="startStopwatch">Start</button>
-                            <button id="stopStopwatch">Stop</button>
-                            <button id="continueStopwatch">Continue</button>
-                     
-                    </div>
-                
-                </article>
-            </section>
-        </main>
-        <nav >
-            <a  href="../index.html"> <span class="fa fa-angle-double-left"></span> Home</a>
-        </nav>
-        <footer>
-            <h6> &copy; Created by Anna Banaszek</h6>
-            <p>Check out my other projects <span class="fas fa-project-diagram"></span></p>
-            <a class="project" href="https://devann23.github.io/about_me/">About me</a>
-            <a class="project" href="https://devann23.github.io/drone_zone/">DroneZone</a>
-            <a class="project" href="https://devann23.github.io/projekt_testowy//">Projekt Testowy</a>
-            <a class="project" href="https://devann23.github.io/python_creator//">Bootstrap</a>
-            
-     </footer>
-        <!-- <script type="text/javascript" src="../js/script.js"></script> -->
-        <script type="text/javascript" src="../js/counters.js"></script>
+            </canvas>
+        </section>
+        <section class="section">
+            <article class="article">
+                <h3>Counters</h3>
+                <div class="counter-div">
+                    <label for="counterValue">Start the countdown from <span
+                            class="fa fa-angle-double-right"></span></label>
+                    <input type="text" name="counterValue" id="counterValue" value="0"><span id="display">0</span>
+                    <button id="startStopwatch">Start</button>
+                    <button id="stopStopwatch">Stop</button>
+                    <button id="continueStopwatch">Continue</button>
 
-    </body>
-    
+                </div>
+                <div class="container-donate">
+                    <div class="donate donate--a current">Pierwszy donate</div>
+                    <div class="donate donate--b">Drugi donate</div>
+                </div>
+
+            </article>
+        </section>
+    </main>
+    <nav>
+        <a href="../index.html"> <span class="fa fa-angle-double-left"></span> Home</a>
+    </nav>
+    <footer>
+        <h6> &copy; Created by Anna Banaszek</h6>
+        <p>Check out my other projects <span class="fas fa-project-diagram"></span></p>
+        <a class="project" href="https://devann23.github.io/about_me/">About me</a>
+        <a class="project" href="https://devann23.github.io/drone_zone/">DroneZone</a>
+        <a class="project" href="https://devann23.github.io/projekt_testowy//">Projekt Testowy</a>
+        <a class="project" href="https://devann23.github.io/python_creator//">Bootstrap</a>
+
+    </footer>
+    <!-- <script type="text/javascript" src="../js/script.js"></script> -->
+    <script type="text/javascript" src="../js/counters.js"></script>
+    <script type="text/javascript" src="../select2/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+
+</body>
+
 </html>

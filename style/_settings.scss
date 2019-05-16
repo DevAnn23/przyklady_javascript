@@ -1,18 +1,20 @@
-
-  html {
-    font-size: 10px;
+html {
+	font-size: 10px;
 
 }
-body > * {
-    overflow-x: hidden;
-       flex-direction: column;
-   }
+
+body>* {
+	overflow-x: hidden;
+	flex-direction: column;
+}
+
 // colors
 .align-left {
 	text-align: left;
 }
-$primaryColor:  #45aada;
-$secondColor:  #f0f0f0;
+
+$primaryColor: #45aada;
+$secondColor: #f0f0f0;
 $greyColor: #cccccc;
 $black: #000000;
 $red: #a31f1f;
@@ -24,23 +26,26 @@ $h3fontSize: 2em;
 $h6FontSize: 1.2em;
 $basicSize: 1.1em;
 
-$secondFontFamily: 'Exo', sans-serif;
-$primaryFontFamily: 'Open Sans', sans-serif;
+$secondFontFamily: 'Exo',
+sans-serif;
+$primaryFontFamily: 'Open Sans',
+sans-serif;
 
 
 
 // brakpionts
 
 @media (min-width: 1024px) {
-    html {
-        font-size: 18px;
-    }
-    body > * {
-        overflow-x: hidden;
-           flex-direction: row;
-       }
-   
-    
+	html {
+		font-size: 18px;
+	}
+
+	body>* {
+		overflow-x: hidden;
+		flex-direction: row;
+	}
+
+
 }
 
 

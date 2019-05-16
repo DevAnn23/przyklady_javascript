@@ -397,4 +397,32 @@ footer .project {
   -webkit-box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
           box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
 }
+
+.container-donate {
+  position: absolute;
+  height: 300px;
+  width: 200px;
+}
+
+.container-donate div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0;
+  background-color: #AAA;
+  opacity: 0;
+  -webkit-transition: all 1.97s;
+  transition: all 1.97s;
+  visibility: hidden;
+}
+
+.container-donate div.donate--a {
+  background-color: red;
+}
+
+.container-donate div.current {
+  opacity: 1;
+  visibility: visible;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,18 +1,22 @@
 @import "_settings.scss";
+
 body {
     margin: 0;
     padding: 0;
     font-family: $primaryFontFamily;
     font-weight: 400;
 }
+
 a {
     color: #000;
     text-decoration: none;
     font-family: $primaryFontFamily;
 }
+
 input {
     font-size: $basicSize;
 }
+
 h2 {
     font-size: $h2fontSize;
 }
@@ -21,17 +25,20 @@ h3 {
     font-size: $h3fontSize;
     font-family: $secondFontFamily;
     border-bottom: 4px solid $primaryColor;
-    
+
 }
+
 h1 {
     padding: 1%;
     font-family: $secondFontFamily;
     margin: 0;
     font-size: $h1fontSize;
 }
+
 h6 {
     font-size: $h6FontSize;
 }
+
 .arrow {
     padding: 5px;
     color: $primaryColor;
@@ -39,9 +46,11 @@ h6 {
     transition: all .5s ease;
 
 }
+
 .align-center {
     text-align: center;
 }
+
 .header {
     background-color: $primaryColor;
     box-shadow: 0 6px 4px -4px #AAA;
@@ -55,30 +64,36 @@ main {
     margin: 0 auto;
     display: flex;
     min-height: 68vh;
+
     .article {
         background-color: $secondColor;
         padding: 2%;
         overflow: auto;
         text-align: center;
     }
+
     .section {
         flex: 2;
         text-align: center;
+
         ol {
             text-align: left;
             max-width: 500px;
             margin: 0 auto;
+
             li {
                 @extend .arrow;
                 display: block;
                 overflow: hidden;
+
                 &:hover {
                     padding-left: 17px;
                 }
             }
+
             a {
                 padding: 5px;
-            
+
             }
         }
     }
@@ -91,11 +106,14 @@ button {
     cursor: pointer;
     font-size: $basicSize;
 }
+
 nav {
     text-align: center;
     padding: 5px;
+
     a {
         position: relative;
+
         span:before {
             @extend .arrow;
             position: absolute;
@@ -104,28 +122,33 @@ nav {
             top: 50%;
             transform: translate(-50%, -50%);
         }
+
         &:hover {
             .fa:before {
                 left: -8%;
             }
-           
+
         }
     }
 }
+
 footer {
     @extend .header;
     margin-bottom: 0;
     padding: 1em 0;
     line-height: 1em;
+
     h6 {
-    padding: 0;
-    margin: 0;
+        padding: 0;
+        margin: 0;
     }
-        .fa-project-diagram {
-            color: $secondColor;
-            padding-left: 0.51em;
-        
+
+    .fa-project-diagram {
+        color: $secondColor;
+        padding-left: 0.51em;
+
     }
+
     .project {
         margin: 0 2px;
         background-color: $secondColor;
@@ -133,42 +156,47 @@ footer {
         text-transform: uppercase;
     }
 }
+
 /* bar - img */
 .bg-bar {
     width: 160px;
     height: 32px;
     margin: 0 auto;
     position: relative;
-    
-    }
-    .bg-bar:after {
-        position: absolute;
-        content: "";
-        height: 100%;
-        width: 100%;
-        background-image: url(../img/fire.png);
-        top: 0;
-        left: 0;
-        opacity: 0.2;
-    }
-    .placeholder {
-        height: 100%;
-        width: 32px;
-        display: block;
-        background-image: url(../img/fire.png);
-    }
-    // 
-    // Zadania to do 
-    // 
+
+}
+
+.bg-bar:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/fire.png);
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+}
+
+.placeholder {
+    height: 100%;
+    width: 32px;
+    display: block;
+    background-image: url(../img/fire.png);
+}
+
+// 
+// Zadania to do 
+// 
 .container {
     max-width: 600px;
     margin: 0 auto;
     // &--slider {
-        
+
     // }
     &-to-do {
         padding: 12px;
         background-color: $greyColor;
+
         li {
             cursor: pointer;
             color: $black !important;
@@ -176,6 +204,7 @@ footer {
             text-decoration-color: red !important;
             text-decoration-style: wavy !important;
         }
+
         button {
             background-color: #2542c7;
             border: none;
@@ -183,17 +212,19 @@ footer {
             color: #fff;
             padding: 2px 5px;
             // text-decoration: inherit;
-            
+
             &.button--strikethrought {
-                background-color: $red; 
+                background-color: $red;
             }
         }
     }
 }
+
 .module-filter {
     text-align: center;
     display: inline-block;
     position: relative;
+
     span {
         position: absolute;
         top: 50%;
@@ -203,36 +234,41 @@ footer {
         z-index: 19;
         transition: all .6s ease;
     }
+
     input {
         padding-left: 30px;
         position: relative;
         transition: all .6s ease;
         z-index: 9;
+
         &:focus {
             transform: scale(1.2);
-            & + span {
+
+            &+span {
                 left: -30px;
                 color: $red;
             }
         }
-     
+
+    }
 }
-}
+
 .container-slider {
-       max-width: 1292px;
+    max-width: 1292px;
     overflow: hidden;
     max-height: 500px;
     min-height: 500px;
     position: relative;
     overflow: hidden;
+
     h4 {
         text-align: center;
         font-size: 30px;
         color: #000;
         position: relative;
-        z-index: 23
-        ;
+        z-index: 23;
     }
+
     img {
         position: absolute;
         min-width: 100%;
@@ -242,20 +278,24 @@ footer {
         transform: translate(-50%, -50%);
         transition: all 0.92s ease;
         opacity: 0;
+
         &.active {
             left: 50%;
             opacity: 0.9;
         }
+
         &.prev {
             left: -150%;
             opacity: 0;
         }
     }
+
     .dots {
         position: absolute;
         bottom: 30px;
         left: 50%;
         transform: translateX(-50%);
+
         span {
             width: 10px;
             height: 10px;
@@ -264,14 +304,44 @@ footer {
             display: inline-block;
             cursor: pointer;
             margin: 10px;
+
             &:hover {
-                background-color: red;             
+                background-color: red;
             }
+
             &.active {
-                background-color: red;      
-                box-shadow: 0 0 0 5px white, 0 0 3px 10px red; 
+                background-color: red;
+                box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
             }
         }
     }
 
+}
+
+.container-donate {
+    position: absolute;
+    height: 300px;
+    width: 200px;
+
+
+    div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        left: 0;
+        background-color: #AAA;
+        opacity: 0;
+        transition: all 1.97s;
+        visibility: hidden;
+
+        &.donate--a {
+            background-color: red;
+        }
+
+        &.current {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
