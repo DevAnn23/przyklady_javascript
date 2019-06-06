@@ -57,7 +57,16 @@ h6 {
     text-align: center;
     margin-bottom: 2%;
 }
-
+.intro {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+.menu {
+    position: fixed;
+    left: 0;
+    top: 15%;
+}
 main {
     max-width: 1200px;
     padding: 1%;
@@ -81,6 +90,7 @@ main {
             text-align: left;
             max-width: 500px;
             margin: 0 auto;
+            padding-left: 11px;
 
             li {
                 @extend .arrow;
@@ -193,13 +203,13 @@ footer {
     }
 
     .project {
-        margin: 0 2px;
-        padding: 3px;
+        margin: 5px 2px;
         text-transform: uppercase;
         border: 2px solid #aaaaaa;
         border-radius: 20px;
-        padding: 2px 10px;
+        padding: 5px 10px;
         font-size: 15px;
+        display: inline-block;
         transition: background-color 0.7s ease;
         &:hover {
             background-color: #b4dff3;

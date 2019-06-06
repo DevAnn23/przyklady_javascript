@@ -5,7 +5,6 @@
 		document.querySelector('body').classList.add('loaded');
 	}
 
-
 	window.addEventListener('load', addPreloader);
 	var canvas = document.getElementById('can');
 	canvas.width = 250;
