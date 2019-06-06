@@ -1,7 +1,12 @@
 
-
 	//Rysowanie w canvas
-	document.querySelector('body').classList.add('loaded');
+	document.querySelector('window');
+	function addPreloader() {
+		document.querySelector('body').classList.add('loaded');
+	}
+
+
+	window.addEventListener('load', addPreloader);
 	var canvas = document.getElementById('can');
 	canvas.width = 250;
 	canvas.height = 400;
