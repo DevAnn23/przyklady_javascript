@@ -30,7 +30,7 @@ changeDots = () => {
     dotsTab[activeDot].classList.remove('active');
     // dajemy active elementowi po naszym licznik active, który zwraca number aktywngo slaju 
     dotsTab[active].classList.add('active');
-    console.log(dotsTab);
+    // console.log(dotsTab);
 }
 carouselSlide  = () => {
     const activeSlide = imageTab.findIndex(img => img.classList.contains('active'))
@@ -48,7 +48,7 @@ carouselSlide  = () => {
     imageTab[active].classList.add('active');
  
    
-    console.log("aktywny slide to " + activeSlide);
+    // console.log("aktywny slide to " + activeSlide);
     // image.style.left = 50 + "%";
 }
 const changeSlide = () => {

@@ -114,12 +114,5 @@
 //     }
 //   }, 100);
 
-const changeBox = (event) => {
-    console.log($(".donate"));
-
-    $('.donate.current + .donate').addClass('current').siblings().removeClass('current');
-
-}
-let continueStopwatch = document.getElementById("continueStopwatch");
-
-continueStopwatch.addEventListener('click', changeBox)
+const Dog = function() {} //konstruktor
+const jamnik = new Dog() // obiekt
