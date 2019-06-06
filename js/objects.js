@@ -59,7 +59,6 @@ document.body.addEventListener('mousemove', function(e) {
   
 })
 
-
 // ///////////////
 // PRoject 2
 // ////////////////

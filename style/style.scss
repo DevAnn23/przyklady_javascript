@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: $primaryFontFamily;
     font-weight: 400;
+    background-color: #ebf4fa63;
 }
 
 a {
@@ -51,8 +52,7 @@ h6 {
     text-align: center;
 }
 
-.header {
-    background-color: $primaryColor;
+.header {    
     box-shadow: 0 6px 4px -4px #AAA;
     text-align: center;
     margin-bottom: 2%;
@@ -74,6 +74,7 @@ main {
 
     .section {
         flex: 2;
+        background-color: $white;
         text-align: center;
 
         ol {
@@ -131,7 +132,49 @@ nav {
         }
     }
 }
-
+#loader {
+    z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+}
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%; 
+    background: #91b5cd;
+    z-index: 1000;
+} 
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+ 
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+ 
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left { 
+    -webkit-transition: all 0.3s 0.3s ease-out; 
+            transition: all 0.3s 0.3s ease-out;
+}
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out; 
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
 footer {
     @extend .header;
     margin-bottom: 0;
@@ -140,7 +183,7 @@ footer {
 
     h6 {
         padding: 0;
-        margin: 0;
+        margin: 30px 0 0 0 ;
     }
 
     .fa-project-diagram {
@@ -153,13 +196,13 @@ footer {
         margin: 0 2px;
         padding: 3px;
         text-transform: uppercase;
-        border: 1px solid #f0f0f0;
+        border: 2px solid #aaaaaa;
         border-radius: 20px;
         padding: 2px 10px;
         font-size: 15px;
         transition: background-color 0.7s ease;
         &:hover {
-            background-color: #f0f0f0;
+            background-color: #b4dff3;
         }
     }
 }
@@ -200,6 +243,7 @@ footer {
     -webkit-box-shadow: 0 6px 4px 4px #e0d7d7;
     box-shadow: 26 25px 27px 28px red;
     margin: 17px auto;
+    background-color: $white;
     // &--slider {
 
     // }

@@ -116,3 +116,37 @@
 
 const Dog = function() {} //konstruktor
 const jamnik = new Dog() // obiekt
+
+function Car(name) {
+    this.name = name;
+}
+const maluch = new Car("maluch");
+
+const Person = function(name, age) {
+    this.name = name;
+    this.age = age;
+    this.children = [];
+}
+// obiekt prtotyp znajduje sięw funkcji konstruktora i wszystkie obiekty tworzone w oparciu o ten konstruktor bedą miały do nie go dostęp
+Person.prototype.addChildren =  function(name) {
+    this.children.push(name);
+}
+const arek = new Person("Arek", 20);
+const asia = new Person("Asia", 60);
+
+arek.addChildren("Ewa");
+
+function Player(citizenship, country) {
+    this.citizenship = citizenship;
+    this.country = country;
+    // this.changeCitizenship = function(citizenshipnew) {
+    //     this.citizenship = citizenshipnew;
+    //     console.log(`Zmiana obywatelstwa ${this.citizenshipnew}`);
+    // }
+}
+Player.prototype.changeCitizenship = function(citizenshipnew) {
+    this.citizenship = citizenshipnew;
+    console.log(`Zmiana obywatelstwa ${this.citizenshipnew}`);
+}
+const zenek = new Player("polskie", "Polska");
+zenek.changeCitizenship("rosyjskie")

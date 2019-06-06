@@ -1,6 +1,7 @@
 
 
 	//Rysowanie w canvas
+	document.querySelector('body').classList.add('loaded');
 	var canvas = document.getElementById('can');
 	canvas.width = 250;
 	canvas.height = 400;
